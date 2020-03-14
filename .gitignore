@@ -12,5 +12,5 @@
 *.user
 
 # Ignore compiled javascript and map files
-*.js
+server.js
 *.map
