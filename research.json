@@ -1,0 +1,6054 @@
+[
+  {
+    "id": "root",
+    "children": [ "tribalcommunity" ],
+    "parents": [],
+    "level": -1,
+    "requirements": []
+  },
+  {
+    "id": "tribalcommunity",
+    "era": "StoneAge",
+    "name": "Tribal Community",
+    "fp": 3,
+    "rewards": [],
+    "children": [ "stilt_houses", "spears", "pottery" ],
+    "parents": [ "root" ],
+    "requirements": []
+  },
+  {
+    "id": "stilt_houses",
+    "era": "BronzeAge",
+    "name": "Stilt Houses",
+    "fp": 3,
+    "rewards": [ "Stilt House", "Flowers" ],
+    "children": [ "wheel" ],
+    "parents": [ "tribalcommunity" ],
+    "level": 1,
+    "requirements": []
+  },
+  {
+    "id": "spears",
+    "era": "BronzeAge",
+    "name": "Spears",
+    "fp": 3,
+    "rewards": [ "Spearfighter Barracks", "Continent Map" ],
+    "children": [ "wheel", "construction" ],
+    "parents": [ "tribalcommunity" ],
+    "level": 1,
+    "requirements": []
+  },
+  {
+    "id": "pottery",
+    "era": "BronzeAge",
+    "name": "Pottery",
+    "fp": 3,
+    "rewards": [ "Pottery" ],
+    "children": [ "construction" ],
+    "parents": [ "tribalcommunity" ],
+    "level": 1,
+    "requirements": []
+  },
+  {
+    "id": "wheel",
+    "era": "BronzeAge",
+    "name": "The Wheel",
+    "fp": 4,
+    "rewards": [ "Expansion" ],
+    "children": [ "slingshots", "cultivation" ],
+    "parents": [ "stilt_houses", "spears" ],
+    "level": 2,
+    "requirements": []
+  },
+  {
+    "id": "construction",
+    "era": "BronzeAge",
+    "name": "Construction",
+    "fp": 5,
+    "rewards": [ "Stone Circle", "Friends Tavern" ],
+    "children": [ "chalets", "cultivation", "tools" ],
+    "parents": [ "pottery", "spears" ],
+    "level": 2,
+    "requirements": []
+  },
+  {
+    "id": "slingshots",
+    "era": "BronzeAge",
+    "name": "Slingshots",
+    "fp": 5,
+    "rewards": [ "Slinger Range" ],
+    "children": [ "horseback_riding" ],
+    "parents": [ "wheel" ],
+    "level": 3,
+    "requirements": { "money": 200 }
+  },
+  {
+    "id": "chalets",
+    "era": "BronzeAge",
+    "name": "Chalets",
+    "fp": 5,
+    "rewards": [ "Chalet" ],
+    "children": [ "growing", "horseback_riding" ],
+    "parents": [ "construction" ],
+    "level": 3,
+    "requirements": {
+      "money": 100,
+      "supplies": 200
+    }
+  },
+  {
+    "id": "cultivation",
+    "era": "BronzeAge",
+    "name": "Cultivation",
+    "fp": 6,
+    "rewards": [ "Fruit Farm", "Special Events" ],
+    "children": [ "thatched_houses" ],
+    "parents": [ "wheel", "construction" ],
+    "level": 3,
+    "requirements": {
+      "money": 200,
+      "supplies": 100
+    }
+  },
+  {
+    "id": "tools",
+    "era": "BronzeAge",
+    "name": "Tools",
+    "fp": 3,
+    "rewards": [ "Expansion" ],
+    "children": [ "stonework", "woodwork" ],
+    "parents": [ "construction" ],
+    "level": 3,
+    "requirements": { "supplies": 100 }
+  },
+  {
+    "id": "growing",
+    "era": "BronzeAge",
+    "name": "Growing",
+    "fp": 5,
+    "rewards": [ "Vineyard", "Dye Works" ],
+    "children": [],
+    "parents": [ "chalets" ],
+    "level": 4,
+    "requirements": { "supplies": 300 }
+  },
+  {
+    "id": "horseback_riding",
+    "era": "BronzeAge",
+    "name": "Horseback Riding",
+    "fp": 6,
+    "rewards": [ "Horseman Stable" ],
+    "children": [ "phalanx" ],
+    "parents": [ "chalets", "slingshots" ],
+    "level": 4,
+    "requirements": { "money": 250 }
+  },
+  {
+    "id": "thatched_houses",
+    "era": "BronzeAge",
+    "name": "Thatched Houses",
+    "fp": 6,
+    "rewards": [ "Thatched House", "Bush" ],
+    "children": [ "phalanx", "smithery", "teaching" ],
+    "parents": [ "cultivation" ],
+    "level": 4,
+    "requirements": {
+      "money": 150,
+      "supplies": 200
+    }
+  },
+  {
+    "id": "stonework",
+    "era": "BronzeAge",
+    "name": "Stonework",
+    "fp": 5,
+    "rewards": [ "Stone Mason", "Marble Mason" ],
+    "children": [ "craftwork" ],
+    "parents": [ "tools" ],
+    "level": 4,
+    "requirements": { "supplies": 500 }
+  },
+  {
+    "id": "woodwork",
+    "era": "BronzeAge",
+    "name": "Woodwork",
+    "fp": 5,
+    "rewards": [ "Lumbermill" ],
+    "children": [ "craftwork" ],
+    "parents": [ "tools" ],
+    "level": 4,
+    "requirements": {
+      "money": 200,
+      "supplies": 100
+    }
+  },
+  {
+    "id": "phalanx",
+    "era": "BronzeAge",
+    "name": "Phalanx",
+    "fp": 8,
+    "rewards": [ "Warrior Barracks" ],
+    "children": [ "paths", "siege_weapons" ],
+    "parents": [ "horseback_riding", "thatched_houses" ],
+    "level": 5,
+    "requirements": { "supplies": 200 }
+  },
+  {
+    "id": "smithery",
+    "era": "BronzeAge",
+    "name": "Smithery",
+    "fp": 8,
+    "rewards": [ "Blacksmith", "Guilds" ],
+    "children": [ "siege_weapons", "brewing" ],
+    "parents": [ "thatched_houses" ],
+    "level": 5,
+    "requirements": { "money": 350 }
+  },
+  {
+    "id": "teaching",
+    "era": "BronzeAge",
+    "name": "Teaching",
+    "fp": 7,
+    "rewards": [ "School", "Statue" ],
+    "children": [ "brewing", "manuring" ],
+    "parents": [ "thatched_houses" ],
+    "level": 5,
+    "requirements": {
+      "money": 200,
+      "supplies": 50
+    }
+  },
+  {
+    "id": "craftwork",
+    "era": "BronzeAge",
+    "name": "Craftwork",
+    "fp": 6,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "stonework", "woodwork" ],
+    "level": 5,
+    "requirements": {
+      "alabaster": 2,
+      "cypress": 2
+    }
+  },
+  {
+    "id": "paths",
+    "era": "BronzeAge",
+    "name": "Paths",
+    "fp": 7,
+    "rewards": [ "Path" ],
+    "children": [ "rooftilehouses" ],
+    "parents": [ "phalanx" ],
+    "level": 6,
+    "requirements": { "supplies": 100 }
+  },
+  {
+    "id": "siege_weapons",
+    "era": "BronzeAge",
+    "name": "Siege Weapons",
+    "fp": 9,
+    "rewards": [ "Thrower Camp" ],
+    "children": [ "rooftilehouses", "architecture" ],
+    "parents": [ "phalanx", "smithery" ],
+    "level": 6,
+    "requirements": { "money": 500 }
+  },
+  {
+    "id": "brewing",
+    "era": "BronzeAge",
+    "name": "Brewing",
+    "fp": 10,
+    "rewards": [ "Tavern", "Hedge" ],
+    "children": [ "architecture", "militia" ],
+    "parents": [ "smithery", "teaching" ],
+    "level": 6,
+    "requirements": {
+      "money": 150,
+      "supplies": 150
+    }
+  },
+  {
+    "id": "manuring",
+    "era": "BronzeAge",
+    "name": "Manuring",
+    "fp": 8,
+    "rewards": [ "Expansion" ],
+    "children": [ "militia" ],
+    "parents": [ "teaching" ],
+    "level": 6,
+    "requirements": { "supplies": 300 }
+  },
+  {
+    "id": "rooftilehouses",
+    "era": "IronAge",
+    "name": "Roof Tile Houses",
+    "fp": 13,
+    "rewards": [ "Roof Tile House", "Flower Tub" ],
+    "children": [ "stockbreeding", "processions" ],
+    "parents": [ "paths", "siege_weapons" ],
+    "level": 7,
+    "requirements": {
+      "money": 250,
+      "supplies": 100
+    }
+  },
+  {
+    "id": "architecture",
+    "era": "IronAge",
+    "name": "Architecture",
+    "fp": 12,
+    "rewards": [ "Expansion", "Great Building contribution" ],
+    "children": [ "processions", "processing" ],
+    "parents": [ "siege_weapons", "brewing" ],
+    "level": 7,
+    "requirements": { "sandstone": 5 }
+  },
+  {
+    "id": "militia",
+    "era": "IronAge",
+    "name": "Militia",
+    "fp": 14,
+    "rewards": [ "Soldier Barracks", "Daily Challenges" ],
+    "children": [ "processing", "ironworks", "handicraft" ],
+    "parents": [ "brewing", "manuring" ],
+    "level": 7,
+    "requirements": { "wine": 8 }
+  },
+  {
+    "id": "stockbreeding",
+    "era": "IronAge",
+    "name": "Stock Breeding",
+    "fp": 12,
+    "rewards": [ "Goat Farm" ],
+    "children": [ "agriculture", "villas" ],
+    "parents": [ "rooftilehouses" ],
+    "level": 8,
+    "requirements": {
+      "money": 300,
+      "supplies": 250
+    }
+  },
+  {
+    "id": "processions",
+    "era": "IronAge",
+    "name": "Processions",
+    "fp": 13,
+    "rewards": [ "Triumphal Arch", "Monument" ],
+    "children": [ "villas", "archery" ],
+    "parents": [ "rooftilehouses", "architecture" ],
+    "level": 8,
+    "requirements": { "dye": 12 }
+  },
+  {
+    "id": "processing",
+    "era": "IronAge",
+    "name": "Processing",
+    "fp": 11,
+    "rewards": [ "Limestone Mason", "Ebony Woodworks" ],
+    "children": [ "archery" ],
+    "parents": [ "architecture", "militia" ],
+    "level": 8,
+    "requirements": { "money": 600 }
+  },
+  {
+    "id": "ironworks",
+    "era": "IronAge",
+    "name": "Iron Works",
+    "fp": 6,
+    "rewards": [ "Iron Foundry" ],
+    "children": [ "sewerage" ],
+    "parents": [ "militia" ],
+    "level": 8,
+    "requirements": { "supplies": 1500 }
+  },
+  {
+    "id": "handicraft",
+    "era": "IronAge",
+    "name": "Handicraft",
+    "fp": 13,
+    "rewards": [ "Jewelry Manufacturer", "Weaving Mill" ],
+    "children": [ "sewerage" ],
+    "parents": [ "militia" ],
+    "level": 8,
+    "requirements": { "money": 1500 }
+  },
+  {
+    "id": "agriculture",
+    "era": "IronAge",
+    "name": "Agriculture",
+    "fp": 11,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "stockbreeding" ],
+    "level": 9,
+    "requirements": { "cypress": 30 }
+  },
+  {
+    "id": "villas",
+    "era": "IronAge",
+    "name": "Cottage",
+    "fp": 13,
+    "rewards": [ "Cottage" ],
+    "children": [ "butchery", "militarytactics", "fortification" ],
+    "parents": [ "stockbreeding", "processions" ],
+    "level": 9,
+    "requirements": {
+      "money": 600,
+      "supplies": 1250
+    }
+  },
+  {
+    "id": "archery",
+    "era": "IronAge",
+    "name": "Archery",
+    "fp": 13,
+    "rewards": [ "Archery Range" ],
+    "children": [ "militarytactics", "fortification" ],
+    "parents": [ "processions", "processing" ],
+    "level": 9,
+    "requirements": { "alabaster": 16 }
+  },
+  {
+    "id": "sewerage",
+    "era": "IronAge",
+    "name": "Sewerage",
+    "fp": 5,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "ironworks", "handicraft" ],
+    "level": 9,
+    "requirements": {
+      "supplies": 750,
+      "dye": 15,
+      "limestone": 3
+    }
+  },
+  {
+    "id": "butchery",
+    "era": "IronAge",
+    "name": "Butchery",
+    "fp": 16,
+    "rewards": [ "Butcher" ],
+    "children": [ "mathematics" ],
+    "parents": [ "villas" ],
+    "level": 10,
+    "requirements": {
+      "money": 100,
+      "supplies": 2500
+    }
+  },
+  {
+    "id": "militarytactics",
+    "era": "IronAge",
+    "name": "Military Tactics",
+    "fp": 22,
+    "rewards": [ "Mounted Warrior Stable", "PVP Fights", "Guild Battlegrounds" ],
+    "children": [ "mathematics", "thermae" ],
+    "parents": [ "villas", "archery" ],
+    "level": 10,
+    "requirements": {
+      "money": 1500,
+      "supplies": 2000
+    }
+  },
+  {
+    "id": "fortification",
+    "era": "IronAge",
+    "name": "Fortification",
+    "fp": 13,
+    "rewards": [ "Expansion", "Gravel Road" ],
+    "children": [ "thermae", "plowing", "chainofcommand" ],
+    "parents": [ "villas", "archery" ],
+    "level": 10,
+    "requirements": {
+      "supplies": 1400,
+      "sandstone": 20,
+      "ebony": 4
+    }
+  },
+  {
+    "id": "mathematics",
+    "era": "IronAge",
+    "name": "Mathematics",
+    "fp": 20,
+    "rewards": [ "Ballista Camp", "Reconstruction Mode" ],
+    "children": [ "framehouses", "tanning" ],
+    "parents": [ "butchery", "militarytactics" ],
+    "level": 11,
+    "requirements": {
+      "money": 2000,
+      "supplies": 1500
+    }
+  },
+  {
+    "id": "thermae",
+    "era": "IronAge",
+    "name": "Thermae",
+    "fp": 17,
+    "rewards": [ "Public Bath", "Fountain" ],
+    "children": [ "framehouses" ],
+    "parents": [ "militarytactics", "fortification" ],
+    "level": 11,
+    "requirements": {
+      "money": 600,
+      "supplies": 750,
+      "alabaster": 21,
+      "cloth": 11
+    }
+  },
+  {
+    "id": "plowing",
+    "era": "IronAge",
+    "name": "Plowing",
+    "fp": 15,
+    "rewards": [ "Expansion", "Cultural Settlements" ],
+    "children": [],
+    "parents": [ "fortification" ],
+    "level": 11,
+    "requirements": {
+      "cypress": 30,
+      "lead": 13
+    }
+  },
+  {
+    "id": "chainofcommand",
+    "era": "IronAge",
+    "name": "Chain of Command",
+    "fp": 17,
+    "rewards": [ "Legionnaire Barracks" ],
+    "children": [ "tanning", "premium_houses" ],
+    "parents": [ "fortification" ],
+    "level": 11,
+    "requirements": {
+      "money": 600,
+      "supplies": 1100,
+      "wine": 50,
+      "gems": 16
+    }
+  },
+  {
+    "id": "framehouses",
+    "era": "EarlyMiddleAge",
+    "name": "Frame Houses",
+    "fp": 12,
+    "rewards": [ "Frame House" ],
+    "children": [ "casting", "mounted_archers", "economics" ],
+    "parents": [ "mathematics", "thermae" ],
+    "level": 12,
+    "requirements": {
+      "money": 3000,
+      "supplies": 1500
+    }
+  },
+  {
+    "id": "tanning",
+    "era": "EarlyMiddleAge",
+    "name": "Tanning",
+    "fp": 18,
+    "rewards": [ "Tannery" ],
+    "children": [ "mounted_archers", "economics", "apiary", "quarries" ],
+    "parents": [ "mathematics", "chainofcommand" ],
+    "level": 12,
+    "requirements": {
+      "money": 1500,
+      "supplies": 3000
+    }
+  },
+  {
+    "id": "premium_houses",
+    "era": "EarlyMiddleAge",
+    "name": "Multistory Houses",
+    "fp": 23,
+    "rewards": [ "Multistory House" ],
+    "children": [],
+    "parents": [ "chainofcommand" ],
+    "level": 12,
+    "requirements": {
+      "money": 2500,
+      "supplies": 2000
+    }
+  },
+  {
+    "id": "casting",
+    "era": "EarlyMiddleAge",
+    "name": "Casting",
+    "fp": 20,
+    "rewards": [ "Goldsmith", "Copper Foundry" ],
+    "children": [],
+    "parents": [ "framehouses" ],
+    "level": 13,
+    "requirements": {
+      "money": 3000,
+      "supplies": 3000
+    }
+  },
+  {
+    "id": "mounted_archers",
+    "era": "EarlyMiddleAge",
+    "name": "Mounted Archers",
+    "fp": 25,
+    "rewards": [ "Mounted Archer Range" ],
+    "children": [ "accomodation", "police", "mercenaries" ],
+    "parents": [ "framehouses", "tanning" ],
+    "level": 13,
+    "requirements": {
+      "money": 750,
+      "supplies": 1500,
+      "ebony": 28,
+      "alabaster": 22
+    }
+  },
+  {
+    "id": "economics",
+    "era": "EarlyMiddleAge",
+    "name": "Economics",
+    "fp": 26,
+    "rewards": [ "Marketplace", "Pond", "Antiques Dealer" ],
+    "children": [ "mercenaries", "leatherworking" ],
+    "parents": [ "framehouses", "tanning" ],
+    "level": 13,
+    "requirements": {
+      "money": 750,
+      "supplies": 1000,
+      "gems": 20,
+      "dye": 46
+    }
+  },
+  {
+    "id": "apiary",
+    "era": "EarlyMiddleAge",
+    "name": "Apiary",
+    "fp": 20,
+    "rewards": [ "Beekeeper" ],
+    "children": [],
+    "parents": [ "tanning" ],
+    "level": 13,
+    "requirements": {
+      "money": 3000,
+      "supplies": 5000
+    }
+  },
+  {
+    "id": "quarries",
+    "era": "EarlyMiddleAge",
+    "name": "Quarries",
+    "fp": 22,
+    "rewards": [ "Granite Mason", "Alabaster Mason" ],
+    "children": [],
+    "parents": [ "tanning" ],
+    "level": 13,
+    "requirements": { "supplies": 6000 }
+  },
+  {
+    "id": "accomodation",
+    "era": "EarlyMiddleAge",
+    "name": "Accommodation",
+    "fp": 25,
+    "rewards": [ "Inn", "Hedge with Flowers" ],
+    "children": [ "clapboardhouses" ],
+    "parents": [ "mounted_archers" ],
+    "level": 14,
+    "requirements": {
+      "money": 3000,
+      "supplies": 1000,
+      "limestone": 40,
+      "cypress": 34
+    }
+  },
+  {
+    "id": "police",
+    "era": "EarlyMiddleAge",
+    "name": "Police",
+    "fp": 26,
+    "rewards": [ "Cobbled Road" ],
+    "children": [ "clapboardhouses" ],
+    "parents": [ "mounted_archers" ],
+    "level": 14,
+    "requirements": {
+      "money": 1500,
+      "supplies": 4000
+    }
+  },
+  {
+    "id": "mercenaries",
+    "era": "EarlyMiddleAge",
+    "name": "Mercenaries",
+    "fp": 26,
+    "rewards": [ "Mercenary Barracks" ],
+    "children": [ "heavycavalry" ],
+    "parents": [ "mounted_archers", "economics" ],
+    "level": 14,
+    "requirements": {
+      "money": 1250,
+      "supplies": 1500,
+      "lead": 42,
+      "wine": 35
+    }
+  },
+  {
+    "id": "leatherworking",
+    "era": "EarlyMiddleAge",
+    "name": "Leather Working",
+    "fp": 29,
+    "rewards": [ "Shoemaker" ],
+    "children": [ "armoredinfantry" ],
+    "parents": [ "economics" ],
+    "level": 14,
+    "requirements": {
+      "money": 1500,
+      "supplies": 1250,
+      "cloth": 49,
+      "sandstone": 61
+    }
+  },
+  {
+    "id": "clapboardhouses",
+    "era": "EarlyMiddleAge",
+    "name": "Clapboard Houses",
+    "fp": 24,
+    "rewards": [ "Clapboard House" ],
+    "children": [ "aqueducts" ],
+    "parents": [ "accomodation", "police" ],
+    "level": 15,
+    "requirements": {
+      "money": 500,
+      "supplies": 2000,
+      "ebony": 35,
+      "granite": 4
+    }
+  },
+  {
+    "id": "heavycavalry",
+    "era": "EarlyMiddleAge",
+    "name": "Heavy Cavalry",
+    "fp": 33,
+    "rewards": [ "Heavy Cavalry Stable" ],
+    "children": [ "aqueducts", "executions" ],
+    "parents": [ "mercenaries" ],
+    "level": 15,
+    "requirements": {
+      "money": 4000,
+      "supplies": 7500
+    }
+  },
+  {
+    "id": "armoredinfantry",
+    "era": "EarlyMiddleAge",
+    "name": "Armored Infantry",
+    "fp": 30,
+    "rewards": [ "Armored Infantry Barracks" ],
+    "children": [ "executions" ],
+    "parents": [ "leatherworking" ],
+    "level": 15,
+    "requirements": {
+      "money": 4000,
+      "supplies": 3000
+    }
+  },
+  {
+    "id": "aqueducts",
+    "era": "EarlyMiddleAge",
+    "name": "Bridges",
+    "fp": 16,
+    "rewards": [ "Expansion" ],
+    "children": [ "croprotations", "physics" ],
+    "parents": [ "clapboardhouses", "heavycavalry" ],
+    "level": 16,
+    "requirements": {
+      "supplies": 4000,
+      "limestone": 30,
+      "marble": 14
+    }
+  },
+  {
+    "id": "executions",
+    "era": "EarlyMiddleAge",
+    "name": "Executions",
+    "fp": 20,
+    "rewards": [ "Gallows" ],
+    "children": [ "physics", "fertilization", "monarchy" ],
+    "parents": [ "heavycavalry", "armoredinfantry" ],
+    "level": 16,
+    "requirements": {
+      "money": 2250,
+      "supplies": 2000,
+      "cloth": 28,
+      "honey": 20
+    }
+  },
+  {
+    "id": "croprotations",
+    "era": "EarlyMiddleAge",
+    "name": "Crop Rotations",
+    "fp": 29,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "aqueducts" ],
+    "level": 17,
+    "requirements": []
+  },
+  {
+    "id": "physics",
+    "era": "EarlyMiddleAge",
+    "name": "Physics",
+    "fp": 35,
+    "rewards": [ "Catapult Camp" ],
+    "children": [ "counterstrategy", "improvedstonework", "alchemy" ],
+    "parents": [ "aqueducts", "executions" ],
+    "level": 17,
+    "requirements": {
+      "money": 1500,
+      "supplies": 3000,
+      "lead": 40,
+      "bronze": 23
+    }
+  },
+  {
+    "id": "fertilization",
+    "era": "EarlyMiddleAge",
+    "name": "Fertilization",
+    "fp": 22,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "executions" ],
+    "level": 17,
+    "requirements": { "supplies": 10000 }
+  },
+  {
+    "id": "monarchy",
+    "era": "EarlyMiddleAge",
+    "name": "Monarchy",
+    "fp": 24,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "executions" ],
+    "level": 17,
+    "requirements": {
+      "supplies": 3000,
+      "gems": 70,
+      "gold": 30
+    }
+  },
+  {
+    "id": "counterstrategy",
+    "era": "HighMiddleAge",
+    "name": "Counterstrategy",
+    "fp": 40,
+    "rewards": [ "Berserker Barracks" ],
+    "children": [ "crossbows" ],
+    "parents": [ "physics" ],
+    "level": 18,
+    "requirements": {
+      "money": 3500,
+      "supplies": 3000,
+      "marble": 20,
+      "ebony": 42
+    }
+  },
+  {
+    "id": "improvedstonework",
+    "era": "HighMiddleAge",
+    "name": "Quality Products",
+    "fp": 30,
+    "rewards": [ "Brickworks", "Herb Merchant" ],
+    "children": [ "guilds", "conservation" ],
+    "parents": [ "physics" ],
+    "level": 18,
+    "requirements": {
+      "money": 2500,
+      "supplies": 9000,
+      "bronze": 20,
+      "gems": 10
+    }
+  },
+  {
+    "id": "alchemy",
+    "era": "HighMiddleAge",
+    "name": "Alchemy",
+    "fp": 37,
+    "rewards": [ "Alchemist" ],
+    "children": [ "conservation", "brownstonehouses" ],
+    "parents": [ "physics" ],
+    "level": 18,
+    "requirements": {
+      "money": 2500,
+      "supplies": 6000,
+      "honey": 30,
+      "cloth": 30
+    }
+  },
+  {
+    "id": "crossbows",
+    "era": "HighMiddleAge",
+    "name": "Crossbows",
+    "fp": 45,
+    "rewards": [ "Crossbow Range" ],
+    "children": [ "monotheism" ],
+    "parents": [ "counterstrategy" ],
+    "level": 19,
+    "requirements": {
+      "money": 5000,
+      "supplies": 9000
+    }
+  },
+  {
+    "id": "guilds",
+    "era": "HighMiddleAge",
+    "name": "Guilds",
+    "fp": 33,
+    "rewards": [ "Ropery", "Glassblower" ],
+    "children": [ "traderoutes" ],
+    "parents": [ "improvedstonework" ],
+    "level": 19,
+    "requirements": {
+      "money": 3000,
+      "supplies": 12000
+    }
+  },
+  {
+    "id": "conservation",
+    "era": "HighMiddleAge",
+    "name": "Conservation",
+    "fp": 20,
+    "rewards": [ "Saltworks" ],
+    "children": [ "chemistry" ],
+    "parents": [ "improvedstonework", "alchemy" ],
+    "level": 19,
+    "requirements": {
+      "money": 9500,
+      "supplies": 7500
+    }
+  },
+  {
+    "id": "brownstonehouses",
+    "era": "HighMiddleAge",
+    "name": "Brownstone Houses",
+    "fp": 30,
+    "rewards": [ "Brownstone House" ],
+    "children": [ "signposting" ],
+    "parents": [ "alchemy" ],
+    "level": 19,
+    "requirements": {
+      "money": 4250,
+      "supplies": 9000,
+      "granite": 60,
+      "limestone": 28
+    }
+  },
+  {
+    "id": "monotheism",
+    "era": "HighMiddleAge",
+    "name": "Monotheism",
+    "fp": 40,
+    "rewards": [ "Church", "Flag" ],
+    "children": [ "chivalry" ],
+    "parents": [ "crossbows" ],
+    "level": 20,
+    "requirements": {
+      "money": 1250,
+      "supplies": 6000,
+      "gold": 41,
+      "lead": 47
+    }
+  },
+  {
+    "id": "traderoutes",
+    "era": "HighMiddleAge",
+    "name": "Trade Routes",
+    "fp": 26,
+    "rewards": [ "Expansion" ],
+    "children": [ "clearing" ],
+    "parents": [ "guilds" ],
+    "level": 20,
+    "requirements": { "supplies": 9500 }
+  },
+  {
+    "id": "chemistry",
+    "era": "HighMiddleAge",
+    "name": "Chemistry",
+    "fp": 43,
+    "rewards": [ "Expansion" ],
+    "children": [ "clearing" ],
+    "parents": [ "conservation" ],
+    "level": 20,
+    "requirements": { "supplies": 10000 }
+  },
+  {
+    "id": "signposting",
+    "era": "HighMiddleAge",
+    "name": "Signposting",
+    "fp": 35,
+    "rewards": [ "Rough Paved Road", "Signpost" ],
+    "children": [ "granary" ],
+    "parents": [ "brownstonehouses" ],
+    "level": 20,
+    "requirements": {
+      "money": 4000,
+      "supplies": 12000
+    }
+  },
+  {
+    "id": "chivalry",
+    "era": "HighMiddleAge",
+    "name": "Chivalry",
+    "fp": 40,
+    "rewards": [ "Knight Stable" ],
+    "children": [ "heavyarmor" ],
+    "parents": [ "monotheism" ],
+    "level": 21,
+    "requirements": {
+      "money": 4500,
+      "supplies": 8500,
+      "sandstone": 66,
+      "ropes": 4
+    }
+  },
+  {
+    "id": "clearing",
+    "era": "HighMiddleAge",
+    "name": "Clearing",
+    "fp": 30,
+    "rewards": [ "Expansion" ],
+    "children": [ "waterwheels" ],
+    "parents": [ "traderoutes", "chemistry" ],
+    "level": 21,
+    "requirements": { "supplies": 20000 }
+  },
+  {
+    "id": "granary",
+    "era": "HighMiddleAge",
+    "name": "Granary",
+    "fp": 40,
+    "rewards": [ "Farm" ],
+    "children": [ "medicine", "townhouses" ],
+    "parents": [ "signposting" ],
+    "level": 21,
+    "requirements": {
+      "money": 4000,
+      "supplies": 8000,
+      "cypress": 79,
+      "salt": 11
+    }
+  },
+  {
+    "id": "heavyarmor",
+    "era": "HighMiddleAge",
+    "name": "Heavy Armor",
+    "fp": 60,
+    "rewards": [ "Heavy Infantry Barracks" ],
+    "children": [ "heavysiege", "hospitals" ],
+    "parents": [ "chivalry" ],
+    "level": 22,
+    "requirements": {
+      "money": 2500,
+      "supplies": 10500,
+      "dye": 90,
+      "herbs": 34
+    }
+  },
+  {
+    "id": "waterwheels",
+    "era": "HighMiddleAge",
+    "name": "Water Wheels",
+    "fp": 30,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "clearing" ],
+    "level": 22,
+    "requirements": { "supplies": 12000 }
+  },
+  {
+    "id": "medicine",
+    "era": "HighMiddleAge",
+    "name": "Medicine",
+    "fp": 40,
+    "rewards": [ "Doctor", "Lantern" ],
+    "children": [ "heavysiege", "hospitals" ],
+    "parents": [ "granary" ],
+    "level": 22,
+    "requirements": {
+      "money": 2000,
+      "supplies": 13000
+    }
+  },
+  {
+    "id": "townhouses",
+    "era": "HighMiddleAge",
+    "name": "Town Houses",
+    "fp": 40,
+    "rewards": [ "Town House" ],
+    "children": [],
+    "parents": [ "granary" ],
+    "level": 22,
+    "requirements": {
+      "money": 5000,
+      "supplies": 5000,
+      "wine": 71,
+      "brick": 40
+    }
+  },
+  {
+    "id": "heavysiege",
+    "era": "HighMiddleAge",
+    "name": "Heavy Siege Engines",
+    "fp": 50,
+    "rewards": [ "Trebuchet Camp" ],
+    "children": [ "metalworking", "crane" ],
+    "parents": [ "heavyarmor", "medicine" ],
+    "level": 23,
+    "requirements": { "supplies": 18000 }
+  },
+  {
+    "id": "hospitals",
+    "era": "HighMiddleAge",
+    "name": "Hospitals",
+    "fp": 24,
+    "rewards": [ "Expansion" ],
+    "children": [ "biology", "aristocracy" ],
+    "parents": [ "heavyarmor", "medicine" ],
+    "level": 23,
+    "requirements": {
+      "supplies": 6000,
+      "alabaster": 94,
+      "glass": 50
+    }
+  },
+  {
+    "id": "metalworking",
+    "era": "LateMiddleAge",
+    "name": "Metal Working",
+    "fp": 40,
+    "rewards": [ "Brass Foundry" ],
+    "children": [],
+    "parents": [ "heavysiege" ],
+    "level": 24,
+    "requirements": {
+      "money": 15000,
+      "supplies": 2500
+    }
+  },
+  {
+    "id": "crane",
+    "era": "LateMiddleAge",
+    "name": "Crane",
+    "fp": 52,
+    "rewards": [ "Talc Cutter", "Basalt Mason" ],
+    "children": [ "cartography", "estate_houses", "great_swords" ],
+    "parents": [ "heavysiege" ],
+    "level": 24,
+    "requirements": {
+      "money": 5000,
+      "supplies": 7500
+    }
+  },
+  {
+    "id": "biology",
+    "era": "LateMiddleAge",
+    "name": "Biology",
+    "fp": 60,
+    "rewards": [ "Expansion" ],
+    "children": [ "estate_houses", "great_swords" ],
+    "parents": [ "hospitals" ],
+    "level": 24,
+    "requirements": { "supplies": 5000 }
+  },
+  {
+    "id": "aristocracy",
+    "era": "LateMiddleAge",
+    "name": "Aristocracy",
+    "fp": 42,
+    "rewards": [ "Gunpowder Manufactory", "Silk Manufactory" ],
+    "children": [],
+    "parents": [ "hospitals" ],
+    "level": 24,
+    "requirements": {
+      "money": 5000,
+      "supplies": 15000
+    }
+  },
+  {
+    "id": "cartography",
+    "era": "LateMiddleAge",
+    "name": "Cartography",
+    "fp": 30,
+    "rewards": [ "Cartographer", "Group of Trees" ],
+    "children": [ "new_trade_routes" ],
+    "parents": [ "crane" ],
+    "level": 25,
+    "requirements": {
+      "money": 5000,
+      "supplies": 10000,
+      "ropes": 120,
+      "gold": 110
+    }
+  },
+  {
+    "id": "estate_houses",
+    "era": "LateMiddleAge",
+    "name": "Estate Houses",
+    "fp": 60,
+    "rewards": [ "Estate House" ],
+    "children": [ "water_reservoirs" ],
+    "parents": [ "crane", "biology" ],
+    "level": 25,
+    "requirements": {
+      "money": 2500,
+      "supplies": 5000,
+      "brick": 60,
+      "honey": 140
+    }
+  },
+  {
+    "id": "great_swords",
+    "era": "LateMiddleAge",
+    "name": "Great Swords",
+    "fp": 58,
+    "rewards": [ "Great Sword Warrior Barracks" ],
+    "children": [ "longbows", "manufacturing" ],
+    "parents": [ "crane", "biology" ],
+    "level": 25,
+    "requirements": {
+      "money": 2500,
+      "supplies": 15000,
+      "herbs": 80,
+      "bronze": 150
+    }
+  },
+  {
+    "id": "new_trade_routes",
+    "era": "LateMiddleAge",
+    "name": "New Trade Routes",
+    "fp": 30,
+    "rewards": [ "Expansion" ],
+    "children": [ "intelligence" ],
+    "parents": [ "cartography" ],
+    "level": 26,
+    "requirements": {
+      "supplies": 20000,
+      "salt": 100,
+      "granite": 140
+    }
+  },
+  {
+    "id": "water_reservoirs",
+    "era": "LateMiddleAge",
+    "name": "Water Reservoirs",
+    "fp": 35,
+    "rewards": [ "Expansion" ],
+    "children": [ "intelligence" ],
+    "parents": [ "estate_houses" ],
+    "level": 26,
+    "requirements": { "supplies": 40000 }
+  },
+  {
+    "id": "longbows",
+    "era": "LateMiddleAge",
+    "name": "Longbows",
+    "fp": 65,
+    "rewards": [ "Longbow Archer Range" ],
+    "children": [ "cavalrytactics", "letterpress" ],
+    "parents": [ "great_swords" ],
+    "level": 26,
+    "requirements": {
+      "money": 15000,
+      "supplies": 30000
+    }
+  },
+  {
+    "id": "manufacturing",
+    "era": "LateMiddleAge",
+    "name": "Manufacturing",
+    "fp": 49,
+    "rewards": [ "Cooperage" ],
+    "children": [ "letterpress", "optic" ],
+    "parents": [ "great_swords" ],
+    "level": 26,
+    "requirements": {
+      "money": 20000,
+      "supplies": 20000,
+      "glass": 80,
+      "marble": 200
+    }
+  },
+  {
+    "id": "intelligence",
+    "era": "LateMiddleAge",
+    "name": "Intelligence",
+    "fp": 38,
+    "rewards": [ "Tower Ruin" ],
+    "children": [ "higher_education", "pike_square" ],
+    "parents": [ "new_trade_routes", "water_reservoirs" ],
+    "level": 27,
+    "requirements": {
+      "money": 17500,
+      "supplies": 22500
+    }
+  },
+  {
+    "id": "cavalrytactics",
+    "era": "LateMiddleAge",
+    "name": "Cavalry Tactics",
+    "fp": 80,
+    "rewards": [ "Heavy Knight Stable" ],
+    "children": [ "pike_square" ],
+    "parents": [ "longbows" ],
+    "level": 27,
+    "requirements": {
+      "money": 12500,
+      "supplies": 30000
+    }
+  },
+  {
+    "id": "letterpress",
+    "era": "LateMiddleAge",
+    "name": "Letterpress",
+    "fp": 43,
+    "rewards": [ "Library" ],
+    "children": [ "brewing_kettles" ],
+    "parents": [ "longbows", "manufacturing" ],
+    "level": 27,
+    "requirements": {
+      "money": 7500,
+      "supplies": 30000
+    }
+  },
+  {
+    "id": "optic",
+    "era": "LateMiddleAge",
+    "name": "Optics",
+    "fp": 40,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "manufacturing" ],
+    "level": 27,
+    "requirements": { "supplies": 30000 }
+  },
+  {
+    "id": "higher_education",
+    "era": "LateMiddleAge",
+    "name": "Higher Education",
+    "fp": 45,
+    "rewards": [ "Academy" ],
+    "children": [ "apartment_houses", "pestcontrol" ],
+    "parents": [ "intelligence" ],
+    "level": 28,
+    "requirements": {
+      "money": 10000,
+      "supplies": 20000,
+      "gunpowder": 50,
+      "ebony": 140
+    }
+  },
+  {
+    "id": "pike_square",
+    "era": "LateMiddleAge",
+    "name": "Pike Square",
+    "fp": 80,
+    "rewards": [ "Imperial Guard Barracks" ],
+    "children": [ "apartment_houses", "pestcontrol", "gunpowder" ],
+    "parents": [ "intelligence", "cavalrytactics" ],
+    "level": 28,
+    "requirements": {
+      "money": 7500,
+      "silk": 40,
+      "limestone": 150
+    }
+  },
+  {
+    "id": "brewing_kettles",
+    "era": "LateMiddleAge",
+    "name": "Brewing Kettles",
+    "fp": 55,
+    "rewards": [ "Brewery" ],
+    "children": [ "gunpowder" ],
+    "parents": [ "letterpress" ],
+    "level": 28,
+    "requirements": {
+      "supplies": 50000,
+      "brass": 50,
+      "lead": 100
+    }
+  },
+  {
+    "id": "apartment_houses",
+    "era": "LateMiddleAge",
+    "name": "Apartment Houses",
+    "fp": 70,
+    "rewards": [ "Apartment House" ],
+    "children": [ "porcelain", "muskets" ],
+    "parents": [ "higher_education", "pike_square" ],
+    "level": 29,
+    "requirements": {
+      "money": 25000,
+      "supplies": 30000,
+      "talc": 70,
+      "gems": 140
+    }
+  },
+  {
+    "id": "pestcontrol",
+    "era": "LateMiddleAge",
+    "name": "Pest Control",
+    "fp": 40,
+    "rewards": [ "Expansion" ],
+    "children": [],
+    "parents": [ "higher_education", "pike_square" ],
+    "level": 29,
+    "requirements": { "supplies": 5000 }
+  },
+  {
+    "id": "gunpowder",
+    "era": "LateMiddleAge",
+    "name": "Gunpowder",
+    "fp": 60,
+    "rewards": [ "Cannon Camp" ],
+    "children": [ "maritime_shipping", "industrial_goods" ],
+    "parents": [ "pike_square", "brewing_kettles" ],
+    "level": 29,
+    "requirements": {
+      "money": 5000,
+      "supplies": 40000,
+      "basalt": 80,
+      "cloth": 130
+    }
+  },
+  {
+    "id": "porcelain",
+    "era": "ColonialAge",
+    "name": "Porcelain",
+    "fp": 37,
+    "rewards": [ "Porcelain Manufactory" ],
+    "children": [],
+    "parents": [ "apartment_houses" ],
+    "level": 30,
+    "requirements": {
+      "money": 2000,
+      "supplies": 20000
+    }
+  },
+  {
+    "id": "muskets",
+    "era": "ColonialAge",
+    "name": "Muskets",
+    "fp": 56,
+    "rewards": [ "Musketeer Range" ],
+    "children": [ "colonies" ],
+    "parents": [ "apartment_houses" ],
+    "level": 30,
+    "requirements": {
+      "money": 4000,
+      "supplies": 10000,
+      "gunpowder": 70,
+      "brass": 60
+    }
+  },
+  {
+    "id": "maritime_shipping",
+    "era": "ColonialAge",
+    "name": "Maritime Shipping",
+    "fp": 38,
+    "rewards": [ "Sailmaker", "Neptune Fountain" ],
+    "children": [ "colonies" ],
+    "parents": [ "gunpowder" ],
+    "level": 30,
+    "requirements": {
+      "supplies": 25000,
+      "ropes": 110,
+      "honey": 160
+    }
+  },
+  {
+    "id": "industrial_goods",
+    "era": "ColonialAge",
+    "name": "Industrial Goods",
+    "fp": 55,
+    "rewards": [ "Wiremill", "Tar Kiln" ],
+    "children": [],
+    "parents": [ "gunpowder" ],
+    "level": 30,
+    "requirements": {
+      "money": 3500,
+      "supplies": 30000
+    }
+  },
+  {
+    "id": "colonies",
+    "era": "ColonialAge",
+    "name": "Colonies",
+    "fp": 36,
+    "rewards": [ "Exotic Goods Vendor", "Paved Lane" ],
+    "children": [ "arcade_houses", "plantation_goods", "new_crops", "exploration" ],
+    "parents": [ "maritime_shipping", "muskets" ],
+    "level": 31,
+    "requirements": {
+      "money": 20000,
+      "supplies": 50000,
+      "salt": 100,
+      "glass": 130
+    }
+  },
+  {
+    "id": "arcade_houses",
+    "era": "ColonialAge",
+    "name": "Arcade Houses",
+    "fp": 54,
+    "rewards": [ "Arcade House", "Eagle Hedge" ],
+    "children": [ "fashion" ],
+    "parents": [ "colonies" ],
+    "level": 32,
+    "requirements": {
+      "supplies": 12000,
+      "basalt": 60,
+      "brick": 100
+    }
+  },
+  {
+    "id": "plantation_goods",
+    "era": "ColonialAge",
+    "name": "Plantation Goods",
+    "fp": 35,
+    "rewards": [ "Coffee Roaster", "Paper Mill" ],
+    "children": [ "plantations" ],
+    "parents": [ "colonies" ],
+    "level": 32,
+    "requirements": {
+      "money": 4000,
+      "supplies": 15000,
+      "herbs": 110
+    }
+  },
+  {
+    "id": "new_crops",
+    "era": "ColonialAge",
+    "name": "New Crops",
+    "fp": 73,
+    "rewards": [ "Expansion" ],
+    "children": [ "plantations", "trading_charters" ],
+    "parents": [ "colonies" ],
+    "level": 32,
+    "requirements": {
+      "money": 5000,
+      "supplies": 25000
+    }
+  },
+  {
+    "id": "exploration",
+    "era": "ColonialAge",
+    "name": "Exploration",
+    "fp": 58,
+    "rewards": [ "Ranger Encampment", "Kite" ],
+    "children": [ "trading_charters" ],
+    "parents": [ "colonies" ],
+    "level": 32,
+    "requirements": {
+      "supplies": 18000,
+      "gold": 40,
+      "tar": 20
+    }
+  },
+  {
+    "id": "fashion",
+    "era": "ColonialAge",
+    "name": "Fashion",
+    "fp": 59,
+    "rewards": [ "Coiffeur" ],
+    "children": [ "rapid_response" ],
+    "parents": [ "arcade_houses" ],
+    "level": 33,
+    "requirements": {
+      "money": 18000,
+      "supplies": 18000,
+      "silk": 90,
+      "talc": 140
+    }
+  },
+  {
+    "id": "plantations",
+    "era": "ColonialAge",
+    "name": "Plantations",
+    "fp": 53,
+    "rewards": [ "Tobacco Plantation" ],
+    "children": [ "country_houses" ],
+    "parents": [ "plantation_goods", "new_crops" ],
+    "level": 33,
+    "requirements": {
+      "money": 5000,
+      "supplies": 5000,
+      "granite": 150,
+      "tar": 20
+    }
+  },
+  {
+    "id": "trading_charters",
+    "era": "ColonialAge",
+    "name": "Trading Charters",
+    "fp": 43,
+    "rewards": [ "Trading Company", "Globe Statue" ],
+    "children": [ "imperialism" ],
+    "parents": [ "new_crops", "exploration" ],
+    "level": 33,
+    "requirements": {
+      "money": 10000,
+      "supplies": 15000,
+      "gold": 20
+    }
+  },
+  {
+    "id": "rapid_response",
+    "era": "ColonialAge",
+    "name": "Rapid Response",
+    "fp": 51,
+    "rewards": [ "Dragoon Stables" ],
+    "children": [ "malthusian_theory", "elite_forces" ],
+    "parents": [ "fashion" ],
+    "level": 34,
+    "requirements": {
+      "money": 2500,
+      "supplies": 8000,
+      "coffee": 40,
+      "bronze": 50
+    }
+  },
+  {
+    "id": "country_houses",
+    "era": "ColonialAge",
+    "name": "Country Houses",
+    "fp": 38,
+    "rewards": [ "Country House", "Peacock Hedge" ],
+    "children": [ "elite_forces", "clockmaking" ],
+    "parents": [ "plantations" ],
+    "level": 34,
+    "requirements": {
+      "money": 3000,
+      "supplies": 30000
+    }
+  },
+  {
+    "id": "imperialism",
+    "era": "ColonialAge",
+    "name": "Imperialism",
+    "fp": 58,
+    "rewards": [ "Expansion" ],
+    "children": [ "clockmaking" ],
+    "parents": [ "trading_charters" ],
+    "level": 34,
+    "requirements": {
+      "money": 8000,
+      "supplies": 5000,
+      "porcelain": 60,
+      "marble": 120
+    }
+  },
+  {
+    "id": "malthusian_theory",
+    "era": "ColonialAge",
+    "name": "Malthusian Theory",
+    "fp": 58,
+    "rewards": [ "Expansion" ],
+    "children": [ "gambrel_roof_houses" ],
+    "parents": [ "rapid_response" ],
+    "level": 35,
+    "requirements": {
+      "money": 1000,
+      "supplies": 2500,
+      "paper": 80
+    }
+  },
+  {
+    "id": "elite_forces",
+    "era": "ColonialAge",
+    "name": "Elite Forces",
+    "fp": 45,
+    "rewards": [ "Grenadier Barracks" ],
+    "children": [ "gambrel_roof_houses", "mobile_artillery" ],
+    "parents": [ "rapid_response", "country_houses" ],
+    "level": 35,
+    "requirements": {
+      "money": 1337,
+      "supplies": 13370,
+      "silk": 60,
+      "gold": 110
+    }
+  },
+  {
+    "id": "clockmaking",
+    "era": "ColonialAge",
+    "name": "Clockmaking",
+    "fp": 45,
+    "rewards": [ "Clockmaker", "Clock Tower" ],
+    "children": [ "mobile_artillery" ],
+    "parents": [ "country_houses", "imperialism" ],
+    "level": 35,
+    "requirements": {
+      "money": 5000,
+      "supplies": 20000,
+      "wire": 80,
+      "bronze": 110
+    }
+  },
+  {
+    "id": "gambrel_roof_houses",
+    "era": "ColonialAge",
+    "name": "Gambrel Roof Houses",
+    "fp": 68,
+    "rewards": [ "Gambrel Roof House", "Flamingo Hedge" ],
+    "children": [ "industrialization", "extraction" ],
+    "parents": [ "malthusian_theory", "elite_forces" ],
+    "level": 36,
+    "requirements": {
+      "money": 20000,
+      "supplies": 75000,
+      "basalt": 100
+    }
+  },
+  {
+    "id": "mobile_artillery",
+    "era": "ColonialAge",
+    "name": "Field Artillery",
+    "fp": 40,
+    "rewards": [ "Field Gun Camp" ],
+    "children": [ "industrialization", "extraction" ],
+    "parents": [ "elite_forces", "clockmaking" ],
+    "level": 36,
+    "requirements": {
+      "money": 3000,
+      "supplies": 25000,
+      "gunpowder": 80
+    }
+  },
+  {
+    "id": "industrialization",
+    "era": "IndustrialAge",
+    "name": "Industrialization",
+    "fp": 60,
+    "rewards": [ "Rubber Plant", "Textile Mill" ],
+    "children": [ "rifles", "railroad" ],
+    "parents": [ "gambrel_roof_houses", "mobile_artillery" ],
+    "level": 37,
+    "requirements": {
+      "supplies": 300000,
+      "brick": 90,
+      "glass": 50
+    }
+  },
+  {
+    "id": "extraction",
+    "era": "IndustrialAge",
+    "name": "Extraction",
+    "fp": 70,
+    "rewards": [ "Whaling Station", "Fertilizer Plant", "Coke Oven" ],
+    "children": [ "hygiene", "modern_chemistry" ],
+    "parents": [ "gambrel_roof_houses", "mobile_artillery" ],
+    "level": 37,
+    "requirements": {
+      "money": 75000,
+      "supplies": 150000,
+      "salt": 100,
+      "basalt": 60
+    }
+  },
+  {
+    "id": "rifles",
+    "era": "IndustrialAge",
+    "name": "Rifles",
+    "fp": 48,
+    "rewards": [ "Rifleman Range" ],
+    "children": [ "workers_houses" ],
+    "parents": [ "industrialization" ],
+    "level": 38,
+    "requirements": {
+      "supplies": 50000,
+      "silk": 100,
+      "textiles": 40
+    }
+  },
+  {
+    "id": "railroad",
+    "era": "IndustrialAge",
+    "name": "Railroad",
+    "fp": 110,
+    "rewards": [ "Expansion" ],
+    "children": [ "workers_houses" ],
+    "parents": [ "industrialization" ],
+    "level": 38,
+    "requirements": {
+      "money": 30000,
+      "supplies": 60000,
+      "brass": 200,
+      "coke": 55
+    }
+  },
+  {
+    "id": "hygiene",
+    "era": "IndustrialAge",
+    "name": "Hygiene",
+    "fp": 110,
+    "rewards": [ "Expansion" ],
+    "children": [ "the_west" ],
+    "parents": [ "extraction" ],
+    "level": 38,
+    "requirements": {
+      "money": 30000,
+      "supplies": 60000,
+      "herbs": 190,
+      "rubber": 90
+    }
+  },
+  {
+    "id": "modern_chemistry",
+    "era": "IndustrialAge",
+    "name": "Modern Chemistry",
+    "fp": 48,
+    "rewards": [ "Chemical Plant", "Gas Lamp" ],
+    "children": [ "the_west" ],
+    "parents": [ "extraction" ],
+    "level": 38,
+    "requirements": {
+      "money": 10000,
+      "supplies": 20000,
+      "talc": 130,
+      "glass": 50
+    }
+  },
+  {
+    "id": "workers_houses",
+    "era": "IndustrialAge",
+    "name": "Workers' Houses",
+    "fp": 58,
+    "rewards": [ "Workers' House", "Old Wall South" ],
+    "children": [ "reconnaissance", "precision_tools" ],
+    "parents": [ "rifles", "railroad" ],
+    "level": 39,
+    "requirements": {
+      "money": 30000,
+      "fertilizer": 45,
+      "ropes": 80
+    }
+  },
+  {
+    "id": "the_west",
+    "era": "IndustrialAge",
+    "name": "The West",
+    "fp": 42,
+    "rewards": [ "Saloon" ],
+    "children": [ "precision_tools", "boarding_houses" ],
+    "parents": [ "hygiene", "modern_chemistry" ],
+    "level": 39,
+    "requirements": {
+      "supplies": 30000,
+      "coffee": 90,
+      "ropes": 110
+    }
+  },
+  {
+    "id": "reconnaissance",
+    "era": "IndustrialAge",
+    "name": "Reconnaissance",
+    "fp": 42,
+    "rewards": [ "Jaeger Encampment" ],
+    "children": [ "victorian_houses" ],
+    "parents": [ "workers_houses" ],
+    "level": 40,
+    "requirements": {
+      "supplies": 60000,
+      "coffee": 80,
+      "silk": 30
+    }
+  },
+  {
+    "id": "precision_tools",
+    "era": "IndustrialAge",
+    "name": "Precision Tools",
+    "fp": 30,
+    "rewards": [ "Gunsmith" ],
+    "children": [ "victorian_houses", "modern_manufacturing", "modern_roads", "flanking_tactics", "law_and_order" ],
+    "parents": [ "workers_houses", "the_west" ],
+    "level": 40,
+    "requirements": {
+      "money": 5000,
+      "supplies": 90000,
+      "wire": 160,
+      "coke": 50
+    }
+  },
+  {
+    "id": "boarding_houses",
+    "era": "IndustrialAge",
+    "name": "Boarding Houses",
+    "fp": 68,
+    "rewards": [ "Boarding House", "Old Wall East" ],
+    "children": [ "flanking_tactics", "law_and_order" ],
+    "parents": [ "the_west" ],
+    "level": 40,
+    "requirements": {
+      "tar": 80,
+      "porcelain": 60
+    }
+  },
+  {
+    "id": "victorian_houses",
+    "era": "IndustrialAge",
+    "name": "Victorian Houses",
+    "fp": 68,
+    "rewards": [ "Victorian House", "Pavilion with Flowers" ],
+    "children": [ "ballistics" ],
+    "parents": [ "reconnaissance", "precision_tools" ],
+    "level": 41,
+    "requirements": {
+      "money": 70000,
+      "whaleoil": 60,
+      "porcelain": 100
+    }
+  },
+  {
+    "id": "modern_manufacturing",
+    "era": "IndustrialAge",
+    "name": "Modern Manufacturing",
+    "fp": 80,
+    "rewards": [ "Ceramics Factory" ],
+    "children": [ "ballistics", "infrastructure" ],
+    "parents": [ "precision_tools" ],
+    "level": 41,
+    "requirements": {
+      "money": 8000,
+      "supplies": 200000,
+      "salt": 110,
+      "glass": 60
+    }
+  },
+  {
+    "id": "modern_roads",
+    "era": "IndustrialAge",
+    "name": "Modern Roads",
+    "fp": 33,
+    "rewards": [ "Sett Paved Road" ],
+    "children": [ "infrastructure" ],
+    "parents": [ "precision_tools" ],
+    "level": 41,
+    "requirements": {
+      "money": 20000,
+      "supplies": 180000,
+      "tar": 70,
+      "fertilizer": 50
+    }
+  },
+  {
+    "id": "flanking_tactics",
+    "era": "IndustrialAge",
+    "name": "Flanking Tactics",
+    "fp": 73,
+    "rewards": [ "Lancer Stables" ],
+    "children": [ "infrastructure", "breech_loading" ],
+    "parents": [ "precision_tools", "boarding_houses" ],
+    "level": 41,
+    "requirements": {
+      "supplies": 70000,
+      "whaleoil": 50,
+      "textiles": 60
+    }
+  },
+  {
+    "id": "law_and_order",
+    "era": "IndustrialAge",
+    "name": "Law and Order",
+    "fp": 41,
+    "rewards": [ "Police Station" ],
+    "children": [ "breech_loading" ],
+    "parents": [ "precision_tools", "boarding_houses" ],
+    "level": 41,
+    "requirements": {
+      "money": 5000,
+      "supplies": 5000,
+      "paper": 120,
+      "silk": 100
+    }
+  },
+  {
+    "id": "ballistics",
+    "era": "IndustrialAge",
+    "name": "Ballistics",
+    "fp": 55,
+    "rewards": [ "Howitzer Factory" ],
+    "children": [],
+    "parents": [ "victorian_houses", "modern_manufacturing" ],
+    "level": 42,
+    "requirements": {
+      "supplies": 80000,
+      "rubber": 70,
+      "gunpowder": 110
+    }
+  },
+  {
+    "id": "infrastructure",
+    "era": "IndustrialAge",
+    "name": "Infrastructure",
+    "fp": 37,
+    "rewards": [ "Water Pumping Station", "Fire Hydrant" ],
+    "children": [ "traffic_lanes" ],
+    "parents": [ "modern_roads", "modern_manufacturing", "flanking_tactics" ],
+    "level": 42,
+    "requirements": {
+      "money": 20000,
+      "supplies": 50000,
+      "brick": 130,
+      "basalt": 110
+    }
+  },
+  {
+    "id": "breech_loading",
+    "era": "IndustrialAge",
+    "name": "Breech Loading",
+    "fp": 67,
+    "rewards": [ "Breech Loader Factory" ],
+    "children": [],
+    "parents": [ "flanking_tactics", "law_and_order" ],
+    "level": 42,
+    "requirements": {
+      "supplies": 90000,
+      "gunpowder": 100,
+      "brass": 60
+    }
+  },
+  {
+    "id": "traffic_lanes",
+    "era": "ProgressiveEra",
+    "name": "Traffic Lanes",
+    "fp": 75,
+    "rewards": [ "Tarmac Road", "Promenade", "Urban Tree" ],
+    "children": [ "mass_manufacturing", "modern_explosives", "oil_refining", "modern_materials" ],
+    "parents": [ "infrastructure" ],
+    "level": 43,
+    "requirements": {
+      "money": 20000,
+      "supplies": 225000,
+      "basalt": 180,
+      "tar": 100
+    }
+  },
+  {
+    "id": "mass_manufacturing",
+    "era": "ProgressiveEra",
+    "name": "Mass Manufacturing",
+    "fp": 55,
+    "rewards": [ "Machine Workshop" ],
+    "children": [ "electricity" ],
+    "parents": [ "traffic_lanes" ],
+    "level": 44,
+    "requirements": {
+      "supplies": 75000,
+      "brass": 130,
+      "wire": 60
+    }
+  },
+  {
+    "id": "modern_explosives",
+    "era": "ProgressiveEra",
+    "name": "Modern Explosives",
+    "fp": 55,
+    "rewards": [ "Explosives Factory" ],
+    "children": [ "percussion_fuze" ],
+    "parents": [ "traffic_lanes" ],
+    "level": 44,
+    "requirements": {
+      "supplies": 75000,
+      "gunpowder": 160,
+      "fertilizer": 75
+    }
+  },
+  {
+    "id": "oil_refining",
+    "era": "ProgressiveEra",
+    "name": "Oil Refining",
+    "fp": 55,
+    "rewards": [ "Oil Refinery" ],
+    "children": [ "automobiles", "urbanization" ],
+    "parents": [ "traffic_lanes" ],
+    "level": 44,
+    "requirements": {
+      "money": 50000,
+      "supplies": 25000,
+      "porcelain": 110,
+      "rubber": 100
+    }
+  },
+  {
+    "id": "modern_materials",
+    "era": "ProgressiveEra",
+    "name": "Modern Materials",
+    "fp": 85,
+    "rewards": [ "Asbestos Factory", "Tinning Plant" ],
+    "children": [ "urbanization", "tenement_houses" ],
+    "parents": [ "traffic_lanes" ],
+    "level": 44,
+    "requirements": {
+      "money": 75000,
+      "supplies": 75000,
+      "talc": 60,
+      "coke": 50
+    }
+  },
+  {
+    "id": "electricity",
+    "era": "ProgressiveEra",
+    "name": "Electricity",
+    "fp": 90,
+    "rewards": [ "Electrical Plant" ],
+    "children": [ "power_distribution" ],
+    "parents": [ "mass_manufacturing" ],
+    "level": 45,
+    "requirements": {
+      "money": 100000,
+      "wire": 80,
+      "brass": 80
+    }
+  },
+  {
+    "id": "percussion_fuze",
+    "era": "ProgressiveEra",
+    "name": "Percussion Fuze",
+    "fp": 48,
+    "rewards": [ "Ordnance Factory" ],
+    "children": [ "council_houses" ],
+    "parents": [ "modern_explosives" ],
+    "level": 45,
+    "requirements": {
+      "supplies": 90000,
+      "explosives": 60,
+      "machineparts": 20
+    }
+  },
+  {
+    "id": "automobiles",
+    "era": "ProgressiveEra",
+    "name": "Automobiles",
+    "fp": 74,
+    "rewards": [ "Garage" ],
+    "children": [ "armor_plating" ],
+    "parents": [ "oil_refining" ],
+    "level": 45,
+    "requirements": {
+      "supplies": 80000,
+      "machineparts": 60,
+      "petroleum": 50
+    }
+  },
+  {
+    "id": "urbanization",
+    "era": "ProgressiveEra",
+    "name": "Urbanization",
+    "fp": 35,
+    "rewards": [ "Expansion" ],
+    "children": [ "journalism" ],
+    "parents": [ "oil_refining", "modern_materials" ],
+    "level": 45,
+    "requirements": {
+      "supplies": 90000,
+      "coffee": 90,
+      "whaleoil": 140
+    }
+  },
+  {
+    "id": "tenement_houses",
+    "era": "ProgressiveEra",
+    "name": "Tenement Houses",
+    "fp": 51,
+    "rewards": [ "Tenement House", "Billboard" ],
+    "children": [ "ranching" ],
+    "parents": [ "modern_materials" ],
+    "level": 45,
+    "requirements": {
+      "supplies": 120000,
+      "talc": 90,
+      "whaleoil": 80
+    }
+  },
+  {
+    "id": "power_distribution",
+    "era": "ProgressiveEra",
+    "name": "Power Distribution",
+    "fp": 43,
+    "rewards": [ "Lamp Factory" ],
+    "children": [ "public_transport" ],
+    "parents": [ "electricity" ],
+    "level": 46,
+    "requirements": {
+      "supplies": 100000,
+      "wire": 110,
+      "coke": 130
+    }
+  },
+  {
+    "id": "council_houses",
+    "era": "ProgressiveEra",
+    "name": "Council Houses",
+    "fp": 65,
+    "rewards": [ "Council House", "Water Tower" ],
+    "children": [ "public_transport" ],
+    "parents": [ "percussion_fuze" ],
+    "level": 46,
+    "requirements": {
+      "money": 40000,
+      "supplies": 80000,
+      "talc": 90,
+      "porcelain": 80
+    }
+  },
+  {
+    "id": "armor_plating",
+    "era": "ProgressiveEra",
+    "name": "Armor Plating",
+    "fp": 53,
+    "rewards": [ "Armored Car Factory" ],
+    "children": [ "tracked_vehicles" ],
+    "parents": [ "automobiles" ],
+    "level": 46,
+    "requirements": {
+      "supplies": 80000,
+      "tinplate": 150,
+      "petroleum": 40
+    }
+  },
+  {
+    "id": "journalism",
+    "era": "ProgressiveEra",
+    "name": "Journalism",
+    "fp": 68,
+    "rewards": [ "Publishing House" ],
+    "children": [ "mass_mobilization" ],
+    "parents": [ "urbanization" ],
+    "level": 46,
+    "requirements": {
+      "paper": 220,
+      "silk": 150
+    }
+  },
+  {
+    "id": "ranching",
+    "era": "ProgressiveEra",
+    "name": "Ranching",
+    "fp": 47,
+    "rewards": [ "Cattle Ranch" ],
+    "children": [ "mass_mobilization" ],
+    "parents": [ "tenement_houses" ],
+    "level": 46,
+    "requirements": {
+      "money": 50000,
+      "supplies": 75000,
+      "fertilizer": 200,
+      "petroleum": 80
+    }
+  },
+  {
+    "id": "public_transport",
+    "era": "ProgressiveEra",
+    "name": "Public Transport",
+    "fp": 73,
+    "rewards": [ "Metro Entrance" ],
+    "children": [ "high_rises" ],
+    "parents": [ "power_distribution", "council_houses" ],
+    "level": 47,
+    "requirements": {
+      "money": 18000,
+      "supplies": 90000,
+      "tar": 220,
+      "machineparts": 140
+    }
+  },
+  {
+    "id": "tracked_vehicles",
+    "era": "ProgressiveEra",
+    "name": "Tracked Vehicles",
+    "fp": 88,
+    "rewards": [ "Tank Factory" ],
+    "children": [ "scoped_rifles" ],
+    "parents": [ "armor_plating" ],
+    "level": 47,
+    "requirements": {
+      "supplies": 80000,
+      "machineparts": 110,
+      "explosives": 60
+    }
+  },
+  {
+    "id": "mass_mobilization",
+    "era": "ProgressiveEra",
+    "name": "Mass Mobilization",
+    "fp": 88,
+    "rewards": [ "Conscription Office" ],
+    "children": [ "antibiotics" ],
+    "parents": [ "journalism", "ranching" ],
+    "level": 47,
+    "requirements": {
+      "money": 150000,
+      "supplies": 100000,
+      "textiles": 230,
+      "coffee": 230
+    }
+  },
+  {
+    "id": "high_rises",
+    "era": "ProgressiveEra",
+    "name": "High-Rises",
+    "fp": 98,
+    "rewards": [ "High-Rise", "Newspaper Stand" ],
+    "children": [ "recreation" ],
+    "parents": [ "public_transport" ],
+    "level": 48,
+    "requirements": {
+      "money": 11111,
+      "supplies": 111111,
+      "asbestos": 180,
+      "tinplate": 90
+    }
+  },
+  {
+    "id": "scoped_rifles",
+    "era": "ProgressiveEra",
+    "name": "Scoped Rifles",
+    "fp": 53,
+    "rewards": [ "Sniper Camp" ],
+    "children": [],
+    "parents": [ "tracked_vehicles" ],
+    "level": 48,
+    "requirements": {
+      "supplies": 25000,
+      "explosives": 180,
+      "rubber": 160
+    }
+  },
+  {
+    "id": "antibiotics",
+    "era": "ProgressiveEra",
+    "name": "Antibiotics",
+    "fp": 79,
+    "rewards": [ "Expansion" ],
+    "children": [ "recreation" ],
+    "parents": [ "mass_mobilization" ],
+    "level": 48,
+    "requirements": {
+      "supplies": 180000,
+      "porcelain": 190,
+      "tinplate": 110
+    }
+  },
+  {
+    "id": "recreation",
+    "era": "ProgressiveEra",
+    "name": "Recreation",
+    "fp": 52,
+    "rewards": [ "City Park" ],
+    "children": [ "prefabrication", "autobahns", "food_processing" ],
+    "parents": [ "antibiotics", "high_rises" ],
+    "level": 49,
+    "requirements": {
+      "supplies": 250000,
+      "asbestos": 150,
+      "petroleum": 130
+    }
+  },
+  {
+    "id": "prefabrication",
+    "era": "ModernEra",
+    "name": "Prefabrication",
+    "fp": 102,
+    "rewards": [ "Concrete Plant", "Packaging Factory" ],
+    "children": [ "prefab_houses", "mechanized_infantry" ],
+    "parents": [ "recreation" ],
+    "level": 50,
+    "requirements": {
+      "money": 100000,
+      "supplies": 200000,
+      "machineparts": 200,
+      "coke": 200
+    }
+  },
+  {
+    "id": "autobahns",
+    "era": "ModernEra",
+    "name": "Autobahns",
+    "fp": 57,
+    "rewards": [ "Expansion", "Motorway", "Construction Warehouse" ],
+    "children": [ "mechanized_infantry", "motels", "mechanized_artillery" ],
+    "parents": [ "recreation" ],
+    "level": 50,
+    "requirements": {
+      "supplies": 400000,
+      "petroleum": 180,
+      "tar": 130
+    }
+  },
+  {
+    "id": "food_processing",
+    "era": "ModernEra",
+    "name": "Food Processing",
+    "fp": 85,
+    "rewards": [ "Food Processing Plant", "Flavor Laboratory" ],
+    "children": [ "mechanized_artillery", "advertisement" ],
+    "parents": [ "recreation" ],
+    "level": 50,
+    "requirements": {
+      "money": 75000,
+      "supplies": 150000,
+      "whaleoil": 430,
+      "tinplate": 100
+    }
+  },
+  {
+    "id": "prefab_houses",
+    "era": "ModernEra",
+    "name": "Prefab Houses",
+    "fp": 79,
+    "rewards": [ "Prefab House" ],
+    "children": [ "commercial_aviation" ],
+    "parents": [ "prefabrication" ],
+    "level": 51,
+    "requirements": {
+      "money": 50000,
+      "supplies": 200000,
+      "ferroconcrete": 190,
+      "convenience_food": 140
+    }
+  },
+  {
+    "id": "mechanized_infantry",
+    "era": "ModernEra",
+    "name": "Mechanized Infantry",
+    "fp": 59,
+    "rewards": [ "Mechanized Infantry Barracks" ],
+    "children": [ "service_24_7" ],
+    "parents": [ "autobahns", "prefabrication" ],
+    "level": 51,
+    "requirements": {
+      "money": 25000,
+      "supplies": 250000,
+      "machineparts": 90,
+      "petroleum": 60
+    }
+  },
+  {
+    "id": "motels",
+    "era": "ModernEra",
+    "name": "Motels",
+    "fp": 62,
+    "rewards": [ "Motel" ],
+    "children": [ "service_24_7" ],
+    "parents": [ "autobahns" ],
+    "level": 51,
+    "requirements": {
+      "money": 50000,
+      "supplies": 200000,
+      "asbestos": 130,
+      "porcelain": 90
+    }
+  },
+  {
+    "id": "mechanized_artillery",
+    "era": "ModernEra",
+    "name": "Mechanized Artillery",
+    "fp": 67,
+    "rewards": [ "Mechanized Artillery Factory", "Nuclear Shelter" ],
+    "children": [ "service_24_7" ],
+    "parents": [ "autobahns", "food_processing" ],
+    "level": 51,
+    "requirements": {
+      "money": 25000,
+      "supplies": 250000,
+      "explosives": 180,
+      "wire": 90
+    }
+  },
+  {
+    "id": "advertisement",
+    "era": "ModernEra",
+    "name": "Advertisement",
+    "fp": 73,
+    "rewards": [ "Hatter" ],
+    "children": [ "hollywood" ],
+    "parents": [ "food_processing" ],
+    "level": 51,
+    "requirements": {
+      "money": 100000,
+      "supplies": 50000,
+      "flavorants": 190,
+      "packaging": 140
+    }
+  },
+  {
+    "id": "commercial_aviation",
+    "era": "ModernEra",
+    "name": "Commercial Aviation",
+    "fp": 110,
+    "rewards": [ "Aircraft Factory", "Jet Statue" ],
+    "children": [ "spectator_sports", "rapid_deployment" ],
+    "parents": [ "prefab_houses" ],
+    "level": 52,
+    "requirements": {
+      "money": 77000,
+      "supplies": 110000,
+      "tinplate": 90,
+      "coke": 120
+    }
+  },
+  {
+    "id": "service_24_7",
+    "era": "ModernEra",
+    "name": "24/7 Service",
+    "fp": 77,
+    "rewards": [ "American Diner" ],
+    "children": [ "rapid_deployment", "consumer_goods" ],
+    "parents": [ "mechanized_infantry", "motels", "mechanized_artillery" ],
+    "level": 52,
+    "requirements": {
+      "money": 24000,
+      "supplies": 70000,
+      "convenience_food": 210,
+      "coffee": 90
+    }
+  },
+  {
+    "id": "hollywood",
+    "era": "ModernEra",
+    "name": "Hollywood",
+    "fp": 111,
+    "rewards": [ "Drive-In Theater", "Palm Group" ],
+    "children": [ "consumer_goods", "baby_boom" ],
+    "parents": [ "advertisement" ],
+    "level": 52,
+    "requirements": {
+      "money": 300000,
+      "supplies": 100000,
+      "luxury_materials": 180,
+      "explosives": 60
+    }
+  },
+  {
+    "id": "spectator_sports",
+    "era": "ModernEra",
+    "name": "Spectator Sports",
+    "fp": 108,
+    "rewards": [ "Roller Derby Track" ],
+    "children": [],
+    "parents": [ "commercial_aviation" ],
+    "level": 53,
+    "requirements": {
+      "money": 15000,
+      "supplies": 80000,
+      "textiles": 140,
+      "asbestos": 120
+    }
+  },
+  {
+    "id": "rapid_deployment",
+    "era": "ModernEra",
+    "name": "Rapid Deployment",
+    "fp": 58,
+    "rewards": [ "Paratrooper Camp" ],
+    "children": [ "modern_tanks" ],
+    "parents": [ "commercial_aviation", "service_24_7" ],
+    "level": 53,
+    "requirements": {
+      "money": 250000,
+      "supplies": 100000,
+      "textiles": 160,
+      "paper": 40
+    }
+  },
+  {
+    "id": "consumer_goods",
+    "era": "ModernEra",
+    "name": "Consumer Goods",
+    "fp": 109,
+    "rewards": [ "Appliance Factory" ],
+    "children": [ "suburban_houses" ],
+    "parents": [ "service_24_7", "hollywood" ],
+    "level": 53,
+    "requirements": {
+      "money": 60000,
+      "supplies": 250000,
+      "machineparts": 160,
+      "rubber": 130
+    }
+  },
+  {
+    "id": "baby_boom",
+    "era": "ModernEra",
+    "name": "Baby Boom",
+    "fp": 56,
+    "rewards": [ "Expansion", "Alley" ],
+    "children": [ "modern_tanks", "suburban_houses" ],
+    "parents": [ "hollywood" ],
+    "level": 53,
+    "requirements": {
+      "supplies": 300000,
+      "fertilizer": 160,
+      "packaging": 140
+    }
+  },
+  {
+    "id": "modern_tanks",
+    "era": "ModernEra",
+    "name": "Modern Tanks",
+    "fp": 112,
+    "rewards": [ "Battle Tank Factory" ],
+    "children": [ "anti_tank_warfare" ],
+    "parents": [ "rapid_deployment", "baby_boom" ],
+    "level": 54,
+    "requirements": {
+      "money": 25000,
+      "supplies": 250000,
+      "tinplate": 150,
+      "petroleum": 140
+    }
+  },
+  {
+    "id": "suburban_houses",
+    "era": "ModernEra",
+    "name": "Suburban Houses",
+    "fp": 70,
+    "rewards": [ "Suburban House" ],
+    "children": [ "anti_tank_warfare" ],
+    "parents": [ "consumer_goods", "baby_boom" ],
+    "level": 54,
+    "requirements": {
+      "money": 50000,
+      "supplies": 200000,
+      "luxury_materials": 150,
+      "ferroconcrete": 80
+    }
+  },
+  {
+    "id": "anti_tank_warfare",
+    "era": "ModernEra",
+    "name": "Anti-Tank Warfare",
+    "fp": 45,
+    "rewards": [ "Heavy Weapons Center" ],
+    "children": [ "private_transport", "industrial_steel", "equality", "species_conservation", "modern_electronics" ],
+    "parents": [ "modern_tanks", "suburban_houses" ],
+    "level": 55,
+    "requirements": {
+      "money": 25000,
+      "supplies": 250000,
+      "explosives": 90,
+      "ferroconcrete": 90
+    }
+  },
+  {
+    "id": "private_transport",
+    "era": "PostModernEra",
+    "name": "Private Transport",
+    "fp": 53,
+    "rewards": [ "Car Factory", "Boulevard" ],
+    "children": [ "renewable_resources" ],
+    "parents": [ "anti_tank_warfare" ],
+    "level": 56,
+    "requirements": {
+      "money": 80000,
+      "supplies": 350000,
+      "machineparts": 180,
+      "rubber": 230
+    }
+  },
+  {
+    "id": "industrial_steel",
+    "era": "PostModernEra",
+    "name": "Industrial Steel",
+    "fp": 110,
+    "rewards": [ "Steel Plant" ],
+    "children": [ "prefab_high_rises" ],
+    "parents": [ "anti_tank_warfare" ],
+    "level": 56,
+    "requirements": {
+      "money": 150000,
+      "supplies": 300000,
+      "coke": 250,
+      "tinplate": 170
+    }
+  },
+  {
+    "id": "equality",
+    "era": "PostModernEra",
+    "name": "Equality",
+    "fp": 45,
+    "rewards": [ "Expansion", "Peace Sculpture" ],
+    "children": [ "environment_standards" ],
+    "parents": [ "anti_tank_warfare" ],
+    "level": 56,
+    "requirements": {
+      "supplies": 300000,
+      "textiles": 160,
+      "convenience_food": 80
+    }
+  },
+  {
+    "id": "species_conservation",
+    "era": "PostModernEra",
+    "name": "Species Conservation",
+    "fp": 47,
+    "rewards": [ "Zoo", "Walkway" ],
+    "children": [ "genetics_research" ],
+    "parents": [ "anti_tank_warfare" ],
+    "level": 56,
+    "requirements": {
+      "supplies": 400000,
+      "whaleoil": 240,
+      "convenience_food": 220
+    }
+  },
+  {
+    "id": "modern_electronics",
+    "era": "PostModernEra",
+    "name": "Modern Electronics",
+    "fp": 120,
+    "rewards": [ "Semiconductor Factory" ],
+    "children": [ "rocket_artillery" ],
+    "parents": [ "anti_tank_warfare" ],
+    "level": 56,
+    "requirements": {
+      "money": 200000,
+      "supplies": 300000,
+      "packaging": 120,
+      "rubber": 100
+    }
+  },
+  {
+    "id": "renewable_resources",
+    "era": "PostModernEra",
+    "name": "Renewable Resources",
+    "fp": 77,
+    "rewards": [ "Tree Nursery" ],
+    "children": [ "high_society" ],
+    "parents": [ "private_transport" ],
+    "level": 57,
+    "requirements": {
+      "money": 350000,
+      "supplies": 200000,
+      "fertilizer": 370,
+      "packaging": 180
+    }
+  },
+  {
+    "id": "prefab_high_rises",
+    "era": "PostModernEra",
+    "name": "Prefab High-Rises",
+    "fp": 99,
+    "rewards": [ "Prefabricated High-Rise" ],
+    "children": [ "high_society" ],
+    "parents": [ "industrial_steel" ],
+    "level": 57,
+    "requirements": {
+      "money": 100000,
+      "supplies": 450000,
+      "ferroconcrete": 180,
+      "steel": 200
+    }
+  },
+  {
+    "id": "environment_standards",
+    "era": "PostModernEra",
+    "name": "Environmental Standards",
+    "fp": 76,
+    "rewards": [ "Industrial Filter Factory", "Allotment Garden Cabin" ],
+    "children": [ "high_society", "waste_management", "space_flight" ],
+    "parents": [ "equality" ],
+    "level": 57,
+    "requirements": {
+      "money": 100000,
+      "supplies": 400000,
+      "asbestos": 140,
+      "coke": 145
+    }
+  },
+  {
+    "id": "genetics_research",
+    "era": "PostModernEra",
+    "name": "Genetics Research",
+    "fp": 82,
+    "rewards": [ "Genetics Research Lab" ],
+    "children": [ "space_flight" ],
+    "parents": [ "species_conservation" ],
+    "level": 57,
+    "requirements": {
+      "money": 250000,
+      "supplies": 20000,
+      "fertilizer": 100,
+      "flavorants": 130
+    }
+  },
+  {
+    "id": "rocket_artillery",
+    "era": "PostModernEra",
+    "name": "Rocket Artillery",
+    "fp": 88,
+    "rewards": [ "Rocket Artillery Factory" ],
+    "children": [ "space_flight", "infantry_support" ],
+    "parents": [ "modern_electronics" ],
+    "level": 57,
+    "requirements": {
+      "money": 400000,
+      "supplies": 400000,
+      "explosives": 230,
+      "semiconductors": 80
+    }
+  },
+  {
+    "id": "high_society",
+    "era": "PostModernEra",
+    "name": "High Society",
+    "fp": 5,
+    "rewards": [ "Golf Course" ],
+    "children": [ "bungalows" ],
+    "parents": [ "renewable_resources", "prefab_high_rises", "environment_standards" ],
+    "level": 58,
+    "requirements": {
+      "money": 1000000,
+      "supplies": 50000,
+      "luxury_materials": 200,
+      "flavorants": 190
+    }
+  },
+  {
+    "id": "waste_management",
+    "era": "PostModernEra",
+    "name": "Waste Management",
+    "fp": 39,
+    "rewards": [ "Junkyard" ],
+    "children": [],
+    "parents": [ "environment_standards" ],
+    "level": 58,
+    "requirements": {
+      "money": 250000,
+      "supplies": 400000,
+      "renewable_resources": 150,
+      "filters": 160
+    }
+  },
+  {
+    "id": "space_flight",
+    "era": "PostModernEra",
+    "name": "Space Flight",
+    "fp": 123,
+    "rewards": [ "Expansion", "Astronaut Statue" ],
+    "children": [ "composite_armor" ],
+    "parents": [ "environment_standards", "genetics_research", "rocket_artillery" ],
+    "level": 58,
+    "requirements": {
+      "supplies": 1000000,
+      "asbestos": 140,
+      "semiconductors": 180
+    }
+  },
+  {
+    "id": "infantry_support",
+    "era": "PostModernEra",
+    "name": "Infantry Support",
+    "fp": 50,
+    "rewards": [ "IFV Factory" ],
+    "children": [ "duplex_houses" ],
+    "parents": [ "rocket_artillery" ],
+    "level": 58,
+    "requirements": {
+      "money": 150000,
+      "supplies": 250000,
+      "tinplate": 120,
+      "machineparts": 50
+    }
+  },
+  {
+    "id": "bungalows",
+    "era": "PostModernEra",
+    "name": "Bungalows",
+    "fp": 101,
+    "rewards": [ "Bungalow", "Allotment Garden House" ],
+    "children": [ "children_rights" ],
+    "parents": [ "high_society" ],
+    "level": 59,
+    "requirements": {
+      "money": 200000,
+      "supplies": 100000,
+      "luxury_materials": 180,
+      "filters": 130
+    }
+  },
+  {
+    "id": "composite_armor",
+    "era": "PostModernEra",
+    "name": "Composite Armor",
+    "fp": 66,
+    "rewards": [ "Universal Tank Factory" ],
+    "children": [ "physical_education" ],
+    "parents": [ "space_flight" ],
+    "level": 59,
+    "requirements": {
+      "money": 100000,
+      "supplies": 500000,
+      "steel": 180,
+      "petroleum": 180
+    }
+  },
+  {
+    "id": "duplex_houses",
+    "era": "PostModernEra",
+    "name": "Duplex Houses",
+    "fp": 92,
+    "rewards": [ "Duplex House" ],
+    "children": [ "physical_education" ],
+    "parents": [ "infantry_support" ],
+    "level": 59,
+    "requirements": {
+      "money": 100000,
+      "supplies": 200000,
+      "ferroconcrete": 70,
+      "renewable_resources": 150
+    }
+  },
+  {
+    "id": "children_rights",
+    "era": "PostModernEra",
+    "name": "Children's Rights",
+    "fp": 76,
+    "rewards": [ "Toy Factory", "Allotment Garden Shed" ],
+    "children": [ "squad_tactics" ],
+    "parents": [ "bungalows" ],
+    "level": 60,
+    "requirements": {
+      "money": 250000,
+      "supplies": 300000,
+      "dna_data": 200,
+      "convenience_food": 140
+    }
+  },
+  {
+    "id": "physical_education",
+    "era": "PostModernEra",
+    "name": "Physical Education",
+    "fp": 93,
+    "rewards": [ "Public Pool" ],
+    "children": [ "special_operations" ],
+    "parents": [ "composite_armor", "duplex_houses" ],
+    "level": 60,
+    "requirements": {
+      "money": 300000,
+      "supplies": 150000,
+      "textiles": 210,
+      "rubber": 120
+    }
+  },
+  {
+    "id": "squad_tactics",
+    "era": "PostModernEra",
+    "name": "Squad Tactics",
+    "fp": 121,
+    "rewards": [ "Machinegun Range" ],
+    "children": [ "internet" ],
+    "parents": [ "children_rights" ],
+    "level": 61,
+    "requirements": {
+      "money": 450000,
+      "supplies": 600000,
+      "semiconductors": 80,
+      "petroleum": 50
+    }
+  },
+  {
+    "id": "special_operations",
+    "era": "PostModernEra",
+    "name": "Special Operations",
+    "fp": 117,
+    "rewards": [ "Commando Camp" ],
+    "children": [ "internet" ],
+    "parents": [ "physical_education" ],
+    "level": 61,
+    "requirements": {
+      "money": 600000,
+      "supplies": 450000,
+      "explosives": 160,
+      "asbestos": 60
+    }
+  },
+  {
+    "id": "internet",
+    "era": "ContemporaryEra",
+    "name": "Internet",
+    "fp": 58,
+    "rewards": [ "Expansion" ],
+    "children": [ "waterfront_residentials", "shophouses", "automation", "bionics", "petroleum_industry" ],
+    "parents": [ "squad_tactics", "special_operations" ],
+    "level": 62,
+    "requirements": {
+      "money": 500000,
+      "supplies": 1000000,
+      "semiconductors": 250,
+      "convenience_food": 150
+    }
+  },
+  {
+    "id": "waterfront_residentials",
+    "era": "ContemporaryEra",
+    "name": "Waterfront Residentials",
+    "fp": 95,
+    "rewards": [ "Waterfront Residential", "Canal Bridge" ],
+    "children": [ "local_purchasing" ],
+    "parents": [ "internet" ],
+    "level": 63,
+    "requirements": {
+      "money": 100000,
+      "supplies": 800000,
+      "ferroconcrete": 250,
+      "filters": 200
+    }
+  },
+  {
+    "id": "shophouses",
+    "era": "ContemporaryEra",
+    "name": "Shophouses",
+    "fp": 75,
+    "rewards": [ "Shophouse" ],
+    "children": [ "consumerism" ],
+    "parents": [ "internet" ],
+    "level": 63,
+    "requirements": {
+      "money": 400000,
+      "supplies": 400000,
+      "convenience_food": 250,
+      "steel": 200
+    }
+  },
+  {
+    "id": "automation",
+    "era": "ContemporaryEra",
+    "name": "Automation",
+    "fp": 104,
+    "rewards": [ "Robotics Factory", "Magnet Factory" ],
+    "children": [ "reactive_armor" ],
+    "parents": [ "internet" ],
+    "level": 63,
+    "requirements": {
+      "money": 400000,
+      "supplies": 850000,
+      "machineparts": 290,
+      "semiconductors": 120
+    }
+  },
+  {
+    "id": "bionics",
+    "era": "ContemporaryEra",
+    "name": "Bionics",
+    "fp": 60,
+    "rewards": [ "Bionics Research Lab" ],
+    "children": [ "reactive_armor", "aerial_fire_support" ],
+    "parents": [ "internet" ],
+    "level": 63,
+    "requirements": {
+      "money": 350000,
+      "supplies": 1200000,
+      "dna_data": 400,
+      "plastics": 100
+    }
+  },
+  {
+    "id": "petroleum_industry",
+    "era": "ContemporaryEra",
+    "name": "Petroleum Industry",
+    "fp": 101,
+    "rewards": [ "LNG Plant", "Plastics Plant" ],
+    "children": [ "missile_artillery" ],
+    "parents": [ "internet" ],
+    "level": 63,
+    "requirements": {
+      "money": 600000,
+      "supplies": 900000,
+      "petroleum": 330,
+      "tinplate": 160
+    }
+  },
+  {
+    "id": "local_purchasing",
+    "era": "ContemporaryEra",
+    "name": "Local Purchasing",
+    "fp": 99,
+    "rewards": [ "Fish Market", "Floating Market" ],
+    "children": [ "financial_services" ],
+    "parents": [ "waterfront_residentials" ],
+    "level": 64,
+    "requirements": {
+      "money": 200000,
+      "supplies": 200000,
+      "renewable_resources": 250,
+      "packaging": 200
+    }
+  },
+  {
+    "id": "consumerism",
+    "era": "ContemporaryEra",
+    "name": "Consumerism",
+    "fp": 61,
+    "rewards": [ "Shopping Mall" ],
+    "children": [ "financial_services", "globalization" ],
+    "parents": [ "shophouses" ],
+    "level": 64,
+    "requirements": {
+      "money": 1300000,
+      "supplies": 500000,
+      "plastics": 260,
+      "luxury_materials": 400
+    }
+  },
+  {
+    "id": "reactive_armor",
+    "era": "ContemporaryEra",
+    "name": "Reactive Armor",
+    "fp": 110,
+    "rewards": [ "Assault Tank Factory" ],
+    "children": [ "globalization" ],
+    "parents": [ "automation", "bionics" ],
+    "level": 64,
+    "requirements": {
+      "money": 150000,
+      "supplies": 700000,
+      "explosives": 380,
+      "steel": 200
+    }
+  },
+  {
+    "id": "aerial_fire_support",
+    "era": "ContemporaryEra",
+    "name": "Aerial Fire Support",
+    "fp": 82,
+    "rewards": [ "Attack Helicopter Base" ],
+    "children": [ "globalization", "mobile_air_defense" ],
+    "parents": [ "bionics" ],
+    "level": 64,
+    "requirements": {
+      "money": 300000,
+      "supplies": 500000,
+      "electromagnets": 120,
+      "machineparts": 100
+    }
+  },
+  {
+    "id": "missile_artillery",
+    "era": "ContemporaryEra",
+    "name": "Missile Artillery",
+    "fp": 105,
+    "rewards": [ "Missile Site" ],
+    "children": [ "mobile_air_defense" ],
+    "parents": [ "petroleum_industry" ],
+    "level": 64,
+    "requirements": {
+      "money": 450000,
+      "supplies": 1000000,
+      "asbestos": 480,
+      "petroleum": 160
+    }
+  },
+  {
+    "id": "financial_services",
+    "era": "ContemporaryEra",
+    "name": "Financial Services",
+    "fp": 44,
+    "rewards": [ "Business Center", "Cherry Tree" ],
+    "children": [ "condominiums", "stress_management" ],
+    "parents": [ "local_purchasing", "consumerism" ],
+    "level": 65,
+    "requirements": {
+      "money": 2500000,
+      "semiconductors": 180,
+      "gas": 260
+    }
+  },
+  {
+    "id": "globalization",
+    "era": "ContemporaryEra",
+    "name": "Globalization",
+    "fp": 97,
+    "rewards": [ "Logistics Center", "Neon Billboard" ],
+    "children": [ "stress_management", "millitary_interventions" ],
+    "parents": [ "consumerism", "reactive_armor", "aerial_fire_support" ],
+    "level": 65,
+    "requirements": {
+      "money": 800000,
+      "supplies": 1500000,
+      "packaging": 400,
+      "robots": 180
+    }
+  },
+  {
+    "id": "mobile_air_defense",
+    "era": "ContemporaryEra",
+    "name": "Mobile Air Defense",
+    "fp": 108,
+    "rewards": [ "Air Defense Factory" ],
+    "children": [ "millitary_interventions" ],
+    "parents": [ "aerial_fire_support", "missile_artillery" ],
+    "level": 65,
+    "requirements": {
+      "money": 650000,
+      "supplies": 450000,
+      "electromagnets": 250,
+      "tinplate": 260
+    }
+  },
+  {
+    "id": "condominiums",
+    "era": "ContemporaryEra",
+    "name": "Condominiums",
+    "fp": 90,
+    "rewards": [ "Condominium" ],
+    "children": [ "renewable_energy" ],
+    "parents": [ "financial_services" ],
+    "level": 66,
+    "requirements": {
+      "money": 200000,
+      "supplies": 600000,
+      "ferroconcrete": 300,
+      "filters": 200
+    }
+  },
+  {
+    "id": "stress_management",
+    "era": "ContemporaryEra",
+    "name": "Stress Management",
+    "fp": 42,
+    "rewards": [ "Zen Garden" ],
+    "children": [ "renewable_energy" ],
+    "parents": [ "financial_services", "globalization" ],
+    "level": 66,
+    "requirements": {
+      "money": 25914,
+      "supplies": 251147,
+      "flavorants": 400,
+      "bionics": 175
+    }
+  },
+  {
+    "id": "millitary_interventions",
+    "era": "ContemporaryEra",
+    "name": "Military Interventions",
+    "fp": 92,
+    "rewards": [ "Strike Team Center" ],
+    "children": [ "renewable_energy" ],
+    "parents": [ "globalization", "mobile_air_defense" ],
+    "level": 66,
+    "requirements": {
+      "money": 1000000,
+      "supplies": 250000,
+      "gas": 250,
+      "robots": 200
+    }
+  },
+  {
+    "id": "renewable_energy",
+    "era": "ContemporaryEra",
+    "name": "Renewable Energy",
+    "fp": 107,
+    "rewards": [ "Expansion" ],
+    "children": [ "fusion_power" ],
+    "parents": [ "condominiums", "stress_management", "millitary_interventions" ],
+    "level": 67,
+    "requirements": {
+      "money": 100000,
+      "supplies": 1250000,
+      "bionics": 225,
+      "renewable_resources": 250
+    }
+  },
+  {
+    "id": "fusion_power",
+    "era": "TomorrowEra",
+    "name": "Fusion Power",
+    "fp": 140,
+    "rewards": [ "Expansion" ],
+    "children": [ "nutrition_science", "recycled_materials", "high_tech_materials", "additive_manufacturing" ],
+    "parents": [ "renewable_energy" ],
+    "level": 68,
+    "requirements": {
+      "money": 3000000,
+      "supplies": 3000000,
+      "electromagnets": 300,
+      "semiconductors": 180
+    }
+  },
+  {
+    "id": "nutrition_science",
+    "era": "TomorrowEra",
+    "name": "Nutrition Science",
+    "fp": 68,
+    "rewards": [ "Preservatives Factory", "Nutrition Research Lab" ],
+    "children": [ "wireless_power_transmission", "capsule_hotels" ],
+    "parents": [ "fusion_power" ],
+    "level": 69,
+    "requirements": {
+      "money": 100000,
+      "supplies": 700000,
+      "convenience_food": 410,
+      "flavorants": 310
+    }
+  },
+  {
+    "id": "recycled_materials",
+    "era": "TomorrowEra",
+    "name": "Recycled Materials",
+    "fp": 20,
+    "rewards": [ "Papercrete Factory", "Burger Booth" ],
+    "children": [ "capsule_hotels" ],
+    "parents": [ "fusion_power" ],
+    "level": 69,
+    "requirements": {
+      "supplies": 2000000,
+      "renewable_resources": 240,
+      "packaging": 420
+    }
+  },
+  {
+    "id": "high_tech_materials",
+    "era": "TomorrowEra",
+    "name": "High-Tech Materials",
+    "fp": 127,
+    "rewards": [ "Smart Materials Factory", "Translucent Concrete Plant" ],
+    "children": [ "capsule_hotels", "armor_piercing_shells", "industrial_design" ],
+    "parents": [ "fusion_power" ],
+    "level": 69,
+    "requirements": {
+      "money": 220000,
+      "supplies": 90000,
+      "filters": 270,
+      "bionics": 310
+    }
+  },
+  {
+    "id": "additive_manufacturing",
+    "era": "TomorrowEra",
+    "name": "Additive Manufacturing",
+    "fp": 102,
+    "rewards": [ "3D Printer", "Pod Home" ],
+    "children": [ "industrial_design" ],
+    "parents": [ "fusion_power" ],
+    "level": 69,
+    "requirements": {
+      "money": 110000,
+      "supplies": 900000,
+      "gas": 130,
+      "renewable_resources": 310
+    }
+  },
+  {
+    "id": "wireless_power_transmission",
+    "era": "TomorrowEra",
+    "name": "Wireless Power Transmission",
+    "fp": 94,
+    "rewards": [ "Microwave Blaster Factory" ],
+    "children": [ "drones" ],
+    "parents": [ "nutrition_science" ],
+    "level": 70,
+    "requirements": {
+      "money": 1400000,
+      "supplies": 111000,
+      "semiconductors": 290,
+      "electromagnets": 245
+    }
+  },
+  {
+    "id": "capsule_hotels",
+    "era": "TomorrowEra",
+    "name": "Capsule Hotels",
+    "fp": 66,
+    "rewards": [ "Capsule Hotel" ],
+    "children": [ "nightlife" ],
+    "parents": [ "nutrition_science", "recycled_materials", "high_tech_materials" ],
+    "level": 70,
+    "requirements": {
+      "money": 200000,
+      "supplies": 1200000,
+      "papercrete": 200,
+      "ferroconcrete": 440
+    }
+  },
+  {
+    "id": "armor_piercing_shells",
+    "era": "TomorrowEra",
+    "name": "Armor-Piercing Shells",
+    "fp": 118,
+    "rewards": [ "Anti-Materiel Range" ],
+    "children": [ "stealth_technology" ],
+    "parents": [ "high_tech_materials" ],
+    "level": 70,
+    "requirements": {
+      "money": 1000000,
+      "supplies": 1000000,
+      "gas": 305,
+      "steel": 120
+    }
+  },
+  {
+    "id": "industrial_design",
+    "era": "TomorrowEra",
+    "name": "Industrial Design",
+    "fp": 79,
+    "rewards": [ "Concept Vehicle Fair" ],
+    "children": [ "stealth_technology" ],
+    "parents": [ "high_tech_materials", "additive_manufacturing" ],
+    "level": 70,
+    "requirements": {
+      "money": 1200000,
+      "supplies": 120000,
+      "translucent_concrete": 180,
+      "flavorants": 380
+    }
+  },
+  {
+    "id": "drones",
+    "era": "TomorrowEra",
+    "name": "Drones",
+    "fp": 94,
+    "rewards": [ "Drone Factory" ],
+    "children": [ "combat_drones" ],
+    "parents": [ "wireless_power_transmission" ],
+    "level": 71,
+    "requirements": {
+      "money": 900000,
+      "supplies": 700000,
+      "bionics": 255,
+      "robots": 250
+    }
+  },
+  {
+    "id": "nightlife",
+    "era": "TomorrowEra",
+    "name": "Nightlife",
+    "fp": 68,
+    "rewards": [ "Tower Club", "Pizza Booth" ],
+    "children": [ "annexes", "physical_security" ],
+    "parents": [ "capsule_hotels" ],
+    "level": 71,
+    "requirements": {
+      "money": 330000,
+      "supplies": 110000,
+      "preservatives": 140,
+      "luxury_materials": 490
+    }
+  },
+  {
+    "id": "stealth_technology",
+    "era": "TomorrowEra",
+    "name": "Stealth Technology",
+    "fp": 129,
+    "rewards": [ "Stealth Tank Factory" ],
+    "children": [ "physical_security" ],
+    "parents": [ "armor_piercing_shells", "industrial_design" ],
+    "level": 71,
+    "requirements": {
+      "money": 660000,
+      "supplies": 800000,
+      "smart_materials": 80,
+      "steel": 600
+    }
+  },
+  {
+    "id": "combat_drones",
+    "era": "TomorrowEra",
+    "name": "Combat Drones",
+    "fp": 118,
+    "rewards": [ "Combat Drone Base" ],
+    "children": [ "land_reclamation" ],
+    "parents": [ "drones" ],
+    "level": 72,
+    "requirements": {
+      "money": 1100000,
+      "supplies": 900000,
+      "smart_materials": 150,
+      "robots": 250
+    }
+  },
+  {
+    "id": "annexes",
+    "era": "TomorrowEra",
+    "name": "Annexes",
+    "fp": 60,
+    "rewards": [ "Annex", "Veggie Booth" ],
+    "children": [ "land_reclamation" ],
+    "parents": [ "nightlife" ],
+    "level": 72,
+    "requirements": {
+      "money": 190000,
+      "supplies": 670000,
+      "preservatives": 170,
+      "nutrition_research": 190
+    }
+  },
+  {
+    "id": "physical_security",
+    "era": "TomorrowEra",
+    "name": "Physical Security",
+    "fp": 53,
+    "rewards": [ "Private Security Company" ],
+    "children": [ "surveillance", "off_road_tactics" ],
+    "parents": [ "nightlife", "stealth_technology" ],
+    "level": 72,
+    "requirements": {
+      "money": 200000,
+      "supplies": 2000000,
+      "papercrete": 330,
+      "dna_data": 320
+    }
+  },
+  {
+    "id": "land_reclamation",
+    "era": "TomorrowEra",
+    "name": "Land Reclamation",
+    "fp": 145,
+    "rewards": [ "Expansion" ],
+    "children": [ "clean_energy" ],
+    "parents": [ "combat_drones", "annexes" ],
+    "level": 73,
+    "requirements": {
+      "money": 4000000,
+      "supplies": 4000000,
+      "nutrition_research": 290,
+      "filters": 480
+    }
+  },
+  {
+    "id": "surveillance",
+    "era": "TomorrowEra",
+    "name": "Surveillance",
+    "fp": 49,
+    "rewards": [ "Surveillance Nexus", "Surveillance Camera" ],
+    "children": [ "clean_energy" ],
+    "parents": [ "physical_security" ],
+    "level": 73,
+    "requirements": {
+      "money": 1010100,
+      "supplies": 1010100,
+      "translucent_concrete": 330,
+      "dna_data": 430
+    }
+  },
+  {
+    "id": "off_road_tactics",
+    "era": "TomorrowEra",
+    "name": "Off-Road Tactics",
+    "fp": 90,
+    "rewards": [ "Ultra AP Factory" ],
+    "children": [ "clean_energy" ],
+    "parents": [ "physical_security" ],
+    "level": 73,
+    "requirements": {
+      "money": 600000,
+      "supplies": 700000,
+      "smart_materials": 340,
+      "plastics": 550
+    }
+  },
+  {
+    "id": "clean_energy",
+    "era": "FutureEra",
+    "name": "Clean Energy",
+    "fp": 133,
+    "rewards": [ "Expansion" ],
+    "children": [ "low_temp_science", "biochemistry", "earth_science", "tidal_power" ],
+    "parents": [ "off_road_tactics", "land_reclamation", "surveillance" ],
+    "level": 74,
+    "requirements": {
+      "money": 860000,
+      "supplies": 2500100,
+      "preservatives": 300,
+      "filters": 190
+    }
+  },
+  {
+    "id": "low_temp_science",
+    "era": "FutureEra",
+    "name": "Low-Temp Science",
+    "fp": 71,
+    "rewards": [ "Superconductor Factory" ],
+    "children": [ "anti_gravitation" ],
+    "parents": [ "clean_energy" ],
+    "level": 75,
+    "requirements": {
+      "money": 250000,
+      "supplies": 970000,
+      "gas": 410,
+      "papercrete": 330
+    }
+  },
+  {
+    "id": "biochemistry",
+    "era": "FutureEra",
+    "name": "Biochemistry",
+    "fp": 112,
+    "rewards": [ "Algae Farm", "Nanoparticle Laboratory" ],
+    "children": [ "quantum_communication", "underground_houses" ],
+    "parents": [ "clean_energy" ],
+    "level": 75,
+    "requirements": {
+      "money": 1500000,
+      "supplies": 3200000,
+      "dna_data": 150,
+      "bionics": 320
+    }
+  },
+  {
+    "id": "earth_science",
+    "era": "FutureEra",
+    "name": "Earth Science",
+    "fp": 77,
+    "rewards": [ "Earth Science Center" ],
+    "children": [ "quantum_communication", "underground_houses", "climate_control" ],
+    "parents": [ "clean_energy" ],
+    "level": 75,
+    "requirements": {
+      "supplies": 1800000,
+      "electromagnets": 420,
+      "smart_materials": 380
+    }
+  },
+  {
+    "id": "tidal_power",
+    "era": "FutureEra",
+    "name": "Tidal Power",
+    "fp": 103,
+    "rewards": [ "Water Purifier" ],
+    "children": [ "climate_control" ],
+    "parents": [ "clean_energy" ],
+    "level": 75,
+    "requirements": {
+      "money": 110000,
+      "supplies": 1700000,
+      "translucent_concrete": 320,
+      "robots": 420
+    }
+  },
+  {
+    "id": "anti_gravitation",
+    "era": "FutureEra",
+    "name": "Anti-Gravitation",
+    "fp": 97,
+    "rewards": [ "Levitation Outlet", "Algae Airship" ],
+    "children": [ "gravity_fields" ],
+    "parents": [ "low_temp_science" ],
+    "level": 76,
+    "requirements": {
+      "money": 725000,
+      "supplies": 2100000,
+      "bionics": 290,
+      "smart_materials": 500
+    }
+  },
+  {
+    "id": "quantum_communication",
+    "era": "FutureEra",
+    "name": "Quantum Communication",
+    "fp": 109,
+    "rewards": [ "Drone Swarm Hub" ],
+    "children": [],
+    "parents": [ "biochemistry", "earth_science" ],
+    "level": 76,
+    "requirements": {
+      "money": 200000,
+      "supplies": 1200000,
+      "semiconductors": 200,
+      "plastics": 400
+    }
+  },
+  {
+    "id": "underground_houses",
+    "era": "FutureEra",
+    "name": "Underground Houses",
+    "fp": 95,
+    "rewards": [ "Underground House" ],
+    "children": [ "food_engineering" ],
+    "parents": [ "biochemistry", "earth_science" ],
+    "level": 76,
+    "requirements": {
+      "money": 1000000,
+      "supplies": 950000,
+      "steel": 300,
+      "purified_water": 100
+    }
+  },
+  {
+    "id": "climate_control",
+    "era": "FutureEra",
+    "name": "Climate Control",
+    "fp": 73,
+    "rewards": [ "Weather Control Station", "Wind Turbine" ],
+    "children": [ "food_engineering" ],
+    "parents": [ "earth_science", "tidal_power" ],
+    "level": 76,
+    "requirements": {
+      "money": 1200000,
+      "supplies": 120000,
+      "electromagnets": 420,
+      "nanoparticles": 115
+    }
+  },
+  {
+    "id": "gravity_fields",
+    "era": "FutureEra",
+    "name": "Gravity Fields",
+    "fp": 108,
+    "rewards": [ "Hover Tank Base" ],
+    "children": [ "solar_roads" ],
+    "parents": [ "anti_gravitation" ],
+    "level": 77,
+    "requirements": {
+      "money": 4000500,
+      "supplies": 1100000,
+      "semiconductors": 240,
+      "superconductors": 185
+    }
+  },
+  {
+    "id": "food_engineering",
+    "era": "FutureEra",
+    "name": "Food Engineering",
+    "fp": 109,
+    "rewards": [ "Food Printer" ],
+    "children": [ "solar_roads" ],
+    "parents": [ "underground_houses", "climate_control" ],
+    "level": 77,
+    "requirements": {
+      "money": 470000,
+      "supplies": 2500000,
+      "nutrition_research": 520,
+      "algae": 190
+    }
+  },
+  {
+    "id": "solar_roads",
+    "era": "FutureEra",
+    "name": "Solar Roads",
+    "fp": 57,
+    "rewards": [ "Solar Roadway", "Solar Walkway" ],
+    "children": [ "terraforming", "xenomineralogy", "self_supporting_homes", "human_machine_interface" ],
+    "parents": [ "gravity_fields", "food_engineering" ],
+    "level": 78,
+    "requirements": {
+      "supplies": 600500,
+      "translucent_concrete": 400,
+      "plastics": 390
+    }
+  },
+  {
+    "id": "terraforming",
+    "era": "FutureEra",
+    "name": "Terraforming",
+    "fp": 77,
+    "rewards": [ "Eco Park" ],
+    "children": [ "precise_forecasting" ],
+    "parents": [ "solar_roads" ],
+    "level": 79,
+    "requirements": {
+      "money": 1100000,
+      "supplies": 1010100,
+      "renewable_resources": 450,
+      "biogeochemical_data": 170
+    }
+  },
+  {
+    "id": "xenomineralogy",
+    "era": "FutureEra",
+    "name": "Xenomineralogy",
+    "fp": 119,
+    "rewards": [ "Helium-3 Extraction Facility" ],
+    "children": [ "precise_forecasting", "orbital_networks" ],
+    "parents": [ "solar_roads" ],
+    "level": 79,
+    "requirements": {
+      "money": 1000500,
+      "supplies": 850000,
+      "filters": 170,
+      "purified_water": 280
+    }
+  },
+  {
+    "id": "self_supporting_homes",
+    "era": "FutureEra",
+    "name": "Self-Supporting Homes",
+    "fp": 91,
+    "rewards": [ "Self-Supporting Home", "Plantarium" ],
+    "children": [ "orbital_networks", "arcologies" ],
+    "parents": [ "solar_roads" ],
+    "level": 79,
+    "requirements": {
+      "money": 350000,
+      "supplies": 2000300,
+      "preservatives": 300,
+      "nanoparticles": 160
+    }
+  },
+  {
+    "id": "human_machine_interface",
+    "era": "FutureEra",
+    "name": "Human-Machine Interface",
+    "fp": 74,
+    "rewards": [ "Exoskeleton Factory" ],
+    "children": [ "arcologies" ],
+    "parents": [ "solar_roads" ],
+    "level": 79,
+    "requirements": {
+      "money": 2000000,
+      "supplies": 3010000,
+      "robots": 490,
+      "dna_data": 300
+    }
+  },
+  {
+    "id": "precise_forecasting",
+    "era": "FutureEra",
+    "name": "Precise Forecasting",
+    "fp": 84,
+    "rewards": [ "Expansion" ],
+    "children": [ "extended_gaussian_distribution" ],
+    "parents": [ "terraforming", "xenomineralogy" ],
+    "level": 80,
+    "requirements": {
+      "money": 3150000,
+      "supplies": 1010100,
+      "papercrete": 445,
+      "nanoparticles": 190
+    }
+  },
+  {
+    "id": "orbital_networks",
+    "era": "FutureEra",
+    "name": "Orbital Networks",
+    "fp": 118,
+    "rewards": [ "Satellite Uplink Center" ],
+    "children": [ "extended_gaussian_distribution" ],
+    "parents": [ "xenomineralogy", "self_supporting_homes" ],
+    "level": 80,
+    "requirements": {
+      "money": 1010100,
+      "supplies": 1010100,
+      "bionics": 425,
+      "superconductors": 240
+    }
+  },
+  {
+    "id": "arcologies",
+    "era": "FutureEra",
+    "name": "Arcologies",
+    "fp": 98,
+    "rewards": [ "Arcology" ],
+    "children": [ "extended_gaussian_distribution" ],
+    "parents": [ "self_supporting_homes", "human_machine_interface" ],
+    "level": 80,
+    "requirements": {
+      "money": 600000,
+      "supplies": 800000,
+      "preservatives": 340,
+      "biogeochemical_data": 280
+    }
+  },
+  {
+    "id": "extended_gaussian_distribution",
+    "era": "FutureEra",
+    "name": "Extended Gaussian Distribution",
+    "fp": 82,
+    "rewards": [ "Rail Gun Range" ],
+    "children": [ "arctic_harvest" ],
+    "parents": [ "precise_forecasting", "orbital_networks", "arcologies" ],
+    "level": 81,
+    "requirements": {
+      "money": 1650000,
+      "supplies": 750000,
+      "gas": 505,
+      "algae": 270
+    }
+  },
+  {
+    "id": "arctic_harvest",
+    "era": "ArcticFuture",
+    "name": "Arctic Harvest",
+    "fp": 130,
+    "rewards": [ "Expansion", "Arctic Harbor", "New Feature" ],
+    "children": [ "nanotubes", "bioplastics", "ai_research" ],
+    "parents": [ "extended_gaussian_distribution" ],
+    "level": 82,
+    "requirements": {
+      "money": 2100000,
+      "supplies": 1850000,
+      "biogeochemical_data": 220,
+      "purified_water": 180
+    }
+  },
+  {
+    "id": "nanotubes",
+    "era": "ArcticFuture",
+    "name": "Nanotubes",
+    "fp": 115,
+    "rewards": [ "Nanowire Laboratory" ],
+    "children": [ "advanced_transesterification" ],
+    "parents": [ "arctic_harvest" ],
+    "level": 83,
+    "requirements": {
+      "money": 1200000,
+      "supplies": 2700000,
+      "nanoparticles": 210,
+      "superconductors": 300
+    }
+  },
+  {
+    "id": "bioplastics",
+    "era": "ArcticFuture",
+    "name": "Bioplastics",
+    "fp": 108,
+    "rewards": [ "Bioplastics Factory" ],
+    "children": [ "advanced_transesterification", "organic_conduction" ],
+    "parents": [ "arctic_harvest" ],
+    "level": 83,
+    "requirements": {
+      "money": 1600000,
+      "supplies": 1800000,
+      "nutrition_research": 320,
+      "algae": 140
+    }
+  },
+  {
+    "id": "ai_research",
+    "era": "ArcticFuture",
+    "name": "A.I. Research",
+    "fp": 122,
+    "rewards": [ "A.I. Research Center" ],
+    "children": [ "organic_conduction" ],
+    "parents": [ "arctic_harvest" ],
+    "level": 83,
+    "requirements": {
+      "money": 1010101,
+      "supplies": 1010010,
+      "robots": 420,
+      "superconductors": 160
+    }
+  },
+  {
+    "id": "advanced_transesterification",
+    "era": "ArcticFuture",
+    "name": "Advanced Transesterification",
+    "fp": 138,
+    "rewards": [ "Transester Gas Catalyzer" ],
+    "children": [ "advanced_homokinetic_joints" ],
+    "parents": [ "nanotubes", "bioplastics" ],
+    "level": 84,
+    "requirements": {
+      "money": 2200000,
+      "supplies": 950000,
+      "gas": 390,
+      "purified_water": 260
+    }
+  },
+  {
+    "id": "organic_conduction",
+    "era": "ArcticFuture",
+    "name": "Organic Conduction",
+    "fp": 136,
+    "rewards": [ "Paper Battery Factory" ],
+    "children": [ "mindcontrolled_robots", "advanced_homokinetic_joints" ],
+    "parents": [ "ai_research", "bioplastics" ],
+    "level": 84,
+    "requirements": {
+      "supplies": 3000000,
+      "papercrete": 330,
+      "algae": 250
+    }
+  },
+  {
+    "id": "mindcontrolled_robots",
+    "era": "ArcticFuture",
+    "name": "Mind-Controlled Robots",
+    "fp": 158,
+    "rewards": [ "Surrogate Assembly" ],
+    "children": [ "mobile_houses" ],
+    "parents": [ "organic_conduction" ],
+    "level": 85,
+    "requirements": {
+      "money": 2561024,
+      "supplies": 2048128,
+      "bionics": 480,
+      "ai_data": 180
+    }
+  },
+  {
+    "id": "advanced_homokinetic_joints",
+    "era": "ArcticFuture",
+    "name": "Advanced Homokinetic Joints",
+    "fp": 140,
+    "rewards": [ "Recon Raider Garage" ],
+    "children": [ "mobile_houses" ],
+    "parents": [ "organic_conduction", "advanced_transesterification" ],
+    "level": 85,
+    "requirements": {
+      "money": 2800000,
+      "supplies": 2200000,
+      "biogeochemical_data": 240,
+      "paper_batteries": 140
+    }
+  },
+  {
+    "id": "mobile_houses",
+    "era": "ArcticFuture",
+    "name": "Mobile Houses",
+    "fp": 118,
+    "rewards": [ "Mobile House" ],
+    "children": [ "rare_earth_elements" ],
+    "parents": [ "mindcontrolled_robots", "advanced_homokinetic_joints" ],
+    "level": 86,
+    "requirements": {
+      "money": 1000000,
+      "supplies": 1800000,
+      "nanoparticles": 220,
+      "bioplastics": 200
+    }
+  },
+  {
+    "id": "rare_earth_elements",
+    "era": "ArcticFuture",
+    "name": "Rare Earth Elements",
+    "fp": 135,
+    "rewards": [ "Recycling Wheel" ],
+    "children": [ "promethium_extraction" ],
+    "parents": [ "mobile_houses" ],
+    "level": 87,
+    "requirements": {
+      "money": 2500000,
+      "supplies": 2000000,
+      "nanowire": 170,
+      "transester_gas": 190
+    }
+  },
+  {
+    "id": "promethium_extraction",
+    "era": "ArcticFuture",
+    "name": "Promethium Extraction",
+    "fp": 122,
+    "rewards": [ "Arctic Harbor Upgrade" ],
+    "children": [ "string_rail_system", "combined_weapon_systems" ],
+    "parents": [ "rare_earth_elements" ],
+    "level": 88,
+    "requirements": {
+      "money": 2000000,
+      "supplies": 1000000,
+      "bioplastics": 150,
+      "transester_gas": 180
+    }
+  },
+  {
+    "id": "string_rail_system",
+    "era": "ArcticFuture",
+    "name": "String Rail System",
+    "fp": 134,
+    "rewards": [ "Personal Rapid Transport", "Tube Entrance" ],
+    "children": [ "clock_tower_apartments" ],
+    "parents": [ "promethium_extraction" ],
+    "level": 89,
+    "requirements": {
+      "money": 3200000,
+      "supplies": 2400000,
+      "nanowire": 200,
+      "paper_batteries": 200
+    }
+  },
+  {
+    "id": "combined_weapon_systems",
+    "era": "ArcticFuture",
+    "name": "Combined Weapon Systems",
+    "fp": 118,
+    "rewards": [ "Battle Fortress Factory" ],
+    "children": [ "clock_tower_apartments", "advanced_hydroponics" ],
+    "parents": [ "promethium_extraction" ],
+    "level": 89,
+    "requirements": {
+      "money": 2300000,
+      "supplies": 1800000,
+      "ai_data": 150,
+      "promethium": 150
+    }
+  },
+  {
+    "id": "clock_tower_apartments",
+    "era": "ArcticFuture",
+    "name": "Clock Tower Apartments",
+    "fp": 138,
+    "rewards": [ "Clock Tower Apartment" ],
+    "children": [ "arctic_navigation" ],
+    "parents": [ "string_rail_system", "combined_weapon_systems" ],
+    "level": 90,
+    "requirements": {
+      "money": 1800000,
+      "supplies": 3000000,
+      "bioplastics": 160,
+      "promethium": 260
+    }
+  },
+  {
+    "id": "advanced_hydroponics",
+    "era": "ArcticFuture",
+    "name": "Advanced Hydroponics",
+    "fp": 98,
+    "rewards": [ "Vertical Farm" ],
+    "children": [],
+    "parents": [ "combined_weapon_systems" ],
+    "level": 90,
+    "requirements": {
+      "money": 500000,
+      "supplies": 500000,
+      "nanowire": 180,
+      "transester_gas": 160
+    }
+  },
+  {
+    "id": "arctic_navigation",
+    "era": "ArcticFuture",
+    "name": "Arctic Navigation",
+    "fp": 156,
+    "rewards": [ "Expansion" ],
+    "children": [ "arctic_stations" ],
+    "parents": [ "clock_tower_apartments" ],
+    "level": 91,
+    "requirements": {
+      "money": 3000000,
+      "supplies": 2600000,
+      "ai_data": 210,
+      "promethium": 350
+    }
+  },
+  {
+    "id": "arctic_stations",
+    "era": "ArcticFuture",
+    "name": "Arctic Stations",
+    "fp": 144,
+    "rewards": [ "Arctic Harbor Upgrade" ],
+    "children": [ "improved_logistics", "artificial_snowflakes", "swarm_control_methods" ],
+    "parents": [ "arctic_navigation" ],
+    "level": 92,
+    "requirements": {
+      "money": 2800000,
+      "supplies": 3200000,
+      "paper_batteries": 160,
+      "promethium": 380
+    }
+  },
+  {
+    "id": "improved_logistics",
+    "era": "ArcticFuture",
+    "name": "Improved Logistics",
+    "fp": 124,
+    "rewards": [ "Arctic Street", "Arctic Sideway" ],
+    "children": [ "arctic_cargo" ],
+    "parents": [ "arctic_stations" ],
+    "level": 93,
+    "requirements": {
+      "money": 1800000,
+      "supplies": 2000000,
+      "nanowire": 200,
+      "paper_batteries": 120
+    }
+  },
+  {
+    "id": "artificial_snowflakes",
+    "era": "ArcticFuture",
+    "name": "Artificial Snowflakes",
+    "fp": 78,
+    "rewards": [ "Ice Sculpture" ],
+    "children": [],
+    "parents": [ "arctic_stations" ],
+    "level": 93,
+    "requirements": {
+      "money": 450000,
+      "supplies": 450000,
+      "transester_gas": 80,
+      "ai_data": 80
+    }
+  },
+  {
+    "id": "swarm_control_methods",
+    "era": "ArcticFuture",
+    "name": "Swarm Control Methods",
+    "fp": 142,
+    "rewards": [ "Dragon Drone Base" ],
+    "children": [ "arctic_cargo", "ecourban_lifestyle" ],
+    "parents": [ "arctic_stations" ],
+    "level": 93,
+    "requirements": {
+      "money": 2500000,
+      "supplies": 1000000,
+      "purified_water": 300,
+      "promethium": 260
+    }
+  },
+  {
+    "id": "arctic_cargo",
+    "era": "ArcticFuture",
+    "name": "Arctic Cargo",
+    "fp": 136,
+    "rewards": [ "Dry Dock" ],
+    "children": [ "regenerative_methods", "biological_transmission" ],
+    "parents": [ "improved_logistics", "swarm_control_methods" ],
+    "level": 94,
+    "requirements": {
+      "money": 2200000,
+      "supplies": 2800000,
+      "superconductors": 280,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "ecourban_lifestyle",
+    "era": "ArcticFuture",
+    "name": "Eco-Urban Lifestyle",
+    "fp": 108,
+    "rewards": [ "Sheltered Tipi", "Expansion" ],
+    "children": [ "regenerative_methods" ],
+    "parents": [ "swarm_control_methods" ],
+    "level": 94,
+    "requirements": {
+      "money": 3000000,
+      "supplies": 1000000,
+      "algae": 300,
+      "promethium": 320
+    }
+  },
+  {
+    "id": "regenerative_methods",
+    "era": "ArcticFuture",
+    "name": "Regenerative Methods",
+    "fp": 150,
+    "rewards": [ "5 Crew Members" ],
+    "children": [ "extreme_weather_prevention" ],
+    "parents": [ "arctic_cargo", "ecourban_lifestyle" ],
+    "level": 95,
+    "requirements": {
+      "money": 1600000,
+      "supplies": 2500000,
+      "nanoparticles": 280,
+      "promethium": 300
+    }
+  },
+  {
+    "id": "biological_transmission",
+    "era": "ArcticFuture",
+    "name": "Biological Transmission",
+    "fp": 144,
+    "rewards": [ "Communication Tower" ],
+    "children": [ "extreme_weather_prevention" ],
+    "parents": [ "arctic_cargo" ],
+    "level": 95,
+    "requirements": {
+      "money": 2600000,
+      "supplies": 2200000,
+      "biogeochemical_data": 260,
+      "bioplastics": 180
+    }
+  },
+  {
+    "id": "extreme_weather_prevention",
+    "era": "ArcticFuture",
+    "name": "Extreme Weather Prevention",
+    "fp": 158,
+    "rewards": [ "Vertical Zoo" ],
+    "children": [ "plasma_spectroscopy", "arctic_mining" ],
+    "parents": [ "regenerative_methods", "biological_transmission" ],
+    "level": 96,
+    "requirements": {
+      "money": 2100000,
+      "supplies": 3000000,
+      "transester_gas": 120,
+      "promethium": 280
+    }
+  },
+  {
+    "id": "plasma_spectroscopy",
+    "era": "ArcticFuture",
+    "name": "Plasma Spectroscopy",
+    "fp": 132,
+    "rewards": [ "Plasma Range" ],
+    "children": [ "crystal_villas" ],
+    "parents": [ "extreme_weather_prevention" ],
+    "level": 97,
+    "requirements": {
+      "money": 2200000,
+      "supplies": 1800000,
+      "nanowire": 160,
+      "promethium": 300
+    }
+  },
+  {
+    "id": "arctic_mining",
+    "era": "ArcticFuture",
+    "name": "Arctic Mining",
+    "fp": 146,
+    "rewards": [ "Arctic Harbor Upgrade", "Crew Selection Slot", "Crew Selection Slot" ],
+    "children": [ "crystal_villas" ],
+    "parents": [ "extreme_weather_prevention" ],
+    "level": 97,
+    "requirements": {
+      "money": 2600000,
+      "supplies": 1000000,
+      "paper_batteries": 140,
+      "promethium": 220
+    }
+  },
+  {
+    "id": "crystal_villas",
+    "era": "ArcticFuture",
+    "name": "Crystal Villas",
+    "fp": 118,
+    "rewards": [ "Crystal Villa" ],
+    "children": [ "frost_immunity", "cryo_botany", "superheavy_warmachines" ],
+    "parents": [ "plasma_spectroscopy", "arctic_mining" ],
+    "level": 98,
+    "requirements": {
+      "money": 1000000,
+      "supplies": 2200000,
+      "transester_gas": 200,
+      "promethium": 320
+    }
+  },
+  {
+    "id": "frost_immunity",
+    "era": "ArcticFuture",
+    "name": "Frost Immunity",
+    "fp": 112,
+    "rewards": [ "4 Crew Members", "Blue Lagoon" ],
+    "children": [ "subaqueous_construction" ],
+    "parents": [ "crystal_villas" ],
+    "level": 99,
+    "requirements": {
+      "money": 1600000,
+      "supplies": 1600000,
+      "ai_data": 140,
+      "bioplastics": 100
+    }
+  },
+  {
+    "id": "cryo_botany",
+    "era": "ArcticFuture",
+    "name": "Cryo Botany",
+    "fp": 142,
+    "rewards": [ "Crystal Flower Store", "Ice Flower" ],
+    "children": [ "subaqueous_construction" ],
+    "parents": [ "crystal_villas" ],
+    "level": 99,
+    "requirements": {
+      "money": 1800000,
+      "supplies": 2600000,
+      "bioplastics": 120,
+      "promethium": 250
+    }
+  },
+  {
+    "id": "superheavy_warmachines",
+    "era": "ArcticFuture",
+    "name": "Superheavy Warmachines",
+    "fp": 154,
+    "rewards": [ "Behemoth Hangar" ],
+    "children": [ "subaqueous_construction" ],
+    "parents": [ "crystal_villas" ],
+    "level": 99,
+    "requirements": {
+      "money": 2400000,
+      "supplies": 2500000,
+      "ai_data": 160,
+      "promethium": 350
+    }
+  },
+  {
+    "id": "subaqueous_construction",
+    "era": "OceanicFuture",
+    "name": "Subaqueous Construction",
+    "fp": 140,
+    "rewards": [ "Expansion", "Oceanic Terminal" ],
+    "children": [ "nano_habitat", "engineered_nuclei", "coral_propagation", "hardened_scales", "oxygen_lens" ],
+    "parents": [ "frost_immunity", "cryo_botany", "superheavy_warmachines" ],
+    "level": 100,
+    "requirements": {
+      "money": 3000000,
+      "supplies": 3200000,
+      "paper_batteries": 150,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "nano_habitat",
+    "era": "OceanicFuture",
+    "name": "Nano Habitat",
+    "fp": 145,
+    "rewards": [ "Phytoplankton Factory" ],
+    "children": [ "shellfish_aquaculture" ],
+    "parents": [ "subaqueous_construction" ],
+    "level": 101,
+    "requirements": {
+      "money": 4500000,
+      "supplies": 4600000,
+      "translucent_concrete": 280,
+      "promethium": 180
+    }
+  },
+  {
+    "id": "engineered_nuclei",
+    "era": "OceanicFuture",
+    "name": "Engineered Nuclei",
+    "fp": 149,
+    "rewards": [ "Oyster Ranch" ],
+    "children": [ "shellfish_aquaculture", "subaquatic_filters" ],
+    "parents": [ "subaqueous_construction" ],
+    "level": 101,
+    "requirements": {
+      "money": 5000000,
+      "nanoparticles": 170,
+      "ai_data": 160,
+      "promethium": 180
+    }
+  },
+  {
+    "id": "coral_propagation",
+    "era": "OceanicFuture",
+    "name": "Coral Propagation",
+    "fp": 153,
+    "rewards": [ "Coral Breeder", "Coral" ],
+    "children": [ "subaquatic_filters" ],
+    "parents": [ "subaqueous_construction" ],
+    "level": 101,
+    "requirements": {
+      "supplies": 5200000,
+      "nutrition_research": 200,
+      "algae": 180,
+      "transester_gas": 160
+    }
+  },
+  {
+    "id": "hardened_scales",
+    "era": "OceanicFuture",
+    "name": "Hardened Scales",
+    "fp": 151,
+    "rewards": [ "Artificial Scale Artisans" ],
+    "children": [ "hydrodynamics" ],
+    "parents": [ "subaqueous_construction" ],
+    "level": 101,
+    "requirements": {
+      "money": 5800000,
+      "smart_materials": 150,
+      "biogeochemical_data": 170,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "oxygen_lens",
+    "era": "OceanicFuture",
+    "name": "Oxygen Lens",
+    "fp": 149,
+    "rewards": [ "Deep Sea Research Lab" ],
+    "children": [ "hydrodynamics" ],
+    "parents": [ "subaqueous_construction" ],
+    "level": 101,
+    "requirements": {
+      "money": 5600000,
+      "purified_water": 210,
+      "transester_gas": 160,
+      "bioplastics": 170
+    }
+  },
+  {
+    "id": "shellfish_aquaculture",
+    "era": "OceanicFuture",
+    "name": "Shellfish Aquaculture",
+    "fp": 138,
+    "rewards": [ "Shellfish Farm", "Avatar" ],
+    "children": [ "high_range_sonar", "personal_paradise" ],
+    "parents": [ "nano_habitat", "engineered_nuclei" ],
+    "level": 102,
+    "requirements": {
+      "preservatives": 140,
+      "algae": 160,
+      "nanowire": 120,
+      "promethium": 190
+    }
+  },
+  {
+    "id": "subaquatic_filters",
+    "era": "OceanicFuture",
+    "name": "Subaquatic Filters",
+    "fp": 154,
+    "rewards": [ "Alloy Walkway", "Avatar" ],
+    "children": [ "personal_paradise" ],
+    "parents": [ "engineered_nuclei", "coral_propagation" ],
+    "level": 102,
+    "requirements": {
+      "superconductors": 220,
+      "bioplastics": 100,
+      "ai_data": 110,
+      "promethium": 170
+    }
+  },
+  {
+    "id": "hydrodynamics",
+    "era": "OceanicFuture",
+    "name": "Hydrodynamics",
+    "fp": 166,
+    "rewards": [ "Cruiser Port" ],
+    "children": [ "controlled_lightning" ],
+    "parents": [ "hardened_scales", "oxygen_lens" ],
+    "level": 102,
+    "requirements": {
+      "supplies": 5700000,
+      "purified_water": 200,
+      "artificial_scales": 100,
+      "promethium": 210
+    }
+  },
+  {
+    "id": "high_range_sonar",
+    "era": "OceanicFuture",
+    "name": "High Range Sonar",
+    "fp": 150,
+    "rewards": [ "Aqua Highway" ],
+    "children": [ "mechanical_claws" ],
+    "parents": [ "shellfish_aquaculture" ],
+    "level": 103,
+    "requirements": {
+      "money": 5900000,
+      "smart_materials": 170,
+      "paper_batteries": 230,
+      "promethium": 180
+    }
+  },
+  {
+    "id": "personal_paradise",
+    "era": "OceanicFuture",
+    "name": "Personal Paradise",
+    "fp": 148,
+    "rewards": [ "Urban Island", "Avatar" ],
+    "children": [ "mechanical_claws" ],
+    "parents": [ "shellfish_aquaculture", "subaquatic_filters" ],
+    "level": 103,
+    "requirements": {
+      "biogeochemical_data": 130,
+      "bioplastics": 120,
+      "corals": 130,
+      "promethium": 190
+    }
+  },
+  {
+    "id": "controlled_lightning",
+    "era": "OceanicFuture",
+    "name": "Controlled Lightning",
+    "fp": 168,
+    "rewards": [ "Hydroelectric Facility" ],
+    "children": [ "laser_rust_removal" ],
+    "parents": [ "hydrodynamics" ],
+    "level": 103,
+    "requirements": {
+      "supplies": 6000000,
+      "papercrete": 250,
+      "transester_gas": 100,
+      "biolight": 140
+    }
+  },
+  {
+    "id": "mechanical_claws",
+    "era": "OceanicFuture",
+    "name": "Mechanical Claws",
+    "fp": 137,
+    "rewards": [ "C.R.A.B. Lab" ],
+    "children": [ "flotation_surfactants" ],
+    "parents": [ "high_range_sonar", "personal_paradise" ],
+    "level": 104,
+    "requirements": {
+      "preservatives": 180,
+      "nanoparticles": 160,
+      "nanowire": 100,
+      "promethium": 180
+    }
+  },
+  {
+    "id": "laser_rust_removal",
+    "era": "OceanicFuture",
+    "name": "Laser Rust Removal",
+    "fp": 160,
+    "rewards": [ "Water Dome" ],
+    "children": [ "flotation_surfactants" ],
+    "parents": [ "controlled_lightning" ],
+    "level": 104,
+    "requirements": {
+      "supplies": 6500000,
+      "biogeochemical_data": 170,
+      "ai_data": 160,
+      "pearls": 130
+    }
+  },
+  {
+    "id": "flotation_surfactants",
+    "era": "OceanicFuture",
+    "name": "Flotation Surfactants",
+    "fp": 172,
+    "rewards": [ "Floating House", "Avatar" ],
+    "children": [ "biomimetic_armor", "deep_sea_exploration" ],
+    "parents": [ "mechanical_claws", "laser_rust_removal" ],
+    "level": 105,
+    "requirements": {
+      "money": 6300000,
+      "nanowire": 200,
+      "plankton": 150,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "biomimetic_armor",
+    "era": "OceanicFuture",
+    "name": "Biomimetic Armor",
+    "fp": 180,
+    "rewards": [ "Turturret Dock" ],
+    "children": [ "coral_domestication", "advanced_hydrophones" ],
+    "parents": [ "flotation_surfactants" ],
+    "level": 106,
+    "requirements": {
+      "supplies": 6600000,
+      "paper_batteries": 200,
+      "artificial_scales": 150,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "deep_sea_exploration",
+    "era": "OceanicFuture",
+    "name": "Deep Sea Exploration",
+    "fp": 157,
+    "rewards": [ "Oceanic Terminal Upgrade" ],
+    "children": [ "advanced_hydrophones" ],
+    "parents": [ "flotation_surfactants" ],
+    "level": 106,
+    "requirements": {
+      "ai_data": 150,
+      "transester_gas": 120,
+      "biolight": 140,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "coral_domestication",
+    "era": "OceanicFuture",
+    "name": "Coral Domestication",
+    "fp": 151,
+    "rewards": [ "Coral Colony" ],
+    "children": [ "ocean_colonization", "holographic_currency" ],
+    "parents": [ "biomimetic_armor" ],
+    "level": 107,
+    "requirements": {
+      "nanoparticles": 160,
+      "bioplastics": 150,
+      "plankton": 140,
+      "corals": 130
+    }
+  },
+  {
+    "id": "advanced_hydrophones",
+    "era": "OceanicFuture",
+    "name": "Advanced Hydrophones",
+    "fp": 167,
+    "rewards": [ "Expansion" ],
+    "children": [ "holographic_currency", "maelstrom_stabilization" ],
+    "parents": [ "biomimetic_armor", "deep_sea_exploration" ],
+    "level": 107,
+    "requirements": {
+      "supplies": 6900000,
+      "nanowire": 250,
+      "paper_batteries": 180,
+      "orichalcum": 90
+    }
+  },
+  {
+    "id": "ocean_colonization",
+    "era": "OceanicFuture",
+    "name": "Ocean Colonization",
+    "fp": 169,
+    "rewards": [ "Avatar", "Avatar" ],
+    "children": [ "seasteading" ],
+    "parents": [ "coral_domestication" ],
+    "level": 108,
+    "requirements": {
+      "ai_data": 190,
+      "artificial_scales": 150,
+      "plankton": 130,
+      "biolight": 120
+    }
+  },
+  {
+    "id": "holographic_currency",
+    "era": "OceanicFuture",
+    "name": "Holographic Currency",
+    "fp": 175,
+    "rewards": [ "Seaside Store" ],
+    "children": [ "seasteading" ],
+    "parents": [ "coral_domestication", "advanced_hydrophones" ],
+    "level": 108,
+    "requirements": {
+      "money": 7000000,
+      "paper_batteries": 180,
+      "pearls": 190,
+      "orichalcum": 120
+    }
+  },
+  {
+    "id": "maelstrom_stabilization",
+    "era": "OceanicFuture",
+    "name": "Maelstrom Stabilization",
+    "fp": 152,
+    "rewards": [ "Maelstrom Dynamo" ],
+    "children": [ "biogel_refrigeration" ],
+    "parents": [ "advanced_hydrophones" ],
+    "level": 108,
+    "requirements": {
+      "superconductors": 190,
+      "transester_gas": 140,
+      "corals": 160,
+      "orichalcum": 130
+    }
+  },
+  {
+    "id": "seasteading",
+    "era": "OceanicFuture",
+    "name": "Seasteading",
+    "fp": 166,
+    "rewards": [ "Oceanic Terminal Upgrade" ],
+    "children": [ "geochemical_prospecting", "wave_farms", "advanced_aquanautics" ],
+    "parents": [ "ocean_colonization", "holographic_currency" ],
+    "level": 109,
+    "requirements": {
+      "bioplastics": 170,
+      "pearls": 110,
+      "promethium": 210,
+      "orichalcum": 140
+    }
+  },
+  {
+    "id": "biogel_refrigeration",
+    "era": "OceanicFuture",
+    "name": "Biogel Refrigeration",
+    "fp": 175,
+    "rewards": [ "Fisherman's House" ],
+    "children": [ "wave_farms", "advanced_aquanautics", "ocean_cleaning_nanobots" ],
+    "parents": [ "maelstrom_stabilization" ],
+    "level": 109,
+    "requirements": {
+      "money": 6800000,
+      "supplies": 6500000,
+      "artificial_scales": 300,
+      "orichalcum": 250
+    }
+  },
+  {
+    "id": "geochemical_prospecting",
+    "era": "OceanicFuture",
+    "name": "Geochemical Prospecting",
+    "fp": 169,
+    "rewards": [ "Mineral Extraction Plant" ],
+    "children": [ "robotic_appendages" ],
+    "parents": [ "seasteading" ],
+    "level": 110,
+    "requirements": {
+      "nanowire": 160,
+      "biolight": 180,
+      "promethium": 210,
+      "orichalcum": 140
+    }
+  },
+  {
+    "id": "wave_farms",
+    "era": "OceanicFuture",
+    "name": "Wave Farms",
+    "fp": 180,
+    "rewards": [ "Expansion" ],
+    "children": [ "robotic_appendages" ],
+    "parents": [ "seasteading", "biogel_refrigeration" ],
+    "level": 110,
+    "requirements": {
+      "supplies": 7000000,
+      "ai_data": 220,
+      "artificial_scales": 240,
+      "orichalcum": 190
+    }
+  },
+  {
+    "id": "advanced_aquanautics",
+    "era": "OceanicFuture",
+    "name": "Advanced Aquanautics",
+    "fp": 179,
+    "rewards": [ "4 Crew Members" ],
+    "children": [ "subaquatic_agriculture", "oxygen_absorbing_materials" ],
+    "parents": [ "biogel_refrigeration", "seasteading" ],
+    "level": 110,
+    "requirements": {
+      "nanowire": 150,
+      "biolight": 210,
+      "pearls": 120,
+      "orichalcum": 150
+    }
+  },
+  {
+    "id": "ocean_cleaning_nanobots",
+    "era": "OceanicFuture",
+    "name": "Ocean Cleaning Nanobots",
+    "fp": 176,
+    "rewards": [ "Turtle Rescue Centre" ],
+    "children": [ "oxygen_absorbing_materials" ],
+    "parents": [ "biogel_refrigeration" ],
+    "level": 110,
+    "requirements": {
+      "paper_batteries": 150,
+      "pearls": 200,
+      "promethium": 100,
+      "orichalcum": 200
+    }
+  },
+  {
+    "id": "robotic_appendages",
+    "era": "OceanicFuture",
+    "name": "Robotic Appendages",
+    "fp": 173,
+    "rewards": [ "Manta Bay" ],
+    "children": [ "aqua_therapy" ],
+    "parents": [ "geochemical_prospecting", "wave_farms" ],
+    "level": 111,
+    "requirements": {
+      "money": 6900000,
+      "corals": 210,
+      "promethium": 250,
+      "orichalcum": 180
+    }
+  },
+  {
+    "id": "subaquatic_agriculture",
+    "era": "OceanicFuture",
+    "name": "Subaquatic Agriculture",
+    "fp": 174,
+    "rewards": [ "Avatar", "Avatar" ],
+    "children": [ "aqua_therapy", "aqualoop" ],
+    "parents": [ "advanced_aquanautics" ],
+    "level": 111,
+    "requirements": {
+      "bioplastics": 220,
+      "plankton": 150,
+      "artificial_scales": 160,
+      "biolight": 160
+    }
+  },
+  {
+    "id": "oxygen_absorbing_materials",
+    "era": "OceanicFuture",
+    "name": "Oxygen Absorbing Materials",
+    "fp": 167,
+    "rewards": [ "Poseidon Statue", "Avatar" ],
+    "children": [ "aqualoop" ],
+    "parents": [ "advanced_aquanautics", "ocean_cleaning_nanobots" ],
+    "level": 111,
+    "requirements": {
+      "money": 6500000,
+      "transester_gas": 190,
+      "corals": 210,
+      "plankton": 230
+    }
+  },
+  {
+    "id": "aqua_therapy",
+    "era": "OceanicFuture",
+    "name": "Aqua Therapy",
+    "fp": 182,
+    "rewards": [ "Houseboat" ],
+    "children": [ "underwater_meditation", "photovoltaic_film" ],
+    "parents": [ "robotic_appendages", "subaquatic_agriculture" ],
+    "level": 112,
+    "requirements": {
+      "pearls": 180,
+      "plankton": 170,
+      "promethium": 190,
+      "orichalcum": 140
+    }
+  },
+  {
+    "id": "aqualoop",
+    "era": "OceanicFuture",
+    "name": "Aqualoop",
+    "fp": 178,
+    "rewards": [ "Oceanic Terminal Upgrade" ],
+    "children": [ "photovoltaic_film", "electronic_tattoos" ],
+    "parents": [ "subaquatic_agriculture", "oxygen_absorbing_materials" ],
+    "level": 112,
+    "requirements": {
+      "transester_gas": 250,
+      "pearls": 300,
+      "promethium": 200,
+      "orichalcum": 250
+    }
+  },
+  {
+    "id": "underwater_meditation",
+    "era": "OceanicFuture",
+    "name": "Underwater Meditation",
+    "fp": 185,
+    "rewards": [ "Diving Bell", "Avatar" ],
+    "children": [ "nautilus_replica", "eco_exploration" ],
+    "parents": [ "aqua_therapy" ],
+    "level": 113,
+    "requirements": {
+      "money": 8000000,
+      "corals": 220,
+      "biolight": 190,
+      "orichalcum": 280
+    }
+  },
+  {
+    "id": "photovoltaic_film",
+    "era": "OceanicFuture",
+    "name": "Photovoltaic Film",
+    "fp": 190,
+    "rewards": [ "Seaweed Harvest" ],
+    "children": [ "nautilus_replica", "eco_exploration" ],
+    "parents": [ "aqua_therapy", "aqualoop" ],
+    "level": 113,
+    "requirements": {
+      "supplies": 7700000,
+      "plankton": 260,
+      "promethium": 300,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "electronic_tattoos",
+    "era": "OceanicFuture",
+    "name": "Electronic Tattoos",
+    "fp": 176,
+    "rewards": [ "2 Crew Members", "Crew Selection Slot" ],
+    "children": [ "eco_exploration", "waterfall_stock" ],
+    "parents": [ "aqualoop" ],
+    "level": 113,
+    "requirements": {
+      "nanowire": 240,
+      "artificial_scales": 260,
+      "biolight": 240,
+      "orichalcum": 270
+    }
+  },
+  {
+    "id": "nautilus_replica",
+    "era": "OceanicFuture",
+    "name": "Nautilus Replica",
+    "fp": 178,
+    "rewards": [ "Nautilus Drop" ],
+    "children": [ "accelerated_shipbuilding" ],
+    "parents": [ "underwater_meditation", "photovoltaic_film" ],
+    "level": 114,
+    "requirements": {
+      "paper_batteries": 280,
+      "corals": 250,
+      "promethium": 280,
+      "orichalcum": 200
+    }
+  },
+  {
+    "id": "eco_exploration",
+    "era": "OceanicFuture",
+    "name": "Eco-exploration",
+    "fp": 192,
+    "rewards": [ "Expansion", "Avatar" ],
+    "children": [ "accelerated_shipbuilding" ],
+    "parents": [ "underwater_meditation", "photovoltaic_film", "electronic_tattoos" ],
+    "level": 114,
+    "requirements": {
+      "bioplastics": 190,
+      "plankton": 210,
+      "pearls": 180,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "waterfall_stock",
+    "era": "OceanicFuture",
+    "name": "Waterfall Stock",
+    "fp": 184,
+    "rewards": [ "Trading Depot", "Avatar" ],
+    "children": [ "agglomeration_architecture", "research_grant" ],
+    "parents": [ "electronic_tattoos" ],
+    "level": 114,
+    "requirements": {
+      "money": 9000000,
+      "supplies": 8500000,
+      "promethium": 400,
+      "orichalcum": 350
+    }
+  },
+  {
+    "id": "accelerated_shipbuilding",
+    "era": "OceanicFuture",
+    "name": "Accelerated Shipbuilding",
+    "fp": 186,
+    "rewards": [ "Boatyard" ],
+    "children": [ "pendulum_oscillation" ],
+    "parents": [ "nautilus_replica", "eco_exploration" ],
+    "level": 115,
+    "requirements": {
+      "ai_data": 160,
+      "corals": 200,
+      "pearls": 220,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "agglomeration_architecture",
+    "era": "OceanicFuture",
+    "name": "Agglomeration Architecture",
+    "fp": 176,
+    "rewards": [ "Bridge House" ],
+    "children": [ "pendulum_oscillation", "new_recruits" ],
+    "parents": [ "waterfall_stock" ],
+    "level": 115,
+    "requirements": {
+      "money": 9500000,
+      "biolight": 200,
+      "pearls": 220,
+      "orichalcum": 370
+    }
+  },
+  {
+    "id": "research_grant",
+    "era": "OceanicFuture",
+    "name": "Research Grant",
+    "fp": 192,
+    "rewards": [ "Oceanic Terminal Upgrade", "Crew Selection Slot" ],
+    "children": [ "new_recruits" ],
+    "parents": [ "waterfall_stock" ],
+    "level": 115,
+    "requirements": {
+      "plankton": 210,
+      "artificial_scales": 220,
+      "promethium": 250,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "pendulum_oscillation",
+    "era": "OceanicFuture",
+    "name": "Pendulum Oscillation",
+    "fp": 174,
+    "rewards": [ "Oceanic Swing", "Avatar" ],
+    "children": [ "chromatophore_synthesis", "braving_the_deep" ],
+    "parents": [ "accelerated_shipbuilding", "agglomeration_architecture" ],
+    "level": 116,
+    "requirements": {
+      "supplies": 9000000,
+      "corals": 220,
+      "biolight": 230,
+      "orichalcum": 320
+    }
+  },
+  {
+    "id": "new_recruits",
+    "era": "OceanicFuture",
+    "name": "New Recruits",
+    "fp": 185,
+    "rewards": [ "2 Crew Members" ],
+    "children": [ "maritime_archaeology" ],
+    "parents": [ "agglomeration_architecture", "research_grant" ],
+    "level": 116,
+    "requirements": {
+      "nanowire": 150,
+      "plankton": 230,
+      "artificial_scales": 200,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "chromatophore_synthesis",
+    "era": "OceanicFuture",
+    "name": "Chromatophore Synthesis",
+    "fp": 190,
+    "rewards": [ "Octo Depot" ],
+    "children": [ "advanced_heliograph" ],
+    "parents": [ "pendulum_oscillation" ],
+    "level": 117,
+    "requirements": {
+      "money": 10000000,
+      "paper_batteries": 300,
+      "promethium": 300,
+      "orichalcum": 360
+    }
+  },
+  {
+    "id": "braving_the_deep",
+    "era": "OceanicFuture",
+    "name": "Braving the Deep",
+    "fp": 205,
+    "rewards": [ "Expansion", "Avatar" ],
+    "children": [ "advanced_heliograph", "lifeguarding" ],
+    "parents": [ "pendulum_oscillation" ],
+    "level": 117,
+    "requirements": {
+      "pearls": 240,
+      "corals": 250,
+      "promethium": 240,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "maritime_archaeology",
+    "era": "OceanicFuture",
+    "name": "Maritime Archaeology",
+    "fp": 178,
+    "rewards": [ "Shipwreck", "Avatar" ],
+    "children": [ "lifeguarding" ],
+    "parents": [ "new_recruits" ],
+    "level": 117,
+    "requirements": {
+      "supplies": 11000000,
+      "artificial_scales": 210,
+      "biolight": 210,
+      "orichalcum": 390
+    }
+  },
+  {
+    "id": "advanced_heliograph",
+    "era": "OceanicFuture",
+    "name": "Advanced Heliograph",
+    "fp": 170,
+    "rewards": [ "Light House", "Avatar" ],
+    "children": [ "enhanced_streamlining", "aquabotanics" ],
+    "parents": [ "chromatophore_synthesis", "braving_the_deep" ],
+    "level": 118,
+    "requirements": {
+      "plankton": 180,
+      "corals": 220,
+      "promethium": 170,
+      "orichalcum": 280
+    }
+  },
+  {
+    "id": "lifeguarding",
+    "era": "OceanicFuture",
+    "name": "Lifeguarding",
+    "fp": 174,
+    "rewards": [ "Lifeguard Tower" ],
+    "children": [ "aquabotanics", "marine_engineering" ],
+    "parents": [ "braving_the_deep", "maritime_archaeology" ],
+    "level": 118,
+    "requirements": {
+      "bioplastics": 200,
+      "biolight": 210,
+      "pearls": 190,
+      "orichalcum": 330
+    }
+  },
+  {
+    "id": "enhanced_streamlining",
+    "era": "OceanicFuture",
+    "name": "Enhanced Streamlining",
+    "fp": 195,
+    "rewards": [ "Scimitar Hangar" ],
+    "children": [ "aqua_terraforming" ],
+    "parents": [ "advanced_heliograph" ],
+    "level": 119,
+    "requirements": {
+      "money": 11000000,
+      "pearls": 230,
+      "artificial_scales": 280,
+      "orichalcum": 360
+    }
+  },
+  {
+    "id": "aquabotanics",
+    "era": "OceanicFuture",
+    "name": "Aquabotanics",
+    "fp": 180,
+    "rewards": [ "Sea Garden" ],
+    "children": [ "accelerated_breaching" ],
+    "parents": [ "advanced_heliograph", "lifeguarding" ],
+    "level": 119,
+    "requirements": {
+      "supplies": 10000000,
+      "corals": 240,
+      "promethium": 300,
+      "orichalcum": 270
+    }
+  },
+  {
+    "id": "marine_engineering",
+    "era": "OceanicFuture",
+    "name": "Marine Engineering",
+    "fp": 178,
+    "rewards": [ "Crew Member" ],
+    "children": [ "accelerated_breaching" ],
+    "parents": [ "lifeguarding" ],
+    "level": 119,
+    "requirements": {
+      "supplies": 11000000,
+      "transester_gas": 340,
+      "artificial_scales": 250,
+      "orichalcum": 380
+    }
+  },
+  {
+    "id": "aqua_terraforming",
+    "era": "OceanicFuture",
+    "name": "Aqua Terraforming",
+    "fp": 220,
+    "rewards": [ "Expansion", "Avatar" ],
+    "children": [ "deepwater_drilling" ],
+    "parents": [ "enhanced_streamlining" ],
+    "level": 120,
+    "requirements": {
+      "money": 11500000,
+      "biolight": 320,
+      "pearls": 270,
+      "promethium": 390
+    }
+  },
+  {
+    "id": "accelerated_breaching",
+    "era": "OceanicFuture",
+    "name": "Accelerated Breaching",
+    "fp": 198,
+    "rewards": [ "Glider Hive" ],
+    "children": [ "deepwater_drilling", "oceanic_preservation" ],
+    "parents": [ "aquabotanics", "marine_engineering" ],
+    "level": 120,
+    "requirements": {
+      "ai_data": 210,
+      "plankton": 240,
+      "promethium": 280,
+      "orichalcum": 250
+    }
+  },
+  {
+    "id": "deepwater_drilling",
+    "era": "OceanicFuture",
+    "name": "Deepwater Drilling",
+    "fp": 200,
+    "rewards": [ "Medusa Silo" ],
+    "children": [ "3d_photon_emitters" ],
+    "parents": [ "aqua_terraforming", "accelerated_breaching" ],
+    "level": 121,
+    "requirements": {
+      "money": 12500000,
+      "nanowire": 320,
+      "corals": 280,
+      "orichalcum": 400
+    }
+  },
+  {
+    "id": "oceanic_preservation",
+    "era": "OceanicFuture",
+    "name": "Oceanic Preservation",
+    "fp": 210,
+    "rewards": [ "Secret Cove", "Avatar" ],
+    "children": [ "3d_photon_emitters" ],
+    "parents": [ "accelerated_breaching" ],
+    "level": 121,
+    "requirements": {
+      "supplies": 12000000,
+      "paper_batteries": 300,
+      "plankton": 250,
+      "promethium": 290
+    }
+  },
+  {
+    "id": "3d_photon_emitters",
+    "era": "VirtualFuture",
+    "name": "3D Photon Emitters",
+    "fp": 180,
+    "rewards": [ "Generational Home", "Avatar" ],
+    "children": [ "smart_fabrics", "pico_computing", "trinary_information_engraving" ],
+    "parents": [ "deepwater_drilling", "oceanic_preservation" ],
+    "level": 122,
+    "requirements": {
+      "money": 15000000,
+      "biolight": 200,
+      "plankton": 150,
+      "promethium": 170
+    }
+  },
+  {
+    "id": "smart_fabrics",
+    "era": "VirtualFuture",
+    "name": "Smart Fabrics",
+    "fp": 195,
+    "rewards": [ "Botanic Fiber Farm" ],
+    "children": [],
+    "parents": [ "3d_photon_emitters" ],
+    "level": 123,
+    "requirements": {
+      "money": 18000000,
+      "pearls": 150,
+      "corals": 200,
+      "orichalcum": 180
+    }
+  },
+  {
+    "id": "pico_computing",
+    "era": "VirtualFuture",
+    "name": "Pico Computing",
+    "fp": 205,
+    "rewards": [ "Nano-Augmentation Clinic" ],
+    "children": [ "reliable_hash_generators", "accelerated_food_engineering", "compounding_robotics" ],
+    "parents": [ "3d_photon_emitters" ],
+    "level": 123,
+    "requirements": {
+      "supplies": 18000000,
+      "artificial_scales": 200,
+      "plankton": 190,
+      "promethium": 220
+    }
+  },
+  {
+    "id": "trinary_information_engraving",
+    "era": "VirtualFuture",
+    "name": "Trinary Information Engraving",
+    "fp": 200,
+    "rewards": [ "Jade Crystal Quarry" ],
+    "children": [ "quantum_photogrammetry" ],
+    "parents": [ "3d_photon_emitters" ],
+    "level": 123,
+    "requirements": {
+      "biolight": 260,
+      "corals": 170,
+      "orichalcum": 250
+    }
+  },
+  {
+    "id": "reliable_hash_generators",
+    "era": "VirtualFuture",
+    "name": "Reliable Hash Generators",
+    "fp": 215,
+    "rewards": [ "Cryptocurrency Bank" ],
+    "children": [ "secured_vr_domains" ],
+    "parents": [ "pico_computing" ],
+    "level": 124,
+    "requirements": {
+      "money": 19500000,
+      "pearls": 220,
+      "artificial_scales": 280,
+      "orichalcum": 150
+    }
+  },
+  {
+    "id": "accelerated_food_engineering",
+    "era": "VirtualFuture",
+    "name": "Accelerated Food Engineering",
+    "fp": 240,
+    "rewards": [ "Sustainable Rice Farm" ],
+    "children": [ "secured_vr_domains" ],
+    "parents": [ "pico_computing" ],
+    "level": 124,
+    "requirements": {
+      "money": 20500000,
+      "biolight": 180,
+      "corals": 200,
+      "promethium": 250
+    }
+  },
+  {
+    "id": "compounding_robotics",
+    "era": "VirtualFuture",
+    "name": "Compounding Robotics",
+    "fp": 210,
+    "rewards": [ "Combat Robot Factory" ],
+    "children": [ "secured_vr_domains", "energy_preserving_surfaces" ],
+    "parents": [ "pico_computing" ],
+    "level": 124,
+    "requirements": {
+      "supplies": 25000000,
+      "pearls": 250,
+      "plankton": 280,
+      "data_crystals": 140
+    }
+  },
+  {
+    "id": "quantum_photogrammetry",
+    "era": "VirtualFuture",
+    "name": "Quantum Photogrammetry",
+    "fp": 220,
+    "rewards": [ "Holographic Research Lab" ],
+    "children": [ "public_emitters" ],
+    "parents": [ "trinary_information_engraving" ],
+    "level": 124,
+    "requirements": {
+      "money": 20700000,
+      "artificial_scales": 230,
+      "corals": 250,
+      "cryptocash": 130
+    }
+  },
+  {
+    "id": "secured_vr_domains",
+    "era": "VirtualFuture",
+    "name": "Secured VR Domains",
+    "fp": 245,
+    "rewards": [ "Expansion" ],
+    "children": [ "codex_of_honor_2" ],
+    "parents": [ "reliable_hash_generators", "accelerated_food_engineering", "compounding_robotics" ],
+    "level": 125,
+    "requirements": {
+      "supplies": 19000000,
+      "biolight": 250,
+      "tea_silk": 160,
+      "golden_rice": 140
+    }
+  },
+  {
+    "id": "energy_preserving_surfaces",
+    "era": "VirtualFuture",
+    "name": "Energy Preserving Surfaces",
+    "fp": 235,
+    "rewards": [ "Energy Preserving Road" ],
+    "children": [ "codex_of_honor_2", "responsive_holo_entertainment" ],
+    "parents": [ "compounding_robotics" ],
+    "level": 125,
+    "requirements": {
+      "pearls": 300,
+      "data_crystals": 150,
+      "tea_silk": 150,
+      "orichalcum": 180
+    }
+  },
+  {
+    "id": "public_emitters",
+    "era": "VirtualFuture",
+    "name": "Public Emitters",
+    "fp": 240,
+    "rewards": [ "Holo Statue", "Avatar" ],
+    "children": [ "noise_cancelling_concrete" ],
+    "parents": [ "quantum_photogrammetry" ],
+    "level": 125,
+    "requirements": {
+      "artificial_scales": 280,
+      "golden_rice": 180,
+      "data_crystals": 120,
+      "orichalcum": 210
+    }
+  },
+  {
+    "id": "codex_of_honor_2",
+    "era": "VirtualFuture",
+    "name": "Codex of Honor 2.0",
+    "fp": 250,
+    "rewards": [ "Dojo" ],
+    "children": [ "cybernetically_augmented_ninjutsu" ],
+    "parents": [ "secured_vr_domains", "energy_preserving_surfaces" ],
+    "level": 126,
+    "requirements": {
+      "corals": 230,
+      "nanites": 180,
+      "cryptocash": 200,
+      "promethium": 210
+    }
+  },
+  {
+    "id": "responsive_holo_entertainment",
+    "era": "VirtualFuture",
+    "name": "Responsive Holo-Entertainment",
+    "fp": 255,
+    "rewards": [ "Karaoke Bar", "Avatar" ],
+    "children": [ "cybernetically_augmented_ninjutsu" ],
+    "parents": [ "energy_preserving_surfaces" ],
+    "level": 126,
+    "requirements": {
+      "plankton": 200,
+      "cryptocash": 180,
+      "nanites": 160,
+      "orichalcum": 210
+    }
+  },
+  {
+    "id": "noise_cancelling_concrete",
+    "era": "VirtualFuture",
+    "name": "Noise-Cancelling Concrete",
+    "fp": 256,
+    "rewards": [ "Noise-Cancelling Highway" ],
+    "children": [ "cybernetically_augmented_ninjutsu" ],
+    "parents": [ "public_emitters" ],
+    "level": 126,
+    "requirements": {
+      "plankton": 190,
+      "golden_rice": 160,
+      "tea_silk": 200,
+      "orichalcum": 260
+    }
+  },
+  {
+    "id": "cybernetically_augmented_ninjutsu",
+    "era": "VirtualFuture",
+    "name": "Cybernetically Augmented Ninjutsu",
+    "fp": 270,
+    "rewards": [ "Hidden School" ],
+    "children": [ "crypto_gambling", "vr_overlays", "encrypted_digital_licensing" ],
+    "parents": [ "codex_of_honor_2", "responsive_holo_entertainment", "noise_cancelling_concrete" ],
+    "level": 127,
+    "requirements": {
+      "biolight": 230,
+      "nanites": 190,
+      "data_crystals": 150,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "crypto_gambling",
+    "era": "VirtualFuture",
+    "name": "Crypto Gambling",
+    "fp": 258,
+    "rewards": [ "Dragon Casino", "Ricardo" ],
+    "children": [ "cultural_resurgence", "vr_domain_archiving" ],
+    "parents": [ "cybernetically_augmented_ninjutsu" ],
+    "level": 128,
+    "requirements": {
+      "supplies": 30000000,
+      "artificial_scales": 250,
+      "golden_rice": 260,
+      "cryptocash": 240
+    }
+  },
+  {
+    "id": "vr_overlays",
+    "era": "VirtualFuture",
+    "name": "VR Overlays",
+    "fp": 260,
+    "rewards": [ "Tea House", "Avatar" ],
+    "children": [ "cultural_resurgence", "vr_domain_archiving", "non_volatile_fire_shells" ],
+    "parents": [ "cybernetically_augmented_ninjutsu" ],
+    "level": 128,
+    "requirements": {
+      "supplies": 35000000,
+      "tea_silk": 260,
+      "data_crystals": 240,
+      "promethium": 180
+    }
+  },
+  {
+    "id": "encrypted_digital_licensing",
+    "era": "VirtualFuture",
+    "name": "Encrypted Digital Licensing",
+    "fp": 255,
+    "rewards": [ "VR Commodity Shop" ],
+    "children": [ "non_volatile_fire_shells" ],
+    "parents": [ "cybernetically_augmented_ninjutsu" ],
+    "level": 128,
+    "requirements": {
+      "golden_rice": 220,
+      "data_crystals": 250,
+      "cryptocash": 150,
+      "promethium": 180
+    }
+  },
+  {
+    "id": "cultural_resurgence",
+    "era": "VirtualFuture",
+    "name": "Cultural Resurgence",
+    "fp": 265,
+    "rewards": [ "Japanese Pine", "Logan" ],
+    "children": [ "vr_supported_celebrations" ],
+    "parents": [ "crypto_gambling", "vr_overlays" ],
+    "level": 129,
+    "requirements": {
+      "supplies": 30000000,
+      "nanites": 210,
+      "data_crystals": 240,
+      "tea_silk": 160
+    }
+  },
+  {
+    "id": "vr_domain_archiving",
+    "era": "VirtualFuture",
+    "name": "VR Domain Archiving",
+    "fp": 260,
+    "rewards": [ "Expansion" ],
+    "children": [ "citizen_score_system", "evolving_vr_overlays" ],
+    "parents": [ "crypto_gambling", "vr_overlays" ],
+    "level": 129,
+    "requirements": {
+      "cryptocash": 240,
+      "nanites": 230,
+      "golden_rice": 180,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "non_volatile_fire_shells",
+    "era": "VirtualFuture",
+    "name": "Non-Volatile Fire Shells",
+    "fp": 270,
+    "rewards": [ "Rocket Range" ],
+    "children": [],
+    "parents": [ "vr_overlays", "encrypted_digital_licensing" ],
+    "level": 129,
+    "requirements": {
+      "money": 35000000,
+      "tea_silk": 250,
+      "cryptocash": 260,
+      "nanites": 120
+    }
+  },
+  {
+    "id": "citizen_score_system",
+    "era": "VirtualFuture",
+    "name": "Citizen Score System",
+    "fp": 300,
+    "rewards": [ "Modular VR Dwelling", "Fiene" ],
+    "children": [ "combat_traditions" ],
+    "parents": [ "vr_domain_archiving" ],
+    "level": 130,
+    "requirements": {
+      "golden_rice": 230,
+      "tea_silk": 185,
+      "nanites": 180,
+      "orichalcum": 350
+    }
+  },
+  {
+    "id": "evolving_vr_overlays",
+    "era": "VirtualFuture",
+    "name": "Evolving VR Overlays",
+    "fp": 275,
+    "rewards": [ "Animal Hologram", "Christian" ],
+    "children": [ "efficient_dna_analysis" ],
+    "parents": [ "vr_domain_archiving" ],
+    "level": 130,
+    "requirements": {
+      "supplies": 30000000,
+      "golden_rice": 290,
+      "nanites": 350
+    }
+  },
+  {
+    "id": "efficient_dna_analysis",
+    "era": "VirtualFuture",
+    "name": "Efficient DNA Analysis",
+    "fp": 280,
+    "rewards": [ "Bonsai Shop" ],
+    "children": [ "high_definition_vr_domains" ],
+    "parents": [ "evolving_vr_overlays" ],
+    "level": 131,
+    "requirements": {
+      "money": 30000000,
+      "tea_silk": 320,
+      "golden_rice": 330,
+      "orichalcum": 200
+    }
+  },
+  {
+    "id": "vr_supported_celebrations",
+    "era": "VirtualFuture",
+    "name": "VR Supported Celebrations",
+    "fp": 295,
+    "rewards": [ "Parade" ],
+    "children": [ "combat_traditions" ],
+    "parents": [ "cultural_resurgence" ],
+    "level": 130,
+    "requirements": {
+      "money": 35000000,
+      "nanites": 325,
+      "cryptocash": 280,
+      "promethium": 250
+    }
+  },
+  {
+    "id": "combat_traditions",
+    "era": "VirtualFuture",
+    "name": "Combat Traditions",
+    "fp": 310,
+    "rewards": [ "Warrior Monk School", "Avatar" ],
+    "children": [ "high_definition_vr_domains" ],
+    "parents": [ "vr_supported_celebrations", "citizen_score_system" ],
+    "level": 131,
+    "requirements": {
+      "supplies": 35000000,
+      "cryptocash": 305,
+      "data_crystals": 295,
+      "promethium": 300
+    }
+  },
+  {
+    "id": "high_definition_vr_domains",
+    "era": "VirtualFuture",
+    "name": "High Definition VR Domains",
+    "fp": 330,
+    "rewards": [ "Expansion" ],
+    "children": [ "spacefaring" ],
+    "parents": [ "combat_traditions", "efficient_dna_analysis" ],
+    "level": 132,
+    "requirements": {
+      "money": 40000000,
+      "supplies": 40000000,
+      "data_crystals": 280,
+      "tea_silk": 300
+    }
+  },
+  {
+    "id": "spacefaring",
+    "era": "SpaceAgeMars",
+    "name": "Spacefaring",
+    "fp": 300,
+    "rewards": [ "Mars Colony", "Carved Road", "Drop Pod" ],
+    "children": [ "subatomic_crystallization", "entangled_nuclear_fusion", "genome_recoding" ],
+    "parents": [ "high_definition_vr_domains" ],
+    "level": 133,
+    "requirements": {
+      "money": 50000000,
+      "supplies": 50000000,
+      "tea_silk": 250,
+      "cryptocash": 280
+    }
+  },
+  {
+    "id": "subatomic_crystallization",
+    "era": "SpaceAgeMars",
+    "name": "Subatomic Crystallization",
+    "fp": 310,
+    "rewards": [ "Surface Drill", "Chemical Milling Facility" ],
+    "children": [],
+    "parents": [ "spacefaring" ],
+    "level": 134,
+    "requirements": {
+      "data_crystals": 350,
+      "tea_silk": 150,
+      "cryptocash": 140
+    }
+  },
+  {
+    "id": "entangled_nuclear_fusion",
+    "era": "SpaceAgeMars",
+    "name": "Entangled Nuclear Fusion",
+    "fp": 305,
+    "rewards": [ "Fusion Plant" ],
+    "children": [ "plasma_nozzles", "polymerized_membranes", "solid_mark_ii_glass" ],
+    "parents": [ "spacefaring" ],
+    "level": 134,
+    "requirements": {
+      "nanites": 235,
+      "golden_rice": 280
+    }
+  },
+  {
+    "id": "genome_recoding",
+    "era": "SpaceAgeMars",
+    "name": "Genome Recoding",
+    "fp": 335,
+    "rewards": [ "BioTech Farm", "Microbe Research Lab" ],
+    "children": [],
+    "parents": [ "spacefaring" ],
+    "level": 134,
+    "requirements": {
+      "data_crystals": 160,
+      "golden_rice": 125,
+      "nanites": 200
+    }
+  },
+  {
+    "id": "plasma_nozzles",
+    "era": "SpaceAgeMars",
+    "name": "Plasma Nozzles",
+    "fp": 310,
+    "rewards": [ "Space Marine Barracks" ],
+    "children": [ "lower_ai_cores" ],
+    "parents": [ "entangled_nuclear_fusion" ],
+    "level": 135,
+    "requirements": {
+      "money": 40000000,
+      "supplies": 30000000,
+      "promethium": 200
+    }
+  },
+  {
+    "id": "polymerized_membranes",
+    "era": "SpaceAgeMars",
+    "name": "Polymerized Membranes",
+    "fp": 330,
+    "rewards": [ "Oxygen Generator", "3 Colony Expansions", "Terraforming" ],
+    "children": [ "multispectral_sensors" ],
+    "parents": [ "entangled_nuclear_fusion" ],
+    "level": 135,
+    "requirements": { "mars_ore": 200 }
+  },
+  {
+    "id": "solid_mark_ii_glass",
+    "era": "SpaceAgeMars",
+    "name": "S.O.L.I.D. Mark II Glass",
+    "fp": 315,
+    "rewards": [ "Rocket Testing Site", "Astronaut Training Dormitory", "Avatar" ],
+    "children": [ "multispectral_sensors" ],
+    "parents": [ "entangled_nuclear_fusion" ],
+    "level": 135,
+    "requirements": {
+      "superalloys": 500,
+      "lubricants": 400
+    }
+  },
+  {
+    "id": "lower_ai_cores",
+    "era": "SpaceAgeMars",
+    "name": "Lower AI Cores",
+    "fp": 320,
+    "rewards": [ "Steel Warden Station", "Avatar" ],
+    "children": [ "space_marketing_techniques" ],
+    "parents": [ "plasma_nozzles" ],
+    "level": 136,
+    "requirements": {
+      "money": 45000000,
+      "supplies": 35000000,
+      "mars_ore": 200,
+      "promethium": 250
+    }
+  },
+  {
+    "id": "multispectral_sensors",
+    "era": "SpaceAgeMars",
+    "name": "Multispectral Sensors",
+    "fp": 335,
+    "rewards": [ "Satellite Dish", "Kurt" ],
+    "children": [ "space_marketing_techniques", "enhanced_plasteel", "mars_regulations" ],
+    "parents": [ "polymerized_membranes", "solid_mark_ii_glass" ],
+    "level": 136,
+    "requirements": {
+      "biotech_crops": 250,
+      "mars_microbes": 300,
+      "fusion_reactors": 280
+    }
+  },
+  {
+    "id": "space_marketing_techniques",
+    "era": "SpaceAgeMars",
+    "name": "Space Marketing Techniques",
+    "fp": 325,
+    "rewards": [ "Moonlander", "Sarah" ],
+    "children": [ "pressurized_plasma" ],
+    "parents": [ "lower_ai_cores", "multispectral_sensors" ],
+    "level": 137,
+    "requirements": {
+      "superalloys": 350,
+      "mars_ore": 200,
+      "lubricants": 500
+    }
+  },
+  {
+    "id": "enhanced_plasteel",
+    "era": "SpaceAgeMars",
+    "name": "Enhanced Plasteel",
+    "fp": 340,
+    "rewards": [ "Simple Shelter", "3 Colony Expansions" ],
+    "children": [ "repurposable_furniture", "non_reflective_photovoltaic" ],
+    "parents": [ "multispectral_sensors" ],
+    "level": 137,
+    "requirements": {
+      "mars_ore": 300,
+      "biotech_crops": 600,
+      "orichalcum": 250
+    }
+  },
+  {
+    "id": "mars_regulations",
+    "era": "SpaceAgeMars",
+    "name": "Mars Regulations",
+    "fp": 350,
+    "rewards": [ "Expansion", "Marcel" ],
+    "children": [ "non_reflective_photovoltaic" ],
+    "parents": [ "multispectral_sensors" ],
+    "level": 137,
+    "requirements": {
+      "money": 60000000,
+      "biotech_crops": 600,
+      "mars_microbes": 650,
+      "lubricants": 600
+    }
+  },
+  {
+    "id": "pressurized_plasma",
+    "era": "SpaceAgeMars",
+    "name": "Pressurized Plasma",
+    "fp": 365,
+    "rewards": [ "Sniperbot Facility" ],
+    "children": [ "anti_gravitational_fields" ],
+    "parents": [ "space_marketing_techniques" ],
+    "level": 138,
+    "requirements": {
+      "mars_microbes": 500,
+      "fusion_reactors": 800,
+      "lubricants": 650
+    }
+  },
+  {
+    "id": "repurposable_furniture",
+    "era": "SpaceAgeMars",
+    "name": "Repurposable Furniture",
+    "fp": 370,
+    "rewards": [ "Modular Home", "3 Colony Expansions" ],
+    "children": [ "waste_management_enzymes" ],
+    "parents": [ "enhanced_plasteel" ],
+    "level": 138,
+    "requirements": {
+      "fusion_reactors": 600,
+      "superalloys": 700,
+      "orichalcum": 250
+    }
+  },
+  {
+    "id": "non_reflective_photovoltaic",
+    "era": "SpaceAgeMars",
+    "name": "Non-Reflective Photovoltaic",
+    "fp": 385,
+    "rewards": [ "Solar Panel East", "Solar Panel South", "3 Colony Expansions" ],
+    "children": [ "waste_management_enzymes", "mars_infrastructure" ],
+    "parents": [ "mars_regulations", "enhanced_plasteel" ],
+    "level": 138,
+    "requirements": {
+      "superalloys": 850,
+      "biotech_crops": 950,
+      "promethium": 300
+    }
+  },
+  {
+    "id": "anti_gravitational_fields",
+    "era": "SpaceAgeMars",
+    "name": "Anti-Gravitational Fields",
+    "fp": 360,
+    "rewards": [ "Sentinel Dome", "Matt" ],
+    "children": [ "molecular_editing", "superconductor_particle_streams" ],
+    "parents": [ "pressurized_plasma" ],
+    "level": 139,
+    "requirements": {
+      "money": 55000000,
+      "mars_ore": 600,
+      "mars_microbes": 1150,
+      "lubricants": 1200
+    }
+  },
+  {
+    "id": "waste_management_enzymes",
+    "era": "SpaceAgeMars",
+    "name": "Waste Management Enzymes",
+    "fp": 365,
+    "rewards": [ "Refinement Station", "3 Colony Expansions", "Terraforming" ],
+    "children": [],
+    "parents": [ "repurposable_furniture", "non_reflective_photovoltaic" ],
+    "level": 139,
+    "requirements": {
+      "biotech_crops": 1050,
+      "fusion_reactors": 1400,
+      "lubricants": 950
+    }
+  },
+  {
+    "id": "mars_infrastructure",
+    "era": "SpaceAgeMars",
+    "name": "Mars Infrastructure",
+    "fp": 385,
+    "rewards": [ "Mars Soil Path", "Marlena" ],
+    "children": [ "superconductor_particle_streams", "self_repairing_alloys", "neural_augmented_frameworks" ],
+    "parents": [ "non_reflective_photovoltaic" ],
+    "level": 139,
+    "requirements": {
+      "mars_microbes": 1400,
+      "superalloys": 1450,
+      "orichalcum": 400
+    }
+  },
+  {
+    "id": "molecular_editing",
+    "era": "SpaceAgeMars",
+    "name": "Molecular Editing",
+    "fp": 375,
+    "rewards": [ "Recombination Machine", "3 Colony Expansions" ],
+    "children": [],
+    "parents": [ "anti_gravitational_fields" ],
+    "level": 140,
+    "requirements": {
+      "fusion_reactors": 200,
+      "mars_ore": 100
+    }
+  },
+  {
+    "id": "superconductor_particle_streams",
+    "era": "SpaceAgeMars",
+    "name": "Superconductor Particle Streams",
+    "fp": 380,
+    "rewards": [ "Tesla Works" ],
+    "children": [ "mars_ownership_patents" ],
+    "parents": [ "anti_gravitational_fields", "mars_infrastructure" ],
+    "level": 140,
+    "requirements": {
+      "superalloys": 1700,
+      "mars_microbes": 1300,
+      "lubricants": 1450
+    }
+  },
+  {
+    "id": "self_repairing_alloys",
+    "era": "SpaceAgeMars",
+    "name": "Self-Repairing Alloys",
+    "fp": 400,
+    "rewards": [ "Dome", "3 Colony Expansions" ],
+    "children": [ "mars_ownership_patents" ],
+    "parents": [ "mars_infrastructure" ],
+    "level": 140,
+    "requirements": {
+      "mars_ore": 1000,
+      "fusion_reactors": 1200
+    }
+  },
+  {
+    "id": "neural_augmented_frameworks",
+    "era": "SpaceAgeMars",
+    "name": "Neural Augmented Frameworks",
+    "fp": 395,
+    "rewards": [ "Guided Street", "Rae" ],
+    "children": [ "mars_ownership_patents", "multi_purpose_code_routines" ],
+    "parents": [ "mars_infrastructure" ],
+    "level": 140,
+    "requirements": {
+      "biotech_crops": 1900,
+      "superalloys": 1700,
+      "orichalcum": 300
+    }
+  },
+  {
+    "id": "mars_ownership_patents",
+    "era": "SpaceAgeMars",
+    "name": "Mars Ownership Patents",
+    "fp": 390,
+    "rewards": [ "Expansion" ],
+    "children": [ "mars_goods_synthesizing" ],
+    "parents": [ "superconductor_particle_streams", "self_repairing_alloys", "neural_augmented_frameworks" ],
+    "level": 141,
+    "requirements": {
+      "supplies": 65000000,
+      "mars_microbes": 2000,
+      "mars_ore": 900,
+      "promethium": 600
+    }
+  },
+  {
+    "id": "multi_purpose_code_routines",
+    "era": "SpaceAgeMars",
+    "name": "Multipurpose Code Routines",
+    "fp": 400,
+    "rewards": [ "Autonomous Food Dispenser", "3 Colony Expansions" ],
+    "children": [ "mars_goods_synthesizing" ],
+    "parents": [ "neural_augmented_frameworks" ],
+    "level": 141,
+    "requirements": {
+      "fusion_reactors": 2800,
+      "biotech_crops": 1900,
+      "lubricants": 1500
+    }
+  },
+  {
+    "id": "mars_goods_synthesizing",
+    "era": "SpaceAgeAsteroidBelt",
+    "name": "Mars Goods Synthesizing",
+    "fp": 350,
+    "rewards": [],
+    "children": [],
+    "parents": [ "mars_ownership_patents", "multi_purpose_code_routines" ],
+    "level": 142,
+    "requirements": {
+      "fusion_reactors": 1,
+      "biotech_crops": 1,
+      "lubricants": 1
+    }
+  }
+]
