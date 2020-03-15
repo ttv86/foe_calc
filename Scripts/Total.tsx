@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Data, Resources, Research } from "./DataCache";
+import { Data, Resources, Research, Provinces } from "./DataCache";
 import { IResource } from "./Types";
 
 const Total: React.FunctionComponent = () => {
@@ -9,20 +9,34 @@ const Total: React.FunctionComponent = () => {
     const [resources, setResources] = React.useState<readonly IResource[]>([]);
 
     React.useEffect(() => {
-        Promise.all([Research, Resources]).then(([research, resources]) => {
+        Promise.all([Research, Resources, Provinces]).then(([research, resources, provinces]) => {
             const checked = new Set<string>(Data.research);
-            const leftCost: Record<string, number> = {};
+            const researchCost: Record<string, number> = {};
+            const mapCost: Record<string, number> = {};
             for (const item of research) {
                 if (item.requirements) {
                     for (const key in item.requirements) {
                         if (!checked.has(item.id)) {
-                            leftCost[key] = item.requirements[key] + (leftCost[key] ?? 0);
+                            researchCost[key] = item.requirements[key] + (researchCost[key] ?? 0);
                         }
                     }
                 }
             }
 
-            setResearchCost(leftCost);
+            for (const item of provinces) {
+                if (item.sectors) {
+                    for (const sector of item.sectors) {
+                        for (const cost of sector.negotiation) {
+                            //if (!checked.has(item.id)) {
+                            mapCost[cost.name] = cost.amount + (mapCost[cost.name] ?? 0);
+                            //}
+                        }
+                    }
+                }
+            }
+
+            setResearchCost(researchCost);
+            setMapCost(mapCost);
             setResources(resources.filter(x => x.types.includes("goodsProduceable")));
         });
     }, []);

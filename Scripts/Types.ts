@@ -71,8 +71,26 @@ export interface IResearch {
 }
 
 export interface IResource {
-    readonly id: string;
+    readonly id: ItemType;
     readonly name: string;
     readonly era: Era;
     readonly types: readonly string[];
+}
+
+export interface IProvince {
+    readonly id: string;
+    readonly name: string;
+    readonly era: Era;
+    readonly sectors: readonly ISector[];
+}
+
+interface ISector {
+    readonly rewardType: ItemType;
+    readonly rewardAmount: number;
+    readonly negotiation: readonly ICost[];
+}
+
+interface ICost {
+    readonly name: ItemType;
+    readonly amount: number;
 }
