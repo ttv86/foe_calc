@@ -154,6 +154,113 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./Scripts/DataCache.ts":
+/*!******************************!*\
+  !*** ./Scripts/DataCache.ts ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Resources = fetch("resources.json").then(x => x.json());
+exports.Research = fetch("research.json").then(x => x.json());
+class Data {
+    static get owned() {
+        var _a;
+        try {
+            return JSON.parse((_a = localStorage.getItem("ownedResources")) !== null && _a !== void 0 ? _a : "{}");
+        }
+        catch (_b) {
+            return {};
+        }
+    }
+    static set owned(newValue) {
+        localStorage.setItem("ownedResources", JSON.stringify(newValue));
+    }
+    static get research() {
+        var _a;
+        try {
+            return ((_a = localStorage.getItem("research")) !== null && _a !== void 0 ? _a : "").split(",");
+        }
+        catch (_b) {
+            return [];
+        }
+    }
+    static set research(newValue) {
+        localStorage.setItem("research", newValue.join(","));
+    }
+    static get deposits() {
+        var _a;
+        try {
+            return ((_a = localStorage.getItem("deposits")) !== null && _a !== void 0 ? _a : "").split(",");
+        }
+        catch (_b) {
+            return [];
+        }
+    }
+    static set deposits(newValue) {
+        localStorage.setItem("deposits", newValue.join(","));
+    }
+}
+exports.Data = Data;
+
+
+/***/ }),
+
+/***/ "./Scripts/Import.tsx":
+/*!****************************!*\
+  !*** ./Scripts/Import.tsx ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const Import = () => {
+    document.createElement;
+    const [text, setText] = React.useState("");
+    const importFunc = React.useCallback(() => {
+        try {
+            const parsedArray = JSON.parse(text);
+            for (const item of parsedArray) {
+                if (item.requestMethod === "getDeposits" && item.requestClass === "CampaignService") {
+                    const data = item.responseData;
+                    const found = new Set();
+                    for (const key in data.states) {
+                        if (data.states[key] === 2) {
+                            found.add(key.indexOf("raw_") === 0 ? key.substr(4) : key);
+                        }
+                    }
+                    localStorage.setItem("deposits", [...found].join(","));
+                }
+                else if (item.requestMethod === "getPlayerResources" && item.requestClass === "ResourceService") {
+                    const data = item.responseData;
+                    localStorage.setItem("ownedResources", JSON.stringify(data.resources));
+                }
+                else if (item.requestMethod === "getProgress" && item.requestClass === "ResearchService") {
+                    const data = item.responseData;
+                    localStorage.setItem("research", data.unlockedTechnologies.join(","));
+                }
+            }
+        }
+        catch (error) {
+            alert(error.message);
+        }
+    }, [text]);
+    return (React.createElement("div", { id: "Import" },
+        React.createElement("textarea", { placeholder: "Paste load data here", value: text, onChange: (ev) => setText(ev.target.value) }),
+        React.createElement("button", { onClick: importFunc }, "Import")));
+};
+;
+exports.default = Import;
+
+
+/***/ }),
+
 /***/ "./Scripts/Index.ts":
 /*!**************************!*\
   !*** ./Scripts/Index.ts ***!
@@ -166,13 +273,94 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const ReactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-const ResearchTable_1 = __webpack_require__(/*! ./ResearchTable */ "./Scripts/ResearchTable.tsx");
+const Layout_1 = __webpack_require__(/*! ./Layout */ "./Scripts/Layout.tsx");
 function start() {
     const root = document.createElement("div");
     document.body.appendChild(root);
-    ReactDom.render(React.createElement(ResearchTable_1.default), root);
+    ReactDom.render(React.createElement(Layout_1.default), root);
 }
 window.addEventListener("load", start);
+
+
+/***/ }),
+
+/***/ "./Scripts/Layout.tsx":
+/*!****************************!*\
+  !*** ./Scripts/Layout.tsx ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const ResearchTable_1 = __webpack_require__(/*! ./ResearchTable */ "./Scripts/ResearchTable.tsx");
+const Map_1 = __webpack_require__(/*! ./Map */ "./Scripts/Map.tsx");
+const Import_1 = __webpack_require__(/*! ./Import */ "./Scripts/Import.tsx");
+const Total_1 = __webpack_require__(/*! ./Total */ "./Scripts/Total.tsx");
+const Layout = () => {
+    var _a;
+    const [tab, tabChanged] = React.useState((_a = localStorage.getItem("tab")) !== null && _a !== void 0 ? _a : "total");
+    const setTab = React.useCallback((newTab) => {
+        tabChanged(newTab);
+        localStorage.setItem("tab", newTab);
+    }, []);
+    let content = null;
+    switch (tab) {
+        case "research":
+            content = React.createElement(ResearchTable_1.default, null);
+            break;
+        case "map":
+            content = React.createElement(Map_1.default, null);
+            break;
+        case "total":
+            content = React.createElement(Total_1.default, null);
+            break;
+        case "import":
+            content = React.createElement(Import_1.default, null);
+            break;
+        default:
+            content = React.createElement("div", null, `404: ${tab}`);
+    }
+    return (React.createElement(React.Fragment, null,
+        React.createElement("ul", { id: "Tabs" },
+            React.createElement("li", { onClick: () => setTab("research") }, "Research"),
+            React.createElement("li", { onClick: () => setTab("map") }, "Map"),
+            React.createElement("li", { onClick: () => setTab("total") }, "Total"),
+            React.createElement("li", { onClick: () => setTab("import") }, "Import data")),
+        React.createElement("div", { id: "TabContent" }, content)));
+};
+exports.default = Layout;
+
+
+/***/ }),
+
+/***/ "./Scripts/Map.tsx":
+/*!*************************!*\
+  !*** ./Scripts/Map.tsx ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const Map = () => {
+    //const [tab, setTab] = React.useState<string>("total");
+    //let content: JSX.Element | null = null;
+    //switch (tab) {
+    //    case "research":
+    //        content = <ResearchTable />;
+    //        break;
+    //    default:
+    //        content = <div>{`404: ${tab}`}</div>;
+    //}
+    return (React.createElement(React.Fragment, null,
+        React.createElement("img", { src: "Images/Map1.png", alt: "" })));
+};
+exports.default = Map;
 
 
 /***/ }),
@@ -189,6 +377,7 @@ window.addEventListener("load", start);
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const Types_1 = __webpack_require__(/*! ./Types */ "./Scripts/Types.ts");
+const DataCache = __webpack_require__(/*! ./DataCache */ "./Scripts/DataCache.ts");
 const checkedItems = new Set();
 const width = { width: "200px" };
 const headerCell = {
@@ -213,17 +402,11 @@ const ResearchTable = () => {
     const [list, setList] = React.useState(null);
     const [checked, setChecked] = React.useState(new Set());
     React.useEffect(() => {
-        var _a;
-        const checked = (_a = localStorage.getItem("research")) === null || _a === void 0 ? void 0 : _a.split(",");
-        if (checked) {
-            setChecked(new Set(checked));
-        }
-        fetch("/resources.json")
-            .then(x => x.json())
-            .then(setResources);
-        fetch("/research.json")
-            .then(x => x.json())
-            .then(setList);
+        setChecked(new Set(DataCache.Data.research));
+        Promise.all([DataCache.Resources, DataCache.Research]).then(([resources, research]) => {
+            setResources(resources);
+            setList(research);
+        }, (error) => { var _a; return alert((_a = "Error: " + error.message) !== null && _a !== void 0 ? _a : error.toString()); });
     }, []);
     const checkedChanged = React.useCallback((ev) => {
         const clone = new Set(checked);
@@ -233,7 +416,7 @@ const ResearchTable = () => {
         else {
             clone.delete(ev.target.id);
         }
-        localStorage.setItem("research", [...clone].join(","));
+        DataCache.Data.research = [...clone];
         setChecked(clone);
     }, [checked]);
     if (!(list && resources)) {
@@ -280,36 +463,55 @@ const ResearchTable = () => {
                 React.createElement("th", { style: headerCell1 }),
                 React.createElement("th", { style: { ...headerCell1, width: "200px" } }),
                 React.createElement("th", { style: headerCell1 }),
-                resourceEras.map(x => React.createElement("th", { colSpan: x.count, style: { ...headerCell1, width: `${100 * x.count}px` }, className: "lineLeft" }, x.title))),
+                resourceEras.map(x => React.createElement("th", { colSpan: x.count, style: { ...headerCell1, width: `${100 * x.count}px` }, className: "lineLeft centerAlign" }, x.title))),
             React.createElement("tr", null,
                 React.createElement("th", { style: headerCell2 }),
                 React.createElement("th", { style: headerCell2 }),
-                React.createElement("th", { style: headerCell2 }, "FP"),
-                finalResources.map(x => React.createElement("th", { title: x.id, style: headerCell2, className: x.className }, x.name))),
+                React.createElement("th", { style: headerCell2, className: "centerAlign" }, "FP"),
+                finalResources.map(x => React.createElement("th", { title: x.id, style: headerCell2, className: `${x.className} centerAlign` }, x.name))),
             React.createElement("tr", null,
                 React.createElement("th", { style: headerCell3 }, "Era"),
                 React.createElement("th", { style: headerCell3 }, "Name"),
-                React.createElement("th", { style: headerCell3 }, `${Types_1.Beautify(leftFP)} / ${Types_1.Beautify(totalFP)}`),
-                finalResources.map(x => { var _a, _b; return React.createElement("th", { style: headerCell3, className: x.className }, `${Types_1.Beautify((_a = leftCost[x.id]) !== null && _a !== void 0 ? _a : 0)} / ${Types_1.Beautify((_b = totalCost[x.id]) !== null && _b !== void 0 ? _b : 0)}`); }))),
+                React.createElement("th", { style: headerCell3, className: "centerAlign" }, `${Types_1.Beautify(leftFP)} / ${Types_1.Beautify(totalFP)}`),
+                finalResources.map(x => { var _a, _b; return React.createElement("th", { style: headerCell3, className: `${x.className} centerAlign` }, `${Types_1.Beautify((_a = leftCost[x.id]) !== null && _a !== void 0 ? _a : 0)} / ${Types_1.Beautify((_b = totalCost[x.id]) !== null && _b !== void 0 ? _b : 0)}`); }))),
         React.createElement("tbody", null, list.map(x => {
             let eraBox = null;
             let rowClassName = "";
             if (lastEra !== x.era) {
                 const item = researchEras.find(y => y.era === x.era);
-                eraBox = React.createElement("td", { rowSpan: item.count, className: "lineAbove" }, item.title);
+                eraBox = React.createElement("td", { rowSpan: item.count, className: "lineAbove leftAlign" }, item.title);
                 lastEra = x.era;
                 rowClassName += " lineAbove";
             }
             return (React.createElement("tr", null,
                 eraBox,
-                React.createElement("td", { className: rowClassName },
+                React.createElement("td", { className: `${rowClassName} leftAlign` },
                     React.createElement("input", { type: "checkbox", id: x.id, checked: checked.has(x.id), onChange: checkedChanged }),
                     React.createElement("label", { htmlFor: x.id }, x.name)),
-                React.createElement("td", { className: rowClassName }, x.fp),
-                finalResources.map(y => React.createElement("td", { className: `${rowClassName}${y.className}` }, Types_1.Beautify(x.requirements[y.id])))));
+                React.createElement("td", { className: `centerAlign ${rowClassName}` }, x.fp),
+                finalResources.map(y => React.createElement("td", { className: `centerAlign${rowClassName}${y.className}` }, Types_1.Beautify(x.requirements[y.id])))));
         }))));
 };
 exports.default = ResearchTable;
+
+
+/***/ }),
+
+/***/ "./Scripts/Total.tsx":
+/*!***************************!*\
+  !*** ./Scripts/Total.tsx ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const Total = () => {
+    return (React.createElement(React.Fragment, null));
+};
+exports.default = Total;
 
 
 /***/ }),

@@ -31,12 +31,12 @@ const ResearchTable = () => {
         if (checked) {
             setChecked(new Set(checked));
         }
-        fetch("/resources.json")
-            .then(x => x.json())
-            .then(setResources);
-        fetch("/research.json")
-            .then(x => x.json())
-            .then(setList);
+        const resourcePromise = fetch("resources.json").then(x => x.json());
+        const researchPromise = fetch("research.json").then(x => x.json());
+        Promise.all([resourcePromise, researchPromise]).then(([resources, research]) => {
+            setResources(resources);
+            setList(research);
+        }, (error) => { var _a; return alert((_a = "Error: " + error.message) !== null && _a !== void 0 ? _a : error.toString()); });
     }, []);
     const checkedChanged = React.useCallback((ev) => {
         const clone = new Set(checked);
@@ -70,43 +70,56 @@ const ResearchTable = () => {
             }
         }
     }
-    const filteredResources = resources.filter(x => (x.types.indexOf("negotiationGame") > -1) && (x.types.indexOf("specialResource") === -1));
-    const resourceEras = Types_1.groupEras(filteredResources.map(x => x.era));
-    const researchEras = Types_1.groupEras(list.map(x => x.era));
+    const tmp = /*React.useMemo(*/ () => {
+        const filteredResources = resources.filter(x => (x.types.indexOf("negotiationGame") > -1) && (x.types.indexOf("specialResource") === -1));
+        const resourceEras = Types_1.groupEras(filteredResources.map(x => x.era));
+        const indexes = new Set();
+        let counter = 0;
+        for (const era of resourceEras) {
+            indexes.add(counter);
+            counter += era.count;
+        }
+        return {
+            resourceEras,
+            researchEras: Types_1.groupEras(list.map(x => x.era)),
+            finalResources: filteredResources.map((x, i) => ({ ...x, className: indexes.has(i) ? " lineLeft" : "" }))
+        };
+    } /*, [])*/;
+    const { resourceEras, researchEras, finalResources } = tmp();
     let lastEra = "";
-    return (React.createElement("table", { style: { borderCollapse: "collapse" } },
+    return (React.createElement("table", { id: "ResearchTable" },
         React.createElement("thead", null,
             React.createElement("tr", null,
                 React.createElement("th", { style: headerCell1 }),
+                React.createElement("th", { style: { ...headerCell1, width: "200px" } }),
                 React.createElement("th", { style: headerCell1 }),
-                React.createElement("th", { style: headerCell1 }),
-                resourceEras.map(x => React.createElement("th", { colSpan: x.count, style: headerCell1 }, x.title))),
+                resourceEras.map(x => React.createElement("th", { colSpan: x.count, style: { ...headerCell1, width: `${100 * x.count}px` }, className: "lineLeft centerAlign" }, x.title))),
             React.createElement("tr", null,
                 React.createElement("th", { style: headerCell2 }),
                 React.createElement("th", { style: headerCell2 }),
-                React.createElement("th", { style: headerCell2 }, "FP"),
-                filteredResources.map(x => React.createElement("th", { title: x.id, style: headerCell2 }, x.name))),
+                React.createElement("th", { style: headerCell2, className: "centerAlign" }, "FP"),
+                finalResources.map(x => React.createElement("th", { title: x.id, style: headerCell2, className: `${x.className} centerAlign` }, x.name))),
             React.createElement("tr", null,
                 React.createElement("th", { style: headerCell3 }, "Era"),
                 React.createElement("th", { style: headerCell3 }, "Name"),
-                React.createElement("th", { style: headerCell3 }, `${Types_1.Beautify(leftFP)} / ${Types_1.Beautify(totalFP)}`),
-                filteredResources.map(x => { var _a, _b; return React.createElement("th", { style: headerCell3, className: "lineLeft" }, `${Types_1.Beautify((_a = leftCost[x.id]) !== null && _a !== void 0 ? _a : 0)} / ${Types_1.Beautify((_b = totalCost[x.id]) !== null && _b !== void 0 ? _b : 0)}`); }))),
+                React.createElement("th", { style: headerCell3, className: "centerAlign" }, `${Types_1.Beautify(leftFP)} / ${Types_1.Beautify(totalFP)}`),
+                finalResources.map(x => { var _a, _b; return React.createElement("th", { style: headerCell3, className: `${x.className} centerAlign` }, `${Types_1.Beautify((_a = leftCost[x.id]) !== null && _a !== void 0 ? _a : 0)} / ${Types_1.Beautify((_b = totalCost[x.id]) !== null && _b !== void 0 ? _b : 0)}`); }))),
         React.createElement("tbody", null, list.map(x => {
             let eraBox = null;
             let rowClassName = "";
             if (lastEra !== x.era) {
                 const item = researchEras.find(y => y.era === x.era);
-                eraBox = React.createElement("td", { rowSpan: item.count, className: "lineAbove" }, item.title);
+                eraBox = React.createElement("td", { rowSpan: item.count, className: "lineAbove leftAlign" }, item.title);
                 lastEra = x.era;
                 rowClassName += " lineAbove";
             }
             return (React.createElement("tr", null,
                 eraBox,
-                React.createElement("td", { className: rowClassName },
+                React.createElement("td", { className: `${rowClassName} leftAlign` },
                     React.createElement("input", { type: "checkbox", id: x.id, checked: checked.has(x.id), onChange: checkedChanged }),
                     React.createElement("label", { htmlFor: x.id }, x.name)),
-                React.createElement("td", { className: rowClassName }, x.fp),
-                filteredResources.map(y => React.createElement("td", { className: rowClassName }, Types_1.Beautify(x.requirements[y.id])))));
+                React.createElement("td", { className: `centerAlign ${rowClassName}` }, x.fp),
+                finalResources.map(y => React.createElement("td", { className: `centerAlign${rowClassName}${y.className}` }, Types_1.Beautify(x.requirements[y.id])))));
         }))));
 };
 exports.default = ResearchTable;

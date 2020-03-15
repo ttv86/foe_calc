@@ -35,7 +35,7 @@
     <Content Include="Resources.json">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Styles\ResearchTable.css">
+    <Content Include="Styles\Main.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="webpack.config.js" />
@@ -53,10 +53,25 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\DataCache.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\Import.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\Index.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\Layout.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\Map.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\ResearchTable.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\Total.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\Types.ts">

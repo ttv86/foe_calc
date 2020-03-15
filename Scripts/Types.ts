@@ -57,3 +57,22 @@ interface IEraGroup {
     readonly title: string;
     readonly count: number;
 }
+
+export interface IResearch {
+    readonly id: string;
+    readonly era: Era;
+    readonly name: string;
+    readonly fp: number;
+    readonly rewards: readonly string[];
+    readonly children: readonly string[];
+    readonly parents: readonly string[];
+    readonly level: number;
+    readonly requirements: Record<string, number>;
+}
+
+export interface IResource {
+    readonly id: string;
+    readonly name: string;
+    readonly era: Era;
+    readonly types: readonly string[];
+}

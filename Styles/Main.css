@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#Tabs {
+    padding: 0;
+    margin: 0;
+}
+
+#Tabs>li {
+    padding: 8px;
+    cursor: pointer;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+#TabContent {
+    height: calc(100vh - 36px);
+    width: 100vw;
+    overflow: auto;
+}
+
+#ResearchTable {
+    width: 8000px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: sans-serif;
+    font-size: 90%;
+}
+
+#ResearchTable th {
+    background-color: #eee;
+    white-space: nowrap;
+}
+
+#ResearchTable th, #ResearchTable td {
+    width: 100px;
+    vertical-align: top;
+}
+
+#ResearchTable .lineAbove {
+    border-top: 1px solid #444;
+}
+
+#ResearchTable .lineLeft {
+    border-left: 1px solid #444;
+}
+
+#Import
+{
+    padding: 8px;
+}
+
+#Import textarea {
+    width: 100%;
+    height: 80vh;
+}
+
+.leftAlign {
+    text-align: start;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.rightAlign {
+    text-align: end;
+}

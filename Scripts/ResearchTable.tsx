@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Era, ItemType, Beautify, groupEras } from "./Types";
+import { Era, ItemType, Beautify, groupEras, IResearch, IResource } from "./Types";
+import * as DataCache from "./DataCache";
 
 const checkedItems = new Set<string>();
 const width: React.CSSProperties = { width: "200px" };
@@ -27,18 +28,14 @@ const ResearchTable: React.FunctionComponent = () => {
     const [checked, setChecked] = React.useState<ReadonlySet<string>>(new Set<string>());
 
     React.useEffect(() => {
-        const checked = localStorage.getItem("research")?.split(",");
-        if (checked) {
-            setChecked(new Set<string>(checked));
-        }
+        setChecked(new Set<string>(DataCache.Data.research));
 
-        fetch("/resources.json")
-            .then(x => x.json())
-            .then(setResources);
-
-        fetch("/research.json")
-            .then(x => x.json())
-            .then(setList);
+        Promise.all([DataCache.Resources, DataCache.Research]).then(
+            ([resources, research]) => {
+                setResources(resources);
+                setList(research);
+            },
+            (error) => alert("Error: " + error.message ?? error.toString()));
     }, []);
 
     const checkedChanged = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +46,7 @@ const ResearchTable: React.FunctionComponent = () => {
             clone.delete(ev.target.id);
         }
 
-        localStorage.setItem("research", [...clone].join(","));
+        DataCache.Data.research = [...clone];
         setChecked(clone);
     }, [checked]);
 
@@ -104,19 +101,19 @@ const ResearchTable: React.FunctionComponent = () => {
                     <th style={headerCell1} />
                     <th style={{ ...headerCell1, width: "200px" }} />
                     <th style={headerCell1} />
-                    {resourceEras.map(x => <th colSpan={x.count} style={{ ...headerCell1, width: `${100 * x.count}px` }} className="lineLeft">{x.title}</th>)}
+                    {resourceEras.map(x => <th colSpan={x.count} style={{ ...headerCell1, width: `${100 * x.count}px` }} className="lineLeft centerAlign">{x.title}</th>)}
                 </tr>
                 <tr>
                     <th style={headerCell2} />
                     <th style={headerCell2} />
-                    <th style={headerCell2}>FP</th>
-                    {finalResources.map(x => <th title={x.id} style={headerCell2} className={x.className}>{x.name}</th>)}
+                    <th style={headerCell2} className="centerAlign">FP</th>
+                    {finalResources.map(x => <th title={x.id} style={headerCell2} className={`${x.className} centerAlign`}>{x.name}</th>)}
                 </tr>
                 <tr>
                     <th style={headerCell3}>Era</th>
                     <th style={headerCell3}>Name</th>
-                    <th style={headerCell3}>{`${Beautify(leftFP)} / ${Beautify(totalFP)}`}</th>
-                    {finalResources.map(x => <th style={headerCell3} className={x.className}>{`${Beautify(leftCost[x.id] ?? 0)} / ${Beautify(totalCost[x.id] ?? 0)}`}</th>)}
+                    <th style={headerCell3} className="centerAlign">{`${Beautify(leftFP)} / ${Beautify(totalFP)}`}</th>
+                    {finalResources.map(x => <th style={headerCell3} className={`${x.className} centerAlign`}>{`${Beautify(leftCost[x.id] ?? 0)} / ${Beautify(totalCost[x.id] ?? 0)}`}</th>)}
                 </tr>
             </thead>
             <tbody>
@@ -125,19 +122,19 @@ const ResearchTable: React.FunctionComponent = () => {
                     let rowClassName = "";
                     if (lastEra !== x.era) {
                         const item = researchEras.find(y => y.era === x.era)!;
-                        eraBox = <td rowSpan={item.count} className="lineAbove">{item.title}</td>;
+                        eraBox = <td rowSpan={item.count} className="lineAbove leftAlign">{item.title}</td>;
                         lastEra = x.era;
                         rowClassName += " lineAbove";
                     }
                     return (
                         <tr>
                             {eraBox}
-                            <td className={rowClassName}>
+                            <td className={`${rowClassName} leftAlign`}>
                                 <input type="checkbox" id={x.id} checked={checked.has(x.id)} onChange={checkedChanged} />
                                 <label htmlFor={x.id}>{x.name}</label>
                             </td>
-                            <td className={rowClassName}>{x.fp}</td>
-                            {finalResources.map(y => <td className={`${rowClassName}${y.className}`}>{Beautify(x.requirements[y.id])}</td>)}
+                            <td className={`centerAlign ${rowClassName}`}>{x.fp}</td>
+                            {finalResources.map(y => <td className={`centerAlign${rowClassName}${y.className}`}>{Beautify(x.requirements[y.id])}</td>)}
                         </tr>
                     );
                 })}
@@ -147,29 +144,3 @@ const ResearchTable: React.FunctionComponent = () => {
 };
 
 export default ResearchTable;
-
-interface IResearch {
-    readonly id: string;
-    readonly era: Era;
-    readonly name: string;
-    readonly fp: number;
-    readonly rewards: readonly string[];
-    readonly children: readonly string[];
-    readonly parents: readonly string[];
-    readonly level: number;
-    readonly requirements: Record<string, number>;
-}
-
-interface IRawResource {
-    readonly id: string;
-    readonly name: string;
-    readonly era: string;
-    readonly abilities: Record<string, never>;
-}
-
-interface IResource {
-    readonly id: string;
-    readonly name: string;
-    readonly era: Era;
-    readonly types: readonly string[];
-}
