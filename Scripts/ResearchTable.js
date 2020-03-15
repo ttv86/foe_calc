@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
 const Types_1 = require("./Types");
+const DataCache = require("./DataCache");
 const checkedItems = new Set();
 const width = { width: "200px" };
 const headerCell = {
@@ -26,14 +27,8 @@ const ResearchTable = () => {
     const [list, setList] = React.useState(null);
     const [checked, setChecked] = React.useState(new Set());
     React.useEffect(() => {
-        var _a;
-        const checked = (_a = localStorage.getItem("research")) === null || _a === void 0 ? void 0 : _a.split(",");
-        if (checked) {
-            setChecked(new Set(checked));
-        }
-        const resourcePromise = fetch("resources.json").then(x => x.json());
-        const researchPromise = fetch("research.json").then(x => x.json());
-        Promise.all([resourcePromise, researchPromise]).then(([resources, research]) => {
+        setChecked(new Set(DataCache.Data.research));
+        Promise.all([DataCache.Resources, DataCache.Research]).then(([resources, research]) => {
             setResources(resources);
             setList(research);
         }, (error) => { var _a; return alert((_a = "Error: " + error.message) !== null && _a !== void 0 ? _a : error.toString()); });
@@ -46,7 +41,7 @@ const ResearchTable = () => {
         else {
             clone.delete(ev.target.id);
         }
-        localStorage.setItem("research", [...clone].join(","));
+        DataCache.Data.research = [...clone];
         setChecked(clone);
     }, [checked]);
     if (!(list && resources)) {

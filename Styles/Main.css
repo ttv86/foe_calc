@@ -5,6 +5,8 @@
 body {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
+    font-size: 90%;
 }
 
 #Tabs {
@@ -29,8 +31,6 @@ body {
     width: 8000px;
     border-collapse: collapse;
     table-layout: fixed;
-    font-family: sans-serif;
-    font-size: 90%;
 }
 
 #ResearchTable th {
@@ -51,8 +51,21 @@ body {
     border-left: 1px solid #444;
 }
 
-#Import
-{
+#TotalTable input {
+    width: 50px;
+}
+
+#TotalTable .bad {
+    background-color: #fcc;
+    color: #c00;
+}
+
+#TotalTable .good {
+    background-color: #cfc;
+    color: #0c0;
+}
+
+#Import {
     padding: 8px;
 }
 

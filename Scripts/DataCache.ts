@@ -1,7 +1,7 @@
 import { IResearch, IResource } from "./Types";
 
-export const Resources: Promise<readonly IResource[]> = fetch("resources.json").then(x => x.json());
-export const Research: Promise<readonly IResearch[]> = fetch("research.json").then(x => x.json());
+export const Resources: Promise<readonly IResource[]> = fetch("Resources.json").then(x => x.json());
+export const Research: Promise<readonly IResearch[]> = fetch("Research.json").then(x => x.json());
 
 export class Data {
     public static get owned(): Record<string, number> {
