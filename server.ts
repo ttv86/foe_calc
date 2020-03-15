@@ -3,16 +3,18 @@ import { createServer, IncomingMessage, ServerResponse } from "http";
 import { createReadStream, exists } from "fs";
 import { extname, join } from "path";
 
-const mimes = {
+const mimes: Record<string, string> = {
     ".html": "text/html",
+    ".css": "text/css",
     ".js": "text/javascript",
     ".json": "application/json",
     ".png": "image/png",
+    ".map": "application/octet-stream",
 };
 
 const port = process.env.port ?? 1337
 createServer((req: IncomingMessage, res: ServerResponse) => {
-    const url = req.url === "/" ? "index.html" : req.url;
+    const url = (req.url === "/" ? "index.html" : req.url) ?? "index.html";
     if (url.indexOf("..") > -1) {
         res.writeHead(404);
         res.end();

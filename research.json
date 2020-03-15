@@ -1,19 +1,13 @@
 [
   {
-    "id": "root",
-    "children": [ "tribalcommunity" ],
-    "parents": [],
-    "level": -1,
-    "requirements": []
-  },
-  {
     "id": "tribalcommunity",
     "era": "StoneAge",
     "name": "Tribal Community",
     "fp": 3,
     "rewards": [],
     "children": [ "stilt_houses", "spears", "pottery" ],
-    "parents": [ "root" ],
+    "parents": [],
+    "level": 0,
     "requirements": []
   },
   {

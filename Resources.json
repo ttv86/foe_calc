@@ -1,0 +1,998 @@
+[
+  {
+    "id": "guild_expedition_attempt",
+    "name": "Attempt",
+    "era": "NoAge",
+    "types": [ "autoRefill", "initialValue", "resourceShopContext", "reward" ]
+  },
+  {
+    "id": "strategy_points",
+    "name": "Forge Points",
+    "era": "NoAge",
+    "types": [ "autoRefill", "collectingRestricted", "resourceShopContext", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "expansions",
+    "name": "Expansion",
+    "era": "NoAge",
+    "types": []
+  },
+  {
+    "id": "era_outpost_expansions",
+    "name": "Expansion",
+    "era": "NoAge",
+    "types": []
+  },
+  {
+    "id": "population",
+    "name": "Population",
+    "era": "NoAge",
+    "types": [ "calculatedStaticResource" ]
+  },
+  {
+    "id": "total_population",
+    "name": "Population",
+    "era": "NoAge",
+    "types": []
+  },
+  {
+    "id": "guild_expedition_point",
+    "name": "Expedition Point",
+    "era": "NoAge",
+    "types": [ "reward" ]
+  },
+  {
+    "id": "chest_event_won_grand_prizes",
+    "name": "Won Grand Prizes",
+    "era": "NoAge",
+    "types": []
+  },
+  {
+    "id": "chest_event_grand_prize_points",
+    "name": "Grand Prize Points",
+    "era": "NoAge",
+    "types": []
+  },
+  {
+    "id": "negotiation_game_turn",
+    "name": "Turn",
+    "era": "NoAge",
+    "types": []
+  },
+  {
+    "id": "premium",
+    "name": "Diamonds",
+    "era": "NoAge",
+    "types": [ "questBoostable", "reward" ]
+  },
+  {
+    "id": "money",
+    "name": "Coins",
+    "era": "NoAge",
+    "types": [ "questBoostable", "negotiationGame", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "supplies",
+    "name": "Supplies",
+    "era": "NoAge",
+    "types": [ "questBoostable", "negotiationGame", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "guild_championship_trophy_gold",
+    "name": "Gold Trophy",
+    "era": "NoAge",
+    "types": [ "reward" ]
+  },
+  {
+    "id": "guild_championship_trophy_silver",
+    "name": "Silver Trophy",
+    "era": "NoAge",
+    "types": [ "reward" ]
+  },
+  {
+    "id": "guild_championship_trophy_bronze",
+    "name": "Bronze Trophy",
+    "era": "NoAge",
+    "types": [ "reward" ]
+  },
+  {
+    "id": "tavern_silver",
+    "name": "Tavern Silver",
+    "era": "NoAge",
+    "types": [ "initialValue", "reward" ]
+  },
+  {
+    "id": "wine",
+    "name": "Wine",
+    "era": "BronzeAge",
+    "types": [ "rankingPoints", "questBoostable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "dye",
+    "name": "Dye",
+    "era": "BronzeAge",
+    "types": [ "rankingPoints", "questBoostable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "alabaster",
+    "name": "Marble",
+    "era": "BronzeAge",
+    "types": [ "rankingPoints", "questBoostable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "cypress",
+    "name": "Lumber",
+    "era": "BronzeAge",
+    "types": [ "rankingPoints", "questBoostable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "sandstone",
+    "name": "Stone",
+    "era": "BronzeAge",
+    "types": [ "rankingPoints", "questBoostable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "gems",
+    "name": "Jewelry",
+    "era": "IronAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "cloth",
+    "name": "Cloth",
+    "era": "IronAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "lead",
+    "name": "Iron",
+    "era": "IronAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "ebony",
+    "name": "Ebony",
+    "era": "IronAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "limestone",
+    "name": "Limestone",
+    "era": "IronAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "gold",
+    "name": "Gold",
+    "era": "EarlyMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "honey",
+    "name": "Honey",
+    "era": "EarlyMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "marble",
+    "name": "Alabaster",
+    "era": "EarlyMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "granite",
+    "name": "Granite",
+    "era": "EarlyMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "bronze",
+    "name": "Copper",
+    "era": "EarlyMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "glass",
+    "name": "Glass",
+    "era": "HighMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "salt",
+    "name": "Salt",
+    "era": "HighMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "ropes",
+    "name": "Ropes",
+    "era": "HighMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "brick",
+    "name": "Brick",
+    "era": "HighMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "herbs",
+    "name": "Dried Herbs",
+    "era": "HighMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "silk",
+    "name": "Silk",
+    "era": "LateMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "gunpowder",
+    "name": "Gunpowder",
+    "era": "LateMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "brass",
+    "name": "Brass",
+    "era": "LateMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "basalt",
+    "name": "Basalt",
+    "era": "LateMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "talc",
+    "name": "Talc Powder",
+    "era": "LateMiddleAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "tar",
+    "name": "Tar",
+    "era": "ColonialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "porcelain",
+    "name": "Porcelain",
+    "era": "ColonialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "wire",
+    "name": "Wire",
+    "era": "ColonialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "coffee",
+    "name": "Coffee",
+    "era": "ColonialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "paper",
+    "name": "Paper",
+    "era": "ColonialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "fertilizer",
+    "name": "Fertilizer",
+    "era": "IndustrialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "whaleoil",
+    "name": "Whale Oil",
+    "era": "IndustrialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "textiles",
+    "name": "Textiles",
+    "era": "IndustrialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "rubber",
+    "name": "Rubber",
+    "era": "IndustrialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "coke",
+    "name": "Coke",
+    "era": "IndustrialAge",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "explosives",
+    "name": "Explosives",
+    "era": "ProgressiveEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "tinplate",
+    "name": "Tinplate",
+    "era": "ProgressiveEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "machineparts",
+    "name": "Machine Parts",
+    "era": "ProgressiveEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "petroleum",
+    "name": "Gasoline",
+    "era": "ProgressiveEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "asbestos",
+    "name": "Asbestos",
+    "era": "ProgressiveEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "ferroconcrete",
+    "name": "Ferroconcrete",
+    "era": "ModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "flavorants",
+    "name": "Flavorants",
+    "era": "ModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "luxury_materials",
+    "name": "Luxury Materials",
+    "era": "ModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "packaging",
+    "name": "Packaging",
+    "era": "ModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "convenience_food",
+    "name": "Convenience Food",
+    "era": "ModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "renewable_resources",
+    "name": "Renewable Resources",
+    "era": "PostModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "steel",
+    "name": "Steel",
+    "era": "PostModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "semiconductors",
+    "name": "Semiconductors",
+    "era": "PostModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "filters",
+    "name": "Industrial Filters",
+    "era": "PostModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "dna_data",
+    "name": "Genome Data",
+    "era": "PostModernEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "electromagnets",
+    "name": "Electromagnets",
+    "era": "ContemporaryEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "gas",
+    "name": "Gas",
+    "era": "ContemporaryEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "plastics",
+    "name": "Plastics",
+    "era": "ContemporaryEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "robots",
+    "name": "Robots",
+    "era": "ContemporaryEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "bionics",
+    "name": "Bionics Data",
+    "era": "ContemporaryEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "translucent_concrete",
+    "name": "Translucent Concrete",
+    "era": "TomorrowEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "smart_materials",
+    "name": "Smart Materials",
+    "era": "TomorrowEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "papercrete",
+    "name": "Papercrete",
+    "era": "TomorrowEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "preservatives",
+    "name": "Preservatives",
+    "era": "TomorrowEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "nutrition_research",
+    "name": "Nutrition Research",
+    "era": "TomorrowEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "biogeochemical_data",
+    "name": "Biogeochemical Data",
+    "era": "FutureEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "purified_water",
+    "name": "Purified Water",
+    "era": "FutureEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "algae",
+    "name": "Algae",
+    "era": "FutureEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "superconductors",
+    "name": "Superconductors",
+    "era": "FutureEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "nanoparticles",
+    "name": "Nanoparticles",
+    "era": "FutureEra",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "medals",
+    "name": "Medals",
+    "era": "AllAge",
+    "types": [ "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "nanowire",
+    "name": "Nanowire",
+    "era": "ArcticFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "transester_gas",
+    "name": "Transester gas",
+    "era": "ArcticFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "ai_data",
+    "name": "AI data",
+    "era": "ArcticFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "paper_batteries",
+    "name": "Paper Batteries",
+    "era": "ArcticFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "bioplastics",
+    "name": "Bioplastics",
+    "era": "ArcticFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "promethium",
+    "name": "Promethium",
+    "era": "ArcticFuture",
+    "types": [ "rankingPoints", "specialResource", "premiumPurchase", "producesInBuilding", "negotiationGame", "inventoryOtherResources" ]
+  },
+  {
+    "id": "orichalcum",
+    "name": "Orichalcum",
+    "era": "OceanicFuture",
+    "types": [ "rankingPoints", "specialResource", "premiumPurchase", "producesInBuilding", "negotiationGame", "inventoryOtherResources" ]
+  },
+  {
+    "id": "stars",
+    "name": "Stars",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "resourceShopContext", "reward" ]
+  },
+  {
+    "id": "carnival_roses",
+    "name": "Roses",
+    "era": "NoAge",
+    "types": [ "trackChanges", "autoRefill", "initialValue", "eventResource", "resourceShopContext", "reward" ]
+  },
+  {
+    "id": "carnival_hearts",
+    "name": "Hearts",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "pearls",
+    "name": "Pearls",
+    "era": "OceanicFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "artificial_scales",
+    "name": "Artificial Scales",
+    "era": "OceanicFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "corals",
+    "name": "Corals",
+    "era": "OceanicFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "biolight",
+    "name": "Biolight",
+    "era": "OceanicFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "plankton",
+    "name": "Plankton",
+    "era": "OceanicFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "tea_silk",
+    "name": "Tea Silk",
+    "era": "VirtualFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "data_crystals",
+    "name": "Data Crystals",
+    "era": "VirtualFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "golden_rice",
+    "name": "Golden Rice",
+    "era": "VirtualFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "nanites",
+    "name": "Nanites",
+    "era": "VirtualFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "cryptocash",
+    "name": "Cryptocash",
+    "era": "VirtualFuture",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "spring_lanterns",
+    "name": "Lanterns",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "summer_tickets",
+    "name": "Tickets",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "fall_apples",
+    "name": "Apples",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "reward" ]
+  },
+  {
+    "id": "forge_bowl_footballs",
+    "name": "Footballs",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "carnival_coins",
+    "name": "Florins",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "carnival_tickets",
+    "name": "Tickets",
+    "era": "NoAge",
+    "types": [ "trackChanges", "autoRefill", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "soccer_energy",
+    "name": "Energy Drinks",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "summer_doubloons",
+    "name": "Doubloons",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "summer_compass",
+    "name": "Compasses",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource" ]
+  },
+  {
+    "id": "vikings",
+    "name": "Vikings",
+    "era": "NoAge",
+    "types": [ "outpostResource", "calculatedStaticResource" ]
+  },
+  {
+    "id": "total_vikings",
+    "name": "Vikings",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "copper_coins",
+    "name": "Copper Coins",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "diplomacy",
+    "name": "Diplomacy",
+    "era": "NoAge",
+    "types": [ "outpostResource", "premiumPurchase", "calculatedStaticResource" ]
+  },
+  {
+    "id": "axes",
+    "name": "Axes",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase" ]
+  },
+  {
+    "id": "mead",
+    "name": "Mead",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase" ]
+  },
+  {
+    "id": "horns",
+    "name": "Horns",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase" ]
+  },
+  {
+    "id": "wool",
+    "name": "Wool",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase" ]
+  },
+  {
+    "id": "japanese",
+    "name": "Japanese",
+    "era": "NoAge",
+    "types": [ "outpostResource", "calculatedStaticResource" ]
+  },
+  {
+    "id": "total_japanese",
+    "name": "Japanese",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "koban_coins",
+    "name": "Koban Coins",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "soy",
+    "name": "Soy",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "paintings",
+    "name": "Paintings",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "armor",
+    "name": "Armor",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "instruments",
+    "name": "Instruments",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "egyptians",
+    "name": "Egyptians",
+    "era": "NoAge",
+    "types": [ "outpostResource", "calculatedStaticResource" ]
+  },
+  {
+    "id": "total_egyptians",
+    "name": "Egyptians",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "deben",
+    "name": "Deben",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "egyptians_loot",
+    "name": "Loot",
+    "era": "NoAge",
+    "types": [ "outpostResource", "reward" ]
+  },
+  {
+    "id": "barley",
+    "name": "Barley",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "pottery",
+    "name": "Pottery",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "flowers",
+    "name": "Flowers",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "sacrificial_offerings",
+    "name": "Sacrificial Offerings",
+    "era": "NoAge",
+    "types": [ "outpostResource", "producesInBuilding", "premiumPurchase", "reward" ]
+  },
+  {
+    "id": "fall_ingredient_apples",
+    "name": "Apples",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "fall_ingredient_pumpkins",
+    "name": "Pumpkins",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "fall_ingredient_chocolate",
+    "name": "Chocolate",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "fall_ingredient_cinnamon",
+    "name": "Cinnamon",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "fall_ingredient_caramel",
+    "name": "Caramel",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "winter_matches",
+    "name": "Matches",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource" ]
+  },
+  {
+    "id": "colonists",
+    "name": "Colonists",
+    "era": "SpaceAgeMars",
+    "types": [ "outpostResource", "calculatedStaticResource" ]
+  },
+  {
+    "id": "total_colonists",
+    "name": "Colonists",
+    "era": "SpaceAgeMars",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "credits",
+    "name": "Credits",
+    "era": "SpaceAgeMars",
+    "types": [ "outpostResource" ]
+  },
+  {
+    "id": "mars_ore",
+    "name": "Mars Ore",
+    "era": "SpaceAgeMars",
+    "types": [ "rankingPoints", "specialResource", "outpostResource", "reward", "premiumPurchase", "inventoryOtherResources" ]
+  },
+  {
+    "id": "life_support",
+    "name": "Life Support",
+    "era": "SpaceAgeMars",
+    "types": [ "outpostResource", "calculatedStaticResource" ]
+  },
+  {
+    "id": "superalloys",
+    "name": "Superalloys",
+    "era": "SpaceAgeMars",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "biotech_crops",
+    "name": "BioTech Crops",
+    "era": "SpaceAgeMars",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "lubricants",
+    "name": "Lubricants",
+    "era": "SpaceAgeMars",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "mars_microbes",
+    "name": "Mars Microbes",
+    "era": "SpaceAgeMars",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "fusion_reactors",
+    "name": "Fusion Reactors",
+    "era": "SpaceAgeMars",
+    "types": [ "rankingPoints", "questBoostable", "guildTreasuryAvailable", "negotiationGame", "premiumPurchase", "goodsProduceable" ]
+  },
+  {
+    "id": "archeology_brush",
+    "name": "Brush",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "archeology_shovel",
+    "name": "Shovel",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "archeology_dynamite",
+    "name": "Dynamite",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "archeology_scroll",
+    "name": "Scroll",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "trade_coins",
+    "name": "Trade Coins",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "reward" ]
+  },
+  {
+    "id": "gemstones",
+    "name": "Gemstones",
+    "era": "NoAge",
+    "types": [ "trackChanges", "reward" ]
+  },
+  {
+    "id": "halloween_wand",
+    "name": "Wand",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "halloween_broomstick",
+    "name": "Broomstick",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "halloween_cauldron",
+    "name": "Cauldron",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "halloween_candy",
+    "name": "Candy",
+    "era": "NoAge",
+    "types": [ "trackChanges", "resourceShopContext", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "winter_tickets",
+    "name": "Tickets",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource" ]
+  },
+  {
+    "id": "winter_reindeer",
+    "name": "Reindeer",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "eventResource", "reward" ]
+  },
+  {
+    "id": "st_patricks_pot_of_gold",
+    "name": "Pot Of Gold",
+    "era": "NoAge",
+    "types": [ "trackChanges", "initialValue", "resourceShopContext", "eventResource", "reward" ]
+  },
+  {
+    "id": "impediment_removals",
+    "name": "Impediment Removal Items",
+    "era": "NoAge",
+    "types": [ "outpostResource", "reward" ]
+  },
+  {
+    "id": "premium_impediment_removals",
+    "name": "Premium Impediment Removal Items",
+    "era": "NoAge",
+    "types": [ "outpostResource" ]
+  }
+]

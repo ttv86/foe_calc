@@ -1,0 +1,26 @@
+#ResearchTable {
+    width: 8000px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: sans-serif;
+    font-size: 90%;
+}
+
+#ResearchTable th {
+    text-align: start;
+    background-color: #eee;
+    white-space: nowrap;
+}
+
+#ResearchTable th, #ResearchTable td {
+    width: 100px;
+    vertical-align: top;
+}
+
+#ResearchTable .lineAbove {
+    border-top: 1px solid #444;
+}
+
+#ResearchTable .lineLeft {
+    border-left: 1px solid #444;
+}

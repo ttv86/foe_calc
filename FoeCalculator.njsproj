@@ -32,6 +32,12 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Resources.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Styles\ResearchTable.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="webpack.config.js" />
     <None Include="server.ts" />
     <Content Include="index.html">
@@ -43,10 +49,17 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Styles\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\Index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\ResearchTable.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Scripts\Types.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
