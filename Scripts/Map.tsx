@@ -1,42 +1,59 @@
 import * as React from "react";
-import { Era, ItemType, Beautify, groupEras, IResearch, IResource, IProvince } from "./Types";
-import * as DataCache from "./DataCache";
+import { IProvince, IResource, Beautify, eraIndex, Era } from "./Types";
+import { Data, Resources, Provinces } from "./DataCache";
+import Table, { IColumn, IRow } from "./Components/Table";
 
-const checkedItems = new Set<string>();
-const width: React.CSSProperties = { width: "200px" };
-const headerCell: React.CSSProperties = {
-    position: "sticky",
-};
-const headerCell1: React.CSSProperties = {
-    ...headerCell,
-    top: "0px",
-};
-const headerCell2: React.CSSProperties = {
-    ...headerCell,
-    top: "20px",
-};
-const headerCell3: React.CSSProperties = {
-    ...headerCell,
-    top: "40px",
-    borderBottom: "1px solid #000"
-};
-
-
-const Map: React.FunctionComponent = () => {
-    const [resources, setResources] = React.useState<(readonly IResource[]) | null>(null);
-    const [list, setList] = React.useState<(readonly IProvince[]) | null>(null);
+const MapView: React.FunctionComponent<{ limitEraName: Era }> = (props) => {
+    const [limitEra, setLimitEra] = React.useState<number>(eraIndex(props.limitEraName));
     const [checked, setChecked] = React.useState<ReadonlySet<string>>(new Set<string>());
+    const [columnInfo, setColumnInfo] = React.useState<readonly IColumn<IColumnTag>[]>([]);
+    const [rowInfo, setRowInfo] = React.useState<readonly IRow<IRowTag>[]>([]);
+    const [totals, setTotals] = React.useState<ReadonlyMap<string, { total: number, left: number }>>(new Map<string, { total: number, left: number }>());
 
     React.useEffect(() => {
-        setChecked(new Set<string>(DataCache.Data.sectors));
+        setChecked(new Set<string>(Data.sectors));
+        const newEra = eraIndex(props.limitEraName);
+        setLimitEra(newEra);
 
-        Promise.all([DataCache.Resources, DataCache.Provinces]).then(
-            ([resources, research]) => {
-                setResources(resources);
-                setList(research);
+        Promise.all([Resources, Provinces]).then(
+            ([resources, provinces]) => {
+                const columns: IColumn<IColumnTag>[] = [
+                    { name: "#era", width: 100 },
+                    { name: "#name", width: 200 },
+                ];
+
+                const rows: IRow<IRowTag>[] = [
+                    { name: "#title1" },
+                    { name: "#title2" },
+                    { name: "#title3" },
+                ];
+
+                const sortedProvinces = provinces.filter(x => (eraIndex(x.era) <= newEra));
+                sortedProvinces.sort((a, b) => eraIndex(a.era) - eraIndex(b.era));
+
+                let lastEra = "NoAge";
+                let odd = true;
+                for (const r of resources.filter(x => (eraIndex(x.era) <= newEra) && x.types.indexOf("goodsProduceable") > -1)) {
+                    columns.push({ name: r.id, tag: { eraText: r.era !== lastEra ? r.era : "", resource: r, color: odd ? "e" : "f" } });
+                    lastEra = r.era;
+                    odd = !odd;
+                }
+
+                odd = true;
+                for (const r of sortedProvinces) {
+                    rows.push({ name: r.id.toString(), tag: { eraText: r.era !== lastEra ? r.era : "", province: r, color: odd ? "e" : "f" } });
+                    lastEra = r.era;
+                    odd = !odd;
+                }
+
+                const checked = new Set<string>(Data.sectors);
+                setChecked(checked);
+                setColumnInfo(columns);
+                setRowInfo(rows);
+                setTotals(calculateTotals(checked, rows));
             },
             (error) => alert("Error: " + error.message ?? error.toString()));
-    }, []);
+    }, [props.limitEraName]);
 
     const checkedChanged = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => {
         const clone = new Set(checked);
@@ -46,92 +63,137 @@ const Map: React.FunctionComponent = () => {
             clone.delete(ev.target.id);
         }
 
-        DataCache.Data.sectors = [...clone];
+        Data.sectors = [...clone];
         setChecked(clone);
-    }, [checked]);
+        setTotals(calculateTotals(clone, rowInfo));
+    }, [checked, rowInfo]);
 
-    if (!(list && resources)) {
-        return <div>Loading...</div>;
+    const cellRenderer = React.useCallback((column: IColumn<IColumnTag>, row: IRow<IRowTag>) => {
+        switch (column.name) {
+            case "#era":
+                switch (row.name) {
+                    case "#title1":
+                    case "#title3":
+                        return "";
+                    case "#title2":
+                        return "Era";
+                    default:
+                        return row.tag?.eraText ?? "";
+                }
+
+            case "#name":
+                switch (row.name) {
+                    case "#title1":
+                    case "#title3":
+                        return "";
+                    case "#title2":
+                        return "Name";
+                    default:
+                        return (
+                            <label>
+                                <input checked={checked.has(row.name ?? "")} id={row.name} type="checkbox" onChange={checkedChanged} />{row.tag?.province.name ?? ""}
+                            </label>
+                        );
+                }
+
+            default:
+                switch (row.name) {
+                    case "#title1":
+                        return column.tag?.eraText ?? "";
+                    case "#title2":
+                        return column.tag?.resource.name ?? "";
+                    case "#title3":
+                        const res = totals.get(column.name ?? "") ?? { total: 0, left: 0 };
+                        return `${Beautify(res.left)} / ${Beautify(res.total)}`;
+                    default:
+                        let cost = 0;
+                        if (row.tag?.province.sectors) {
+                            for (const sector of row.tag?.province.sectors) {
+                                cost += sector.negotiation.filter(x => x.name === column.name).reduce((a, b) => a + b.amount, 0)
+                            }
+                        }
+
+                        return Beautify(cost);
+                }
+        }
+    }, [checked, totals]);
+
+    const cellStyler = React.useCallback((column: IColumn<IColumnTag>, row: IRow<IRowTag>) => {
+        const result: React.CSSProperties = { padding: "0 6px" };
+        if (column.name?.startsWith("#") || row.name?.startsWith("#")) {
+            result.fontWeight = "bold";
+        }
+
+        if (row.tag?.eraText) {
+            result.borderTop = "1px solid black";
+        }
+
+        if (column.tag?.eraText) {
+            result.borderLeft = "1px solid black";
+        }
+
+        if ((column.name === "#name") || (column.name === "#fp") || (column.name === "supplies")) {
+            result.borderRight = "1px solid black";
+        }
+
+        if (row.name === "#title3") {
+            result.borderBottom = "1px solid black";
+        }
+
+        if ((column.name !== "#era") && (column.name !== "#name") && (row.name !== "#title1")) {
+            result.textAlign = "end";
+        }
+
+        const color = `#e${row.tag?.color ?? "f"}${column.tag?.color ?? "f"}`;
+        result.backgroundColor = color;
+
+        return result;
+    }, []);
+
+    return (
+        <Table
+            style={{ height: "100%" }}
+            columns={columnInfo}
+            rows={rowInfo}
+            fixedColumns={2}
+            fixedRows={3}
+            getContent={cellRenderer}
+            getStyle={cellStyler}
+        />
+    );
+}
+
+function calculateTotals(set: ReadonlySet<string>, rows: readonly IRow<IRowTag>[]): ReadonlyMap<string, { total: number, left: number }> {
+    const newTotals = new Map<string, { total: number, left: number }>();
+    function addAmount(code: string, amount: number, done: boolean) {
+        let existing = newTotals.get(code) ?? { total: 0, left: 0 };
+        newTotals.set(code, { total: existing.total + amount, left: existing.left + (done ? 0 : amount) });
     }
 
-    const totalCost: Record<string, number> = {};
-    const leftCost: Record<string, number> = {};
-    for (const item of list) {
-        if (item.sectors) {
-            for (const sector of item.sectors) {
+    for (const row of rows) {
+        if (row.tag?.province) {
+            const done = set.has(row.tag.province.id.toString());
+            for (const sector of row.tag.province.sectors) {
                 for (const cost of sector.negotiation) {
-                    totalCost[cost.name] = cost.amount + (totalCost[cost.name] ?? 0);
-                    if (!checked.has(item.id)) {
-                        leftCost[cost.name] = cost.amount + (leftCost[cost.name] ?? 0);
-                    }
+                    addAmount(cost.name, cost.amount, done);
                 }
             }
         }
     }
 
-    const tmp = /*React.useMemo(*/() => {
-        const filteredResources = resources.filter(x => (x.types.indexOf("goodsProduceable") > -1));
-        const resourceEras = groupEras(filteredResources.map(x => x.era));
-        const indexes = new Set<number>();
-        let counter = 0;
-        for (const era of resourceEras) {
-            indexes.add(counter);
-            counter += era.count;
-        }
+    return newTotals;
+}
 
-        return {
-            resourceEras,
-            researchEras: groupEras(list.map(x => x.era)),
-            finalResources: filteredResources.map((x, i) => ({ ...x, className: indexes.has(i) ? " lineLeft" : "" }))
-        };
-    }/*, [])*/;
+interface IColumnTag {
+    readonly eraText: string;
+    readonly color: string;
+    readonly resource: IResource;
+}
 
-    const { resourceEras, researchEras, finalResources } = tmp();
+interface IRowTag {
+    readonly eraText: string;
+    readonly color: string;
+    readonly province: IProvince;
+}
 
-    let lastEra = "";
-    return (
-        <table id="ResearchTable">
-            <thead>
-                <tr>
-                    <th style={headerCell1} />
-                    <th style={{ ...headerCell1, width: "200px" }} />
-                    {resourceEras.map(x => <th colSpan={x.count} style={{ ...headerCell1, width: `${100 * x.count}px` }} className="lineLeft centerAlign">{x.title}</th>)}
-                </tr>
-                <tr>
-                    <th style={headerCell2} />
-                    <th style={headerCell2} />
-                    {finalResources.map(x => <th title={x.id} style={headerCell2} className={`${x.className} centerAlign`}>{x.name}</th>)}
-                </tr>
-                <tr>
-                    <th style={headerCell3}>Era</th>
-                    <th style={headerCell3}>Name</th>
-                    {finalResources.map(x => <th style={headerCell3} className={`${x.className} centerAlign`}>{`${Beautify(leftCost[x.id] ?? 0)} / ${Beautify(totalCost[x.id] ?? 0)}`}</th>)}
-                </tr>
-            </thead>
-            <tbody>
-                {list.map(x => {
-                    let eraBox: JSX.Element | null = null;
-                    let rowClassName = "";
-                    if (lastEra !== x.era) {
-                        const item = researchEras.find(y => y.era === x.era)!;
-                        eraBox = <td rowSpan={item.count} className="lineAbove leftAlign">{item.title}</td>;
-                        lastEra = x.era;
-                        rowClassName += " lineAbove";
-                    }
-                    return (
-                        <tr>
-                            {eraBox}
-                            <td className={`${rowClassName} leftAlign`}>
-                                <input type="checkbox" id={x.id} checked={checked.has(x.id)} onChange={checkedChanged} />
-                                <label htmlFor={x.id}>{x.name}</label>
-                            </td>
-                            {finalResources.map(y => <td className={`centerAlign${rowClassName}${y.className}`}>{Beautify(0)}</td>)}
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
-    );
-};
-
-export default Map;
+export default MapView;

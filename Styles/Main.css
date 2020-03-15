@@ -9,6 +9,11 @@ body {
     font-size: 90%;
 }
 
+#ReactRoot {
+    width: 100vw;
+    height: 100vh;
+}
+
 #Tabs {
     padding: 0;
     margin: 0;
@@ -85,3 +90,29 @@ body {
 .rightAlign {
     text-align: end;
 }
+
+.Table {
+    position: relative;
+}
+
+.Table > .q1 {
+    position: absolute;
+    overflow: hidden;
+}
+
+    .Table > .q2 {
+        position: absolute;
+        overflow: hidden;
+        padding-right: 50px;
+    }
+
+    .Table > .q3 {
+        position: absolute;
+        overflow: hidden;
+        padding-bottom: 50px;
+    }
+
+    .Table > .q4 {
+        position: absolute;
+        overflow: auto;
+    }

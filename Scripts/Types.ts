@@ -1,4 +1,4 @@
-export type Era = "NoAge" | "StoneAge" | "BronzeAge" | "IronAge" | "EarlyMiddleAge" | "HighMiddleAge" | "LateMiddleAge" | "ColonialAge" |
+export type Era = "AllAge" | "NoAge" | "StoneAge" | "BronzeAge" | "IronAge" | "EarlyMiddleAge" | "HighMiddleAge" | "LateMiddleAge" | "ColonialAge" |
     "IndustrialAge" | "ProgressiveEra" | "ModernEra" | "PostModernEra" | "ContemporaryEra" | "TomorrowEra" | "FutureEra" |
     "ArcticFuture" | "OceanicFuture" | "VirtualFuture" | "SpaceAgeMars" | "SpaceAgeAsteroidBelt";
 
@@ -52,6 +52,33 @@ export function groupEras(eras: readonly Era[]): readonly IEraGroup[] {
     return result;
 }
 
+export function eraIndex(era: Era): number {
+    switch (era) {
+        default:
+        case "NoAge": return 0;
+        case "AllAge": return 0;
+        case "StoneAge": return 1;
+        case "BronzeAge": return 2;
+        case "IronAge": return 3;
+        case "EarlyMiddleAge": return 4;
+        case "HighMiddleAge": return 5;
+        case "LateMiddleAge": return 6;
+        case "ColonialAge": return 7;
+        case "IndustrialAge": return 8;
+        case "ProgressiveEra": return 9;
+        case "ModernEra": return 10;
+        case "PostModernEra": return 11;
+        case "ContemporaryEra": return 12;
+        case "TomorrowEra": return 13;
+        case "FutureEra": return 14;
+        case "ArcticFuture": return 15;
+        case "OceanicFuture": return 16;
+        case "VirtualFuture": return 17;
+        case "SpaceAgeMars": return 18;
+        case "SpaceAgeAsteroidBelt": return 19;
+    }
+}
+
 interface IEraGroup {
     readonly era: Era;
     readonly title: string;
@@ -78,7 +105,7 @@ export interface IResource {
 }
 
 export interface IProvince {
-    readonly id: string;
+    readonly id: number;
     readonly name: string;
     readonly era: Era;
     readonly sectors: readonly ISector[];

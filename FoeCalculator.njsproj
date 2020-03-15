@@ -50,10 +50,14 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Scripts\Components\" />
     <Folder Include="Styles\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Components\Table.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Scripts\DataCache.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

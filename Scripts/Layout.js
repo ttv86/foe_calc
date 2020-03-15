@@ -1,41 +1,56 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = require("react");
-const ResearchTable_1 = require("./ResearchTable");
-const Map_1 = require("./Map");
-const Import_1 = require("./Import");
-const Total_1 = require("./Total");
+//import ResearchTable from "./ResearchTable";
+//import Map from "./Map";
+//import Import from "./Import";
+//import Total from "./Total";
+const Table_1 = require("./Components/Table");
 const Layout = () => {
-    var _a;
-    const [tab, tabChanged] = React.useState((_a = localStorage.getItem("tab")) !== null && _a !== void 0 ? _a : "total");
-    const setTab = React.useCallback((newTab) => {
-        tabChanged(newTab);
-        localStorage.setItem("tab", newTab);
+    const data = React.useMemo(() => {
+        return [
+            ["A", "B", "C", "D", "E", "F", "G"],
+            ["H", "I", "J", "K", "L", "M", "N"],
+            ["O", "P", "Q", "R", "S", "T", "U"],
+            ["A", "B", "C", "D", "E", "F", "G"],
+            ["H", "I", "J", "K", "L", "M", "N"],
+            ["O", "P", "Q", "R", "S", "T", "U"],
+        ];
     }, []);
-    let content = null;
-    switch (tab) {
-        case "research":
-            content = React.createElement(ResearchTable_1.default, null);
-            break;
-        case "map":
-            content = React.createElement(Map_1.default, null);
-            break;
-        case "total":
-            content = React.createElement(Total_1.default, null);
-            break;
-        case "import":
-            content = React.createElement(Import_1.default, null);
-            break;
-        default:
-            content = React.createElement("div", null, `404: ${tab}`);
-    }
-    return (React.createElement(React.Fragment, null,
-        React.createElement("ul", { id: "Tabs" },
-            React.createElement("li", { onClick: () => setTab("research") }, "Research"),
-            React.createElement("li", { onClick: () => setTab("map") }, "Map"),
-            React.createElement("li", { onClick: () => setTab("total") }, "Total"),
-            React.createElement("li", { onClick: () => setTab("import") }, "Import data")),
-        React.createElement("div", { id: "TabContent" }, content)));
+    return React.createElement(Table_1.default, { data: data, fixedColumns: 5, fixedRows: 3 });
+    //const [tab, tabChanged] = React.useState<TabName>(localStorage.getItem("tab") as TabName ?? "total");
+    //const setTab = React.useCallback((newTab: TabName) => {
+    //    tabChanged(newTab);
+    //    localStorage.setItem("tab", newTab);
+    //}, []);
+    //let content: JSX.Element | null = null;
+    //switch (tab) {
+    //    case "research":
+    //        content = <ResearchTable />;
+    //        break;
+    //    case "map":
+    //        content = <Map />;
+    //        break;
+    //    case "total":
+    //        content = <Total />;
+    //        break;
+    //    case "import":
+    //        content = <Import />;
+    //        break;
+    //    default:
+    //        content = <div>{`404: ${tab}`}</div>;
+    //}
+    //return (
+    //    <>
+    //        <ul id="Tabs">
+    //            <li onClick={() => setTab("research")}>Research</li>
+    //            <li onClick={() => setTab("map")}>Map</li>
+    //            <li onClick={() => setTab("total")}>Total</li>
+    //            <li onClick={() => setTab("import")}>Import data</li>
+    //        </ul>
+    //        <div id="TabContent">{content}</div>
+    //    </>
+    //);
 };
 exports.default = Layout;
 //# sourceMappingURL=Layout.js.map

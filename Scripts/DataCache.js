@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Resources = fetch("Resources.json").then(x => x.json());
 exports.Research = fetch("Research.json").then(x => x.json());
+exports.Provinces = fetch("Provinces.json").then(x => x.json());
 class Data {
     static get owned() {
         var _a;
@@ -26,6 +27,18 @@ class Data {
     }
     static set research(newValue) {
         localStorage.setItem("research", newValue.join(","));
+    }
+    static get sectors() {
+        var _a;
+        try {
+            return ((_a = localStorage.getItem("sectors")) !== null && _a !== void 0 ? _a : "").split(",");
+        }
+        catch (_b) {
+            return [];
+        }
+    }
+    static set sectors(newValue) {
+        localStorage.setItem("sectors", newValue.join(","));
     }
     static get deposits() {
         var _a;

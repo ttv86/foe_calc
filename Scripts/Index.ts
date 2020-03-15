@@ -4,6 +4,7 @@ import Layout from "./Layout";
 
 function start() {
     const root = document.createElement("div");
+    root.id = "ReactRoot";
     document.body.appendChild(root);
     ReactDom.render(React.createElement(Layout), root);
 }

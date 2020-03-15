@@ -1,7 +1,6 @@
 import * as React from "react";
 
 const Import: React.FunctionComponent = () => {
-    document.createElement
     const [text, setText] = React.useState<string>("");
     const importFunc = React.useCallback(() => {
         try {
@@ -26,6 +25,8 @@ const Import: React.FunctionComponent = () => {
                 }
             }
 
+            setText("");
+            alert("Success");
         } catch (error) {
             alert(error.message);
         }

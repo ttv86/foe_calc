@@ -20,7 +20,8 @@ export class Data {
 
     public static get research(): readonly string[] {
         try {
-            return (localStorage.getItem("research") ?? "").split(",");
+            const value = localStorage.getItem("research") ?? "";
+            return value ? value.split(",") : [];
         } catch {
             return [];
         }
@@ -33,7 +34,8 @@ export class Data {
 
     public static get sectors(): readonly string[] {
         try {
-            return (localStorage.getItem("sectors") ?? "").split(",");
+            const value = localStorage.getItem("sectors") ?? "";
+            return value ? value.split(",") : [];
         } catch {
             return [];
         }
@@ -46,7 +48,8 @@ export class Data {
 
     public static get deposits(): readonly string[] {
         try {
-            return (localStorage.getItem("deposits") ?? "").split(",");
+            const value = localStorage.getItem("deposits");
+            return value ? value.split(",") : [];
         } catch {
             return [];
         }
