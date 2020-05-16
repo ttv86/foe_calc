@@ -11,6 +11,8 @@
 # Ignore user settings
 *.user
 
+/Scripts/*.js
+
 # Ignore compiled javascript and map files
 server.js
 *.map
